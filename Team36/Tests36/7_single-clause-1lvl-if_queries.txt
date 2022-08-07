@@ -1,0 +1,150 @@
+1 - Valid Declaration: All if
+if ifs;
+Select ifs
+3
+5000
+2 - Invalid Declaration: Mispelled if
+ifelse ifs;
+Select ifs
+
+5000
+3 - Valid Follows: Select stmt (stmt, if)
+stmt s; if ifs;
+Select s such that Follows(s, ifs)
+2
+5000
+4 - Valid Follows: Select if (stmt, if)
+stmt s; if ifs;
+Select ifs such that Follows(s, ifs)
+3
+5000
+5 - Valid Follows: Select stmt (if, stmt)
+stmt s; if ifs;
+Select s such that Follows(ifs, s)
+8
+5000
+6 - Valid Follows: Select if (if, stmt)
+stmt s; if ifs;
+Select ifs such that Follows(ifs, s)
+3
+5000
+7 - Valid Follows*: Select stmt (stmt, if)
+stmt s; if ifs;
+Select s such that Follows*(s, ifs)
+1,2
+5000
+8 - Valid Follows*: Select if (stmt, if)
+stmt s; if ifs;
+Select ifs such that Follows*(s, ifs)
+3
+5000
+9 - Valid Follows*: Select stmt (if, stmt)
+stmt s; if ifs;
+Select s such that Follows*(ifs, s)
+8
+5000
+10 - Valid Follows*: Select if (if, stmt)
+stmt s; if ifs;
+Select ifs such that Follows*(ifs, s)
+3
+5000
+11 - Invalid Uses: (if, procedure), syntax valid | semantic invalid
+if ifs; procedure p;
+Select BOOLEAN such that Uses(ifs, p)
+FALSE
+5000
+12 - Invalid Uses: (stmt, if), syntax valid | semantic invalid
+stmt s; if ifs;
+Select BOOLEAN such that Uses(s, ifs)
+FALSE
+5000
+13 - Valid Uses: Select if (if, variable)
+if ifs; variable v;
+Select ifs such that Uses(ifs, v)
+3
+5000
+14 - Valid Uses: Select variable (if, variable)
+if ifs; variable v;
+Select v such that Uses(ifs, v)
+c7,e7,g7
+5000
+15 - Invalid Uses: Select if (if, constant), syntax valid | semantic invalid
+if ifs; constant c;
+Select BOOLEAN such that Uses(ifs, c)
+FALSE
+5000
+16 - Invalid Uses: Select constant (if, constant), syntax valid | semantic invalid
+if ifs; constant c;
+Select BOOLEAN such that Uses(ifs, c)
+FALSE
+5000
+17 - Valid Uses: Select if (if, IDENT)
+if ifs;
+Select ifs such that Uses(ifs, "e7")
+3
+5000
+18 - Valid Uses: Select variable (integer, variable)
+variable v;
+Select v such that Uses(3, v)
+c7,e7,g7
+5000
+19 - Valid Modifies: Select if (if, variable)
+if ifs; variable v;
+Select ifs such that Modifies(ifs, v)
+3
+5000
+20 - Valid Modifies: Select variable (if, variable)
+if ifs; variable v;
+Select v such that Modifies(ifs, v)
+d7,f7,h7
+5000
+21 - Valid Modifies: Select if (if, constant), syntax valid | semantic invalid
+if ifs; constant c;
+Select BOOLEAN such that Modifies(ifs, c)
+FALSE
+5000
+22 - Valid Modifies: Select constant (if, constant), syntax valid | semantic invalid
+if ifs; constant c;
+Select BOOLEAN such that Modifies(ifs, c)
+FALSE
+5000
+23 - Invalid Modifies: (if, procedure), syntax valid | semantic invalid
+if ifs; procedure p;
+Select BOOLEAN such that Modifies(ifs, p)
+FALSE
+5000
+24 - Invalid Modifies: (stmt, if), syntax valid | semantic invalid
+stmt s; if ifs;
+Select BOOLEAN such that Modifies(s, ifs)
+FALSE
+5000
+25  - Valid Modifies: (if, IDENT)
+if ifs;
+Select ifs such that Modifies(ifs, "b6")
+
+5000
+26 - Valid Modifies: (integer, variable)
+variable v;
+Select v such that Modifies(1, v)
+a7
+5000
+27 - Valid Parent: Select stmt (stmt, if)
+stmt s; if ifs;
+Select s such that Parent(s, ifs)
+
+5000
+28 - Valid Parent: Select if (stmt, if)
+stmt s; if ifs;
+Select ifs such that Parent(s, ifs)
+
+5000
+29 - Valid Parent: Select stmt (if, stmt)
+stmt s; if ifs;
+Select s such that Parent(ifs, s)
+4,5,6,7
+5000
+30 - Valid Parent: Select if (if, stmt)
+stmt s; if ifs;
+Select ifs such that Parent(ifs, s)
+3
+5000

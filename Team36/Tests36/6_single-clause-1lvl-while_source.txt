@@ -1,0 +1,8 @@
+procedure p6 {
+    while (a6 == 0) {
+	b6 = c6 + 1;
+	read d6;
+    }
+    print e6;
+    f6 = e6 + 1;
+}

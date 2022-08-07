@@ -1,0 +1,60 @@
+1 - Valid Calls: Calls(SYN,SYN) select p
+procedure p,q;
+Select p such that Calls(p,q)
+p16, r16, t16, u16
+5000
+2 - Valid Calls: Calls(SYN,SYN) select q
+procedure p,q;
+Select q such that Calls(p,q)
+q16, r16, s16, t16, u16
+5000
+3 - Valid Calls: Calls(SYN,IDENT)
+procedure p,q;
+Select p such that Calls(p,"q16")
+p16, r16
+5000
+4 - Valid Calls: Calls(IDENT,SYN)
+procedure p,q;
+Select q such that Calls("p16",q)
+q16, r16, s16
+5000
+5 - Valid Calls: Calls(IDENT,IDENT) where True
+read re;
+Select re such that Calls("p16","q16")
+10
+5000
+6 - Valid Calls: Calls(IDENT,IDENT) where False
+procedure p,q;
+Select p such that Calls("p16","t16")
+
+5000
+7 - Valid Calls: Calls*(SYN,SYN) select p
+procedure p,q;
+Select p such that Calls*(p,q)
+p16, r16, t16, u16
+5000,
+8 - Valid Calls: Calls*(SYN,SYN) select q
+procedure p,q;
+Select q such that Calls*(p,q)
+r16, q16, s16, t16, u16
+5000
+9 - Valid Calls: Calls*(SYN,IDENT)
+procedure p,q;
+Select p such that Calls*(p,"s16")
+p16, r16, t16, u16
+5000
+10 - Valid Calls: Calls*(IDENT,SYN)
+procedure p,q;
+Select q such that Calls*("p16",q)
+r16, q16, t16, u16, s16
+5000
+11 - Valid Calls: Calls*(IDENT,IDENT) where True
+read re;
+Select re such that Calls*("p16","u16")
+10
+5000
+12 - Valid Calls: Calls*(IDENT,IDENT) where False
+read re;
+Select re such that Calls*("p16","o16")
+
+5000

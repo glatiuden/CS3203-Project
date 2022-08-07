@@ -1,0 +1,120 @@
+1 - Valid Declaration: All procedure	
+procedure p;	
+Select p	
+p1, p2
+5000	
+2 - Valid Declaration: All stmt	
+stmt s;	
+Select s	
+1,2,3,4,5,6,7,8,9,10
+5000	
+3 - Valid Declaration: All read	
+read re;	
+Select re	
+3,7
+5000	
+4 - Valid Declaration: All print	
+print pn;	
+Select pn	
+4,9
+5000	
+5 - Valid Declaration: All assign	
+assign a;	
+Select a	
+1,2,10	
+5000	
+6 - Valid Declaration: All call	
+call cl;	
+Select cl	
+5
+5000	
+7 - Valid Declaration: All while	
+while w;	
+Select w	
+6
+5000	
+8 - Valid Declaration: All if	
+if ifs;	
+Select ifs	
+8
+5000	
+9 - Valid Declaration: All variable	
+variable v;	
+Select v	
+a1,b1,c1,d1,e1,f1,g1,h1,i1
+5000	
+10 - Valid Declaration: All constant	
+constant c;	
+Select c	
+0,1,2	
+5000	
+11 - Invalid Declaration: Mispelled procedure
+proc p;
+Select p
+
+5000
+12 - Invalid Declaration: Mispelled stmt
+statement s;
+Select s
+
+5000
+13 - Invalid Declaration: Mispelled read
+red re;
+Select re
+
+5000
+14 - Invalid Declaration: Mispelled print
+prin p;
+Select p
+
+5000
+15 - Invalid Declaration: Mispelled assign
+assignment a;
+Select a
+
+5000
+16 - Invalid Declaration: Mispelled call
+calls cl;
+Select cl
+
+5000
+17 - Invalid Declaration: Mispelled while
+whilst w;
+Select w
+
+5000
+18 - Invalid Declaration: Mispelled if
+ifthen ifs
+Select ifs
+
+5000
+19 - Invalid Declaration: Misepelled variable
+var v;
+Select v
+
+5000
+20 - Invalid Declaration: Mispelled constant
+const c;
+Select c
+
+5000
+21 - Valid Declaration: Multiple declaration of one design entities
+stmt s1, s2, s3;
+Select s1
+1,2,3,4,5,6,7,8,9,10
+5000
+22 - Valid Declaration: Multiple declaration of multiple design entities
+stmt s1, s2; assign a1, a2;
+Select a1
+1,2,10
+5000
+23 - Invalid Declaration: Invalid multiple declaration syntax, missing comma
+stmt s1 s2;
+Select s1
+
+5000
+24 - Invalid Declaration: Invalid multiple declaration syntax, missing semicolon
+stmt s1, s2 assign a1, a2;
+Select a1
+
+5000

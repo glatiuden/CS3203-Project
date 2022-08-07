@@ -1,0 +1,20 @@
+procedure p3 {
+    a3 = 1;
+    b3 = a3 + 2;
+    read c3;
+    print d3;
+}
+
+procedure q3 {
+    e3 = 1;
+    f3 = e3 + 2;
+}
+
+procedure r3 {
+    e3 = 1;
+    f3 = 2;
+    call q3;
+}
+
+procedure s3{
+}

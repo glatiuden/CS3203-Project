@@ -1,0 +1,105 @@
+1 - Valid Modifies-pattern: Select assign Modifies(assign, variable) pattern (variable, _)
+assign a; variable v;
+Select a such that Modifies(a, v) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+2 - Valid Modifies-pattern: Select assign Modifies(assign, variable) pattern (variable, _variable_) 
+assign a; variable v;
+Select a such that Modifies(a, v) pattern a (v, _"a15"_)
+5, 7, 8, 9
+5000
+3 - Valid Modifies-pattern: Select assign Modifies(assign, variable) pattern (IDENT, _variable_) 
+assign a; variable v;
+Select a such that Modifies(a, v) pattern a ("b15", _"b15"_)
+9
+5000
+4 - Valid Modifies-pattern: Select assign Modifies(assign, variable) pattern (variable, _constant_) 
+assign a; stmt s; variable v;
+Select v such that Modifies(a, v) pattern a (v, _"1"_)
+a15, b15, c15
+5000
+5 - Valid Modifies-pattern: Select assign Modifies(assign, _) pattern (variable, _)
+assign a; variable v;
+Select a such that Modifies(a, _) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+6 - Valid Modifies-pattern: Select assign Modifies(assign, IDENT) pattern (variable, _)
+assign a; variable v;
+Select a such that Modifies(a, "a15") pattern a (v, _)
+1, 5
+5000
+7 - Valid Modifies-pattern: Select assign Modifies(assign, IDENT) pattern (_, _variable_) 
+assign a;
+Select a such that Modifies(a, "b15") pattern a (_, _"a15"_)
+7, 9
+5000
+8 - Valid Modifies-pattern: Select assign Modifies(assign, IDENT) pattern (IDENT, _variable_) 
+assign a;
+Select a such that Modifies(a, "b15") pattern a ("b15", _"c15"_)
+9
+5000
+9 - Valid Modifies-pattern: Select assign Modifies(assign, IDENT) pattern (variable, _) 
+assign a; variable v;
+Select v such that Modifies(a, "c15") pattern a (v, _)
+c15
+5000
+10 - Valid Modifies-pattern: Select assign Modifies(_, variable) pattern (variable, _)
+assign a; variable v;
+Select a such that Modifies(_, v) pattern a (v, _)
+
+5000
+11 - Valid Modifies-pattern: Select assign Modifies(_,_) pattern (variable, _)
+assign a; variable v;
+Select a such that Modifies(_, _) pattern a (v, _)
+
+5000
+12 - Valid Modifies-pattern: Select assign Modifies(_, IDENT) pattern (variable, _) 
+assign a; variable v;
+Select a such that Modifies(_, "a14") pattern a (v, _)
+
+5000
+13 - Valid Modifies-pattern: Select assign Modifies(integer, variable) pattern (variable, _variable_)
+assign a; variable v;
+Select a such that Modifies(9, v) pattern a (v, _"c15"_)
+9
+5000
+14 - Valid Modifies-pattern: Select assign Modifies(integer, variable) pattern (_, _variable_)
+assign a; variable v;
+Select a such that Modifies(9, v) pattern a (_, _"c15"_)
+9, 10
+5000
+15 - Valid Modifies-pattern: Select assign Modifies(integer, variable) pattern (IDENT, _variable_)
+assign a; variable v;
+Select a such that Modifies(6, v) pattern a ("b15", _"a15"_)
+7, 9
+5000
+16 - Valid Modifies-pattern: Select assign Modifies(integer, variable) pattern (variable, _variable_) 
+assign a; variable v;
+Select v such that Modifies(9, v) pattern a (v, _"b15"_)
+b15
+5000
+17 - Valid Modifies-pattern: Select assign Modifies(integer, _) pattern (variable, _) 
+assign a; variable v;
+Select a such that Modifies(3, _) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+18 - Valid Modifies-pattern: Select assign Modifies(integer, IDENT) pattern (variable, _)
+assign a; variable v;
+Select a such that Modifies(10, "c15") pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+19 - Valid pattern-Modifies: Select assign pattern (variable, _) Modifies(assign, IDENT)
+assign a; variable v;
+Select a pattern a (v, _) such that Modifies(a, "a15")
+1, 5
+5000
+20 - Valid pattern-Modifies: Select assign pattern (variable, _) Modifies(_,_)
+assign a; variable v;
+Select a pattern a (v, _) such that Modifies(_, _)
+
+5000
+21 - Valid pattern-Modifies: Select assign pattern (IDENT, _variable_) Modifies(integer, variable)
+assign a; variable v;
+Select a such that Modifies(6, v) pattern a ("b15", _"a15"_)
+7, 9
+5000

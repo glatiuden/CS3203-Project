@@ -1,0 +1,130 @@
+1 - Affects(a, a1)
+assign a,a1;
+Select <a,a1> such that Affects(a,a1)
+3 5, 5 6, 6 5, 6 7, 3 7, 7 9
+5000
+2 - Affects(a, INT)
+assign a;
+Select a such that Affects(a, 7)
+3, 6
+5000
+3 - Affects(a, _)
+assign a;
+Select a such that Affects(a, _)
+3, 5, 6, 7
+5000
+4 - Affects(INT, a)
+assign a;
+Select a such that Affects(3, a)
+5, 7
+5000
+5 - Affects(INT, INT) where TRUE
+
+Select BOOLEAN such that Affects(7, 9)
+TRUE
+5000
+6 - Affects(INT, INT) where FALSE
+
+Select BOOLEAN such that Affects(1, 3)
+FALSE
+5000
+7 - Affects(INT, _) where TRUE
+
+Select BOOLEAN such that Affects(5, _)
+TRUE
+5000
+8 - Affects(INT, _) where FALSE
+
+Select BOOLEAN such that Affects(1, _)
+FALSE
+5000
+9 - Affects(_, a)
+assign a;
+Select a such that Affects(_, a)
+5, 6, 7, 9
+5000
+10 - Affects(_, IDENT) where TRUE
+
+Select BOOLEAN such that Affects(_, 7)
+TRUE
+5000
+11 - Affects(_, IDENT) where FALSE
+
+Select BOOLEAN such that Affects(_, 3)
+FALSE
+5000
+12 - Affects(_, _) where TRUE
+
+Select BOOLEAN such that Affects(_, _)
+TRUE
+5000
+13 - Invalid Affects: (variable, integer), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Affects(v, 8)
+FALSE
+5000
+14 - Invalid Affects*: (variable, integer), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Affects*(v, 8)
+FALSE
+5000
+15 - Invalid Affects: (constant, integer), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Affects(c, 8)
+FALSE
+5000
+16 - Invalid Affects*: (constant, integer), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Affects*(c, 8)
+FALSE
+5000
+17 - Invalid Affects: (procedure, integer), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Affects(p, 8)
+FALSE
+5000
+18 - Invalid Affects*: (procedure, integer), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Affects*(p, 8)
+FALSE
+5000
+19 - Invalid Affects: (variable, _), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Affects(v, _)
+FALSE
+5000
+20 - Invalid Affects*: (variable, _), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Affects*(v, _)
+FALSE
+5000
+21 - Invalid Affects: (constant, _), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Affects(c, _)
+FALSE
+5000
+22 - Invalid Affects*: (constant, _), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Affects*(c, _)
+FALSE
+5000
+23 - Invalid Affects: (procedure, _), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Affects(p, _)
+FALSE
+5000
+24 - Invalid Affects*: (procedure, _), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Affects*(p, _)
+FALSE
+5000
+25 - Invalid Affects: (integer, variable), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Affects(2, v)
+FALSE
+5000
+26 - Invalid Affects*: (integer, variable), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Affects*(2, v)
+FALSE
+5000

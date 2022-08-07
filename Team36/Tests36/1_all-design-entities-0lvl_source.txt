@@ -1,0 +1,19 @@
+procedure p1 {
+    a1 = 1;
+    b1 = a1 + 2;
+    read c1;
+    print d1;
+    call p2;
+}
+
+procedure p2 {
+    while (e1 != 0) {
+	    read f1;
+    }
+
+    if (g1 == 0) then {
+        print h1;
+    } else {
+        i1 = 2;
+    }
+}

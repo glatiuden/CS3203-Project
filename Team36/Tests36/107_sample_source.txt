@@ -1,0 +1,145 @@
+procedure ifOnly {
+	if (a == b) then {
+		call ifAndWhileInsideWhile;
+		c = c + (b * (d + 1) / (2 + (3 * ( (4 % 3) + 5) / (e * 2 + (4 * 3))))) * a;
+		call whileInsideIf;
+		read b;
+		call whileOnly;
+	} else {
+		call ifInsideWhile;
+		print dress;
+		call doubleWhile;
+	}
+	call ifInsideIf;
+}
+
+procedure whileOnly {
+	while (((one * ((1 + 1) / 1)) + (2 * (two / ((2 + 2) - 2) / 2) * 2)) > three) {
+		call whileInsideWhileInsideWhile;
+		call whileInsideWhile;
+		print two;
+		call whileInsideIf;
+		three = three * two * one;
+		call doubleWhile;
+	}
+}
+
+procedure ifInsideWhile {
+	while (f > g) {
+		if ((4 % ((3 * ((2 * h) + 1)) / 3)) == f) then {
+			call whileOnly;
+			read h;
+			i =  g;
+			call whileInsideIf;
+		} else {
+			call whileInsideWhile;
+		}
+		call doubleWhile;
+		call ifInsideIf;
+		i = g + 1;
+		call doubleWhileInsideWhile;
+		print g;
+	}
+}
+
+procedure whileInsideIf {
+	if (j == 1) then {
+		while (k > 2) {
+			print k;
+			call doubleWhileInsideWhile;
+			k = k * 2;
+			call whileInsideWhileInsideWhile;
+		}
+	} else {
+		while (3 == l) {
+			call whileInsideWhile;
+			l = l;
+			read l;
+		}
+		call doubleWhile;
+	}
+}
+
+procedure doubleWhile {
+	while (m != while) {
+		n = m;
+		call whileInsideWhile;
+		print o;
+		call whileInsideWhileInsideWhile;
+	}
+	while (p > (n + q)) {
+		read q;
+		call ifInsideIf;
+		call doubleWhileInsideWhile;
+	}
+}
+
+procedure whileInsideWhile {
+	while (r < s) {
+		while (t == u) {
+			call doubleWhileInsideWhile;
+			read t;
+			u = r + s;
+		}
+		call whileInsideWhileInsideWhile;
+	}
+}
+
+procedure ifInsideIf {
+	if (v == (v + w)) then {
+		if ((w - w) == 3) then {
+			read w;
+			x = y / v;
+		} else {
+			print z;
+		}
+	} else {
+		if (z == z) then {
+			call whileInsideWhile;
+		} else {
+			print a1;
+			x = w + v;
+		}
+		call whileInsideWhileInsideWhile;
+	}
+}
+
+procedure whileInsideWhileInsideWhile {
+	while (b1 < 1) {
+		while (c1 == c1) {
+			while ((d1 - 1) < d1) {
+				call doubleWhileInsideWhile;
+				e1 = c1;
+			}
+		}
+		read c1;
+	}
+}
+
+procedure doubleWhileInsideWhile {
+	while (f1 < g1) {
+		while (g1 == g1) {
+			f1 = f1 + 3;
+			read g1;
+			call ifAndWhileInsideWhile;
+		}
+		while (f1 < (f1 + 5)) {
+			print f1;
+		}
+	}
+}
+
+procedure ifAndWhileInsideWhile {
+	while (h1 < i1) {
+		if (i1 == 5) then {
+			read i1;
+			print h1;
+		} else {
+			j1 = k1;
+		}
+		while (i1 < j1) {
+			h1 = h1 - i1;
+			k1 = h1;
+		}
+	}
+}

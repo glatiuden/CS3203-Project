@@ -1,0 +1,32 @@
+procedure procedure {
+    asd = asd*call+if-assign / stmt % spa;
+    loop = for;
+    if ( constant != 0 ) then {
+        read read;
+        if (if != Follows) then {
+            print print;
+            Pattern = (2*call) / (f / (a + head));
+        } else {
+            while((left!=0) && (right!=0)) {
+                i = i + 1;
+                left = 0;
+                right = 0;
+            }
+            exit = 1;
+        }
+        read n1;
+    } else {
+        else = then + 20;
+        while(pattern == loop) {
+            while (for == call) {
+                while (if == procedure) {
+                    okay = nested + loop;
+                }
+            }
+            pattern = for - okay * (call + pattern);
+            while (i == 0) {
+                okay = a*(head+c)*p*donkey;
+            }
+        }
+    }
+}

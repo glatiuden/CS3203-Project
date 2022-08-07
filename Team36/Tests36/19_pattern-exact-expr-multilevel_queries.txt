@@ -1,0 +1,70 @@
+1 - Valid pattern assign: PartialMatch on AST not on string
+assign a;
+Select a pattern a(_, _"1 + 2 + 3"_)
+1
+5000
+2 - Valid pattern assign: ExactMatch
+assign a;
+Select a pattern a(_, "1 + 2")
+4
+5000
+3 - Valid pattern assign: pattern(_,_)
+assign a;
+Select a pattern a(_, _)
+1,2,3,4,7
+5000
+4 - Valid pattern assign: select variable (partial match)
+assign a; variable v;
+Select v pattern a(v, _"1 + 2 + 3"_)
+a19
+5000
+5 - Valid pattern assign: select variable (exact match)
+assign a; variable v;
+Select v pattern a(v, "1 + 2")
+d19
+5000
+6 - Valid pattern assign: select variable (wildcard)
+assign a; variable v;
+Select v pattern a(v, _)
+a19,b19,c19,d19
+5000
+7 - Valid pattern assign: pattern(IDENT,_)
+assign a; variable v;
+Select a pattern a("a19", _)
+1,7
+5000
+8 - Valid pattern assign: pattern(IDENT, ExactMatch) true
+assign a; if i;
+Select i pattern a("d19", "1 + 2")
+5,6
+5000
+9 - Valid pattern assign: pattern(IDENT, ExactMatch) false
+assign a; if i;
+Select i pattern a("a19", "1 + 2")
+
+5000
+10 - Valid pattern assign: pattern(IDENT, PartialMatch) true 
+assign a; if i;
+Select i pattern a("a19", _"1 + 2"_)
+5,6
+5000
+11 - Valid pattern assign: pattern(IDENT, PartialMatch) false 
+assign a; if i;
+Select i pattern a("b19", _"1 + 2 + 3"_)
+
+5000
+12 - Valid pattern assign: pattern(IDENT, wildcard) true
+assign a; if i;
+Select i pattern a("a19", _)
+5,6
+5000
+13 - Valid pattern assign: pattern(IDENT, wildcard) false
+assign a; if i;
+Select i pattern a("e19", _)
+
+5000
+14 - Valid pattern assign: ExactMatch + weird whitespace
+assign a;
+Select a pattern a(_, "a19 + (b19*(c19*4)/(2+(69*((4%d19)+    5)/(e19 * 2 + (4 * 3))))) * f19")
+7
+5000

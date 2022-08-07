@@ -1,0 +1,90 @@
+1 - Valid pattern: pattern while (variable, _)
+variable v; while w;
+Select v pattern w(v, _)
+a, b, c, d, e, f, g, h
+5000
+2 - Valid pattern: pattern while (_, _)
+variable v; while w;
+Select v pattern w(_, _)
+a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p
+5000
+3 - Valid pattern: pattern while (variable, _)
+variable v; while w;
+Select w pattern w(v, _)
+1, 2, 3
+5000
+4 - Valid pattern: pattern while (_, _)
+variable v; while w;
+Select w pattern w(_, _)
+1, 2, 3
+5000
+5 - Valid pattern: pattern while (IDENT, _)
+while w;
+Select w pattern w("b", _)
+1
+5000
+6 - Valid pattern: pattern while (IDENT, _)
+while w;
+Select w pattern w("e", _)
+2
+5000
+7 - Valid pattern: pattern while (IDENT, _)
+while w;
+Select w pattern w("f", _)
+3
+5000
+8 - Valid pattern: pattern while (IDENT, _)
+while w;
+Select w pattern w("c", _)
+1, 2
+5000
+9 - Valid pattern: pattern if(variable, _, _)
+variable v; if ifs;
+Select v pattern ifs(v, _, _)
+i, j, k, l, m, n, o, p
+5000
+10 - Valid pattern: pattern if(_, _, _)
+variable v; if ifs;
+Select v pattern ifs(_, _, _)
+a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p
+5000
+11 - Valid pattern: pattern if(variable, _, _)
+variable v; if ifs;
+Select ifs pattern ifs(v, _, _)
+4, 5, 6
+5000
+12 - Valid pattern: pattern if(_, _,_)
+variable v; if ifs;
+Select ifs pattern ifs(_, _,_)
+4, 5, 6
+5000
+13 - Valid pattern: pattern if(IDENT, _, _)
+if ifs;
+Select ifs pattern ifs("j", _, _)
+4
+5000
+14 - Valid pattern: pattern if(IDENT, _, _)
+if ifs;
+Select ifs pattern ifs("m", _, _)
+5
+5000
+15 - Valid pattern: pattern if(IDENT, _, _)
+if ifs;
+Select ifs pattern ifs("o", _, _)
+6
+5000
+16 - Valid pattern: pattern if(IDENT, _, _)
+if ifs;
+Select ifs pattern ifs("k", _, _)
+4, 5
+5000
+17 - Invalid pattern: pattern while (entRef, _, _), syntax valid | semantic invalid
+while w;
+Select BOOLEAN pattern w ("a", _, _)
+FALSE
+5000
+18 - Invalid pattern: pattern if (entRef, _), syntax valid | semantic invalid
+if ifs;
+Select BOOLEAN pattern ifs ("j", _)
+FALSE
+5000

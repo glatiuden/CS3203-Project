@@ -1,0 +1,480 @@
+1 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select pn such that Modifies(pn,v) pattern a(v, _)
+
+5000
+2 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(pn,v) pattern a(v, _)
+
+5000
+3 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(pn,_) pattern a(v, _)
+
+5000
+4 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,v) pattern a(v, _)
+1,2,7,9,10,11,12,14,18,19,21
+5000
+5 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(a,v) pattern a(v, _)
+select,loop,Pattern,i,left,right,exit,else,end,pattern
+5000
+6 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,_) pattern a(v, _)
+1,2,7,9,10,11,12,14,18,19,21
+5000
+7 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,_) pattern a(v, _)
+1,2,7,9,10,11,12,14,18,19,21
+5000
+8 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select ifs such that Modifies(ifs,v) pattern a(v, _)
+3,5
+5000
+9 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select ifs such that Modifies(ifs,_) pattern a(v, _)
+3,5
+5000
+10 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(ifs,v) pattern a(v, _)
+i,left,right,Pattern,exit,else,end,pattern
+5000
+11 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select w such that Modifies(w,v) pattern a(v, _)
+8,15,16,17,20
+5000
+12 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select w such that Modifies(w,_) pattern a(v, _)
+8,15,16,17,20
+5000
+13 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(w,v) pattern a(v, _)
+i,left,right,pattern,end
+5000
+14 - Invalid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,v) pattern a(v, _)
+
+5000
+15 - Valid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,_) pattern a(v, _)
+4,13
+5000
+16 - Valid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select p such that Modifies(p,v) pattern a(v, _)
+while
+5000
+17 - Valid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select p such that Modifies(p,_) pattern a(v, _)
+while
+5000
+18 - Valid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(p,v) pattern a(v, _)
+select,loop,Pattern,i,left,right,exit,else,end,pattern
+5000
+19 - Valid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select s such that Modifies(s,v) pattern a(v, _)
+1,2,3,5,7,8,9,10,11,12,14,15,16,17,18,19,20,21
+5000
+20 - Valid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select s such that Modifies(s,_) pattern a(v, _)
+1,2,3,4,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+5000
+21 - Valid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(s,v) pattern a(v, _)
+select,loop,i,left,right,pattern,Pattern,exit,end,else
+5000
+22 - Invalid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(c,v) pattern a(v, _)
+
+5000
+23 - Invalid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(c,v) pattern a(v, _)
+
+5000
+24 - Invalid Modifies and Pattern clauses
+read r,r1; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(c,_) pattern a(v, _)
+
+5000
+25 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v,v1; procedure p; stmt s; constant c;
+Select a such that Modifies(v,v1) pattern a(v, _)
+
+5000
+26 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v,v1; procedure p; stmt s; constant c;
+Select a such that Modifies(v,_) pattern a(v, _)
+
+5000
+27 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v,v1; procedure p; stmt s; constant c;
+Select v such that Modifies(1,v) pattern a(v, _)
+select
+5000
+28 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v,v1; procedure p; stmt s; constant c;
+Select v such that Modifies(1,_) pattern a(v, _)
+select,loop,Pattern,i,left,right,exit,else,end,pattern
+5000
+29 -Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v,v1; procedure p; stmt s; constant c;
+Select v such that Modifies(6,_) pattern a(v, _)
+
+5000
+30 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v,v1; procedure p; stmt s; constant c;
+Select v such that Modifies(19,v) pattern a(v, _"for"_)
+pattern
+5000
+31 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v,v1; procedure p; stmt s; constant c;
+Select v such that Modifies(1,_) pattern a(v, _"stmt"_)
+select
+5000
+32 -Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v,v1; procedure p; stmt s; constant c;
+Select v such that Modifies(8,_) pattern a(v, _"for"_)
+pattern,loop
+5000
+33 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,_) pattern a(v,_"while"_)
+4,13
+5000
+34 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,v) pattern a(v, _"while"_)
+1,7
+5000
+35 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,_) pattern a(v,_"assign"_)
+1
+5000
+36 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(pn,_) pattern a(v,_"assign"_)
+
+5000
+37 - Valid Modifies and Pattern clauses
+variable v; assign a;
+Select v such that Modifies(9,v) pattern a(v, _"1"_)
+i
+5000
+38 - Valid Modifies and Pattern clauses
+assign a; variable v;
+Select v such that Modifies(9,_) pattern a(v, _"1"_)
+i,exit
+5000
+39 -Invalid Modifies and Pattern clauses
+assign a; variable v;
+Select v such that Modifies(10,v) pattern a(v, _"1"_)
+
+5000
+40 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,_) pattern a(v,_"0"_)
+4,13
+5000
+41 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select ifs such that Modifies(ifs,v) pattern a(v, _"0"_)
+3,5
+5000
+42 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select w such that Modifies(w,v) pattern a(v, _"0"_)
+8
+5000
+43 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,v) pattern a(v,_"1"_)
+9,12
+5000
+44 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select pn such that Modifies(pn,_) pattern a(v,_"1"_)
+
+5000
+45 - Valid Modifies and Pattern clauses
+variable v; assign a;
+Select v such that Modifies(3,v) pattern a(_, _"for"_)
+read,Pattern,i,left,right,exit,next,else,end,pattern
+5000
+46 - Valid Modifies and Pattern clauses
+assign a;
+Select a such that Modifies(9,_) pattern a(_, _"nested + affects"_)
+18
+5000
+47 -Invalid Modifies and Pattern clauses
+assign a; variable v;
+Select v such that Modifies(6,v) pattern a(_, _"nested + affects"_)
+
+5000
+48 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,_) pattern a(_,_"for"_)
+4,13
+5000
+49 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(r,v) pattern a(_, _"for"_)
+next,read
+5000
+50 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(ifs,v) pattern a(_, _"for"_)
+read,Pattern,i,left,right,exit,next,else,end,pattern
+5000
+51 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select v such that Modifies(a,v) pattern a(_,_"while"_)
+select,Pattern
+5000
+52 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select pn such that Modifies(pn,_) pattern a(_,_"while"_)
+
+5000
+53 - Valid Modifies and Pattern clauses
+variable v; assign a;
+Select v such that Modifies(3,v) pattern a(_, _"0"_)
+read, i, Pattern, left,right, exit,next,else,end,pattern
+5000
+54 - Valid Modifies and Pattern clauses
+assign a; variable v;
+Select a such that Modifies(8,_) pattern a(_, _"20"_)
+14
+5000
+55 -Invalid Modifies and Pattern clauses
+assign a; variable v;
+Select v such that Modifies(8,v) pattern a(_, _"2"_)
+i,left,right
+5000
+56 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,_) pattern a(_,_"0"_)
+4,13
+5000
+57 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select s such that Modifies(r,v) pattern a(_, _"0"_)
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+5000
+58 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,v) pattern a(_,_"1"_)
+9,12
+5000
+59 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select pn such that Modifies(pn,_) pattern a(_,"1")
+
+5000
+60 - Valid Modifies and Pattern clauses
+variable v; assign a;
+Select v such that Modifies(15,v) pattern a(_,_)
+end,pattern
+5000
+61 - Valid Modifies and Pattern clauses
+assign a; variable v; stmt s;
+Select s such that Modifies(8,_) pattern a(_, _)
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+5000
+62 -Valid Modifies and Pattern clauses
+assign a; variable v;
+Select v such that Modifies(4,v) pattern a(_,_)
+read
+5000
+63 -Invalid Modifies and Pattern clauses
+assign a; variable v;
+Select v such that Modifies(6,v) pattern a(_,_)
+
+5000
+64 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,_) pattern a(_,_)
+4,13
+5000
+65 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(r,v) pattern a(_,_)
+1,2,7,9,10,11,12,14,18,19,21
+5000
+66 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,v) pattern a(_,_)
+1,2,7,9,10,11,12,14,18,19,21
+5000
+67 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select w such that Modifies(w,v) pattern a(_,_)
+8,15,16,17,20
+5000
+68 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(pn,_) pattern a(_,_)
+
+5000
+69 - Valid Uses and Pattern clauses
+variable v; assign a;
+Select a such that Modifies(8,v) pattern a("pattern",_"for"_)
+19
+5000
+70 - Valid Modifies and Pattern clauses
+variable v; assign a;
+Select v such that Modifies(20,v) pattern a("pattern",_"for"_)
+end
+5000
+71 - Valid Modifies and Pattern clauses
+assign a; variable v;
+Select a such that Modifies(8,_) pattern a("end", _"b"_)
+21
+5000
+72 -Invalid Modifies and Pattern clauses
+assign a; variable v;
+Select a such that Modifies(6,v) pattern a("for",_"loop"_)
+
+5000
+73 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,_) pattern a("end", _"p"_)
+4,13
+5000
+74 - Valid Uses and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(r,v) pattern a("end", _"nested + affects"_)
+18
+5000
+75 - Valid Uses and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,v) pattern a("else", _"then"_)
+14
+5000
+76 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(pn,_) pattern a("i", _"1"_)
+
+5000
+77 - Valid Modifies and Pattern clauses
+variable v; assign a;
+Select v such that Modifies(8,v) pattern a("left",_"0"_)
+i,left,right
+5000
+78 - Valid Modifies and Pattern clauses
+assign a; variable v;
+Select a such that Modifies(8,_) pattern a("exit", _"1"_)
+12
+5000
+79 -Invalid Modifies and Pattern clauses
+assign a; variable v;
+Select v such that Modifies(6,v) pattern a("i",_"1"_)
+
+5000
+80 -Invalid Modifies and Pattern clauses
+assign a; variable v;
+Select a such that Modifies(6,v) pattern a("i",_"0"_)
+
+5000
+81 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,_) pattern a("else", _"20"_)
+4,13
+5000
+82 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(r,v) pattern a("else", _"20"_)
+14
+5000
+83 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,v) pattern a("i", _"1"_)
+9
+5000
+84 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(pn,_) pattern a("i", "1")
+
+5000
+85 - Valid Modifies and Pattern clauses
+variable v; assign a;
+Select a such that Modifies(8,v) pattern a("end",_)
+18,21
+5000
+86 - Valid Modifies and Pattern clauses
+variable v; assign a;
+Select v such that Modifies(15,v) pattern a("end",_)
+end,pattern
+5000
+87 - Valid Modifies and Pattern clauses
+assign a; variable v;
+Select a such that Modifies(8,_) pattern a("loop",_)
+2
+5000
+88 - Invalid Modifies and Pattern clauses
+assign a; variable v;
+Select v such that Modifies(4,v) pattern a("X1",_)
+
+5000
+89 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select r such that Modifies(r,_) pattern a("left", _)
+4,13
+5000
+90 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(r,v) pattern a("left", _)
+10
+5000
+91 - Valid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(a,v) pattern a("end", _)
+18,21
+5000
+92 - Invalid Modifies and Pattern clauses
+read r; print pn; while w; if ifs; assign a; variable v; procedure p; stmt s; constant c;
+Select a such that Modifies(pn,_) pattern a("i", _)
+
+5000
+93 - Valid Modifies and Pattern clauses
+assign a; stmt s; variable v; while w; read r;
+Select v pattern a(v,_"while"_) such that Modifies(s,v)
+select, Pattern
+5000
+94 - Valid Modifies and Pattern clauses
+assign a; stmt s; variable v; while w; read r; procedure p;
+Select a pattern a(v,_"then"_) such that Modifies(p,v)
+14
+5000
+95 - Valid Modifies and Pattern clauses
+assign a; stmt s; variable v; while w; read r;
+Select s pattern a(v,_"20"_) such that Modifies(s,v)
+3,14
+5000
+96 - Invalid Modifies and Pattern clauses
+assign a; stmt s; variable v; while w; read r; if ifs;
+Select a pattern a(v,_"none"_) such that Modifies(s,v)
+
+5000

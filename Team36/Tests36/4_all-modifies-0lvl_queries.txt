@@ -1,0 +1,325 @@
+1 - Valid Modifies: (selected-synonym, synonym)
+stmt s; variable v;
+Select s such that Modifies(s, v)
+1,2,3,5,6,8
+5000
+2 - Valid Modifies: (synonym, selected-synonym)
+stmt s; variable v;
+Select v such that Modifies(s, v)
+a4,b4,c4,e4,f4
+5000
+3 - Valid Modifies: (synonym, _)
+stmt s;
+Select s such that Modifies(s, _)
+1,2,3,5,6,8
+5000
+4 - Valid Modifies: (synonym, IDENT)
+stmt s;
+Select s such that Modifies(s, "a4")
+1
+5000
+5 - Invalid Modifies: (_, synonym), syntax valid | semantic invalid
+variable v;
+Select v such that Modifies(_, v)
+
+5000
+6 - Invalid Modifies: (_, _), syntax valid | semantic invalid
+stmt s;
+Select s such that Modifies(_, _)
+
+5000
+7 - Invalid Modifies: (_, IDENT), syntax valid | semantic invalid
+stmt s;
+Select s such that Modifies(_, "d4")
+
+5000
+8 - Valid Modifies: (integer, synonym)
+variable v;
+Select v such that Modifies(6, v)
+f4
+5000
+9 - Valid Modifies: (integer, _)
+stmt s;
+Select s such that Modifies(2, _)
+1,2,3,4,5,6,7,8
+5000
+10 - Valid Modifies: (integer, IDENT)
+stmt s;
+Select s such that Modifies(1, "a4")
+1,2,3,4,5,6,7,8
+5000
+11 - Valid Modifies: (IDENT, synonym)
+variable v;
+Select BOOLEAN such that Modifies("p4", v)
+TRUE
+5000
+12 - Valid Modifies: (IDENT, _)
+
+Select BOOLEAN such that Modifies("p4", _)
+TRUE
+5000
+13 - Valid Modifies: (IDENT, IDENT)
+variable v;
+Select BOOLEAN such that Modifies("q4", "e4")
+TRUE
+5000
+14 - Invalid Modifies: (synonym, integer), syntax invalid 
+stmt s;
+Select s such that Modifies(s, 123)
+
+5000
+15 - Invalid Modifies: (_, integer), syntax invalid 
+
+Select BOOLEAN such that Modifies(_, 123) 
+
+5000
+16 - Invalid Modifies: (IDENT, integer), syntax invalid 
+
+Select BOOLEAN such that Modifies("q4", 123)
+
+5000
+17 - Invalid Modifies: (stmt, procedure), syntax valid | semantic invalid
+stmt s; procedure p;
+Select BOOLEAN such that Modifies(s, p)
+FALSE
+5000
+18 - Invalid Modifies: (read, procedure), syntax valid | semantic invalid
+read re; procedure p;
+Select BOOLEAN such that Modifies(re, p)
+FALSE
+5000
+19 - Invalid Modifies: (print, procedure), syntax valid | semantic invalid
+print pn; procedure p;
+Select BOOLEAN such that Modifies(pn, p)
+FALSE
+5000
+20 - Invalid Modifies: (assign, procedure), syntax valid | semantic invalid
+assign a; procedure p;
+Select BOOLEAN such that Modifies(a, p)
+FALSE
+5000
+21 - Invalid Modifies: (call, procedure), syntax valid | semantic invalid
+call cl; procedure p;
+Select BOOLEAN such that Modifies(cl, p)
+FALSE
+5000
+22 - Invalid Modifies: (while, procedure), syntax valid | semantic invalid
+while w; procedure p;
+Select BOOLEAN such that Modifies(w, p)
+FALSE
+5000
+23 - Invalid Modifies: (if, procedure), syntax valid | semantic invalid
+if ifs; procedure p;
+Select BOOLEAN such that Modifies(ifs, p)
+FALSE
+5000
+24 - Invalid Modifies: (stmt, stmt), syntax valid | semantic invalid
+stmt s1, s2;
+Select BOOLEAN such that Modifies(s1, s2)
+FALSE
+5000
+25 - Invalid Modifies: (stmt, read), syntax valid | semantic invalid
+stmt s; read re;
+Select BOOLEAN such that Modifies(s, re)
+FALSE
+5000
+26 - Invalid Modifies: (stmt, print), syntax valid | semantic invalid
+stmt s; print pn;
+Select BOOLEAN such that Modifies(s, pn)
+FALSE
+5000
+27 - Invalid Modifies: (stmt, assign), syntax valid | semantic invalid
+stmt s; assign a;
+Select BOOLEAN such that Modifies(s, a)
+FALSE
+5000
+28 - Invalid Modifies: (stmt, call), syntax valid | semantic invalid
+stmt s; call cl;
+Select BOOLEAN such that Modifies(s, cl)
+FALSE
+5000
+29 - Invalid Modifies: (stmt, while), syntax valid | semantic invalid
+stmt s; while w;
+Select BOOLEAN such that Modifies(s, w)
+FALSE
+5000
+30 - Invalid Modifies: (stmt, if), syntax valid | semantic invalid
+stmt s; if ifs;
+Select BOOLEAN such that Modifies(s, ifs)
+FALSE
+5000
+31 - Valid Modifies: Select stmt (stmt, variable)
+stmt s; variable v;
+Select s such that Modifies(s,v)
+1,2,3,5,6,8
+5000
+32 - Valid Modifies: Select variable (stmt, variable)
+stmt s; variable v;
+Select v such that Modifies(s,v)
+a4,b4,c4,e4,f4
+5000
+33 - Valid Modifies: Select stmt (stmt, constant)
+stmt s; constant c;
+Select s such that Modifies(s, c)
+
+5000
+34 - Valid Modifies: Select constant (stmt, constant)
+stmt s; constant c;
+Select c such that Modifies(s, c)
+
+5000
+35 - Valid Modifies: Select read (read, variable)
+read re; variable v;
+Select re such that Modifies(re, v)
+3
+5000
+36 - Valid Modifies: Select variable (read, variable)
+read re; variable v;
+Select v such that Modifies(re, v)
+c4
+5000
+37 - Valid Modifies: Select read (read, constant)
+read re; constant c;
+Select re such that Modifies(re, c)
+
+5000
+38 - Valid Modifies: Select constant (read, constant)
+read re; constant c;
+Select c such that Modifies(re, c)
+
+5000
+39 - Valid Modifies: Select print (print, variable)
+print pn; variable v;
+Select pn such that Modifies(pn, v)
+
+5000
+40 - Valid Modifies: Select variable (print, variable)
+print pn; variable v;
+Select v such that Modifies(pn, v)
+
+5000
+41 - Valid Modifies: Select print (print, constant)
+print pn; constant c;
+Select pn such that Modifies(pn, c)
+
+5000
+42 - Valid Modifies: Select constant (print, constant)
+print pn; constant c;
+Select c such that Modifies(pn, c)
+
+5000
+43 - Valid Modifies: Select assign (assign, variable)
+assign a; variable v;
+Select a such that Modifies(a, v)
+1,2,5,6
+5000
+44 - Valid Modifies: Select variable (assign, variable)
+assign a; variable v;
+Select v such that Modifies(a, v)
+a4,b4,e4,f4
+5000
+45 - Valid Modifies: Select assign (assign, constant)
+assign a; constant c;
+Select a such that Modifies(a, c)
+
+5000
+46 - Valid Modifies: Select constant (assign, constant)
+assign a; constant c;
+Select c such that Modifies(a, c)
+
+5000
+47 - Valid Modifies: Select call (call, variable)
+call cl; variable v;
+Select cl such that Modifies(cl, v)
+8
+5000
+48 - Valid Modifies: Select variable (call, variable)
+call cl; variable v;
+Select v such that Modifies(cl, v)
+e4,f4
+5000
+49 - Valid Modifies: Select call (call, constant)
+call cl; constant c;
+Select cl such that Modifies(cl, c)
+
+5000
+50 - Valid Modifies: Select constant (call, constant)
+call cl; constant c;
+Select c such that Modifies(cl, c)
+
+5000
+51 - Valid Modifies: Select while (while, variable)
+while w; variable v;
+Select w such that Modifies(w, v)
+
+5000
+52 - Valid Modifies: Select variable (while, variable)
+while w; variable v;
+Select v such that Modifies(w, v)
+
+5000
+53 - Valid Modifies: Select while (while, constant)
+while w; constant c;
+Select w such that Modifies(w, c)
+
+5000
+54 - Valid Modifies: Select constant (while, constant)
+while w; constant c;
+Select c such that Modifies(w, c)
+
+5000
+55 - Valid Modifies: Select if (if, variable)
+if ifs; variable v;
+Select ifs such that Modifies(ifs, v)
+
+5000
+56 - Valid Modifies: Select variable (if, variable)
+if ifs; variable v;
+Select v such that Modifies(ifs, v)
+
+5000
+57 - Valid Modifies: Select if (if, constant)
+if ifs; constant c;
+Select ifs such that Modifies(ifs, c)
+
+5000
+58 - Valid Modifies: Select constant (if, constant)
+if ifs; constant c;
+Select c such that Modifies(ifs, c)
+
+5000
+59 - Valid Modifies: (procName, variable)
+variable v;
+Select v such that Modifies("p4", v)
+a4,b4,c4
+5000
+60 - Valid Modifies: (procName, _) where True
+assign a;
+Select a such that Modifies("p4", _)
+1,2,5,6
+5000
+61 - Valid Modifies: (procName, _) where False
+stmt s;
+Select s such that Modifies("s4",_)
+
+5000
+62 - Valid Modifies: (procName, ident) where True
+stmt s;
+Select s such that Modifies("p4","a4")
+1,2,3,4,5,6,7,8
+5000
+63 - Valid Modifies: (procName, ident) where False
+stmt s;
+Select s such that Modifies("p4","b4")
+1,2,3,4,5,6,7,8
+5000
+64 - Invalid Modifies: Mispelled Modifies, syntax invalid
+stmt s; variable v;
+Select BOOLEAN such that Modifie(s, v)
+
+5000
+65 - Invalid Modifies: Lower case modifies, syntax invalid
+stmt s; variable v;
+Select BOOLEAN such that modifies(s, v)
+
+5000

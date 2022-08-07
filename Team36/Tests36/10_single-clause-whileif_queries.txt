@@ -1,0 +1,505 @@
+1 - Valid Follows: Select stmt (stmt, while)
+stmt s; while w;
+Select s such that Follows(s, w)
+2
+5000
+2 - Valid Follows: Select while (stmt, while)
+stmt s; while w;
+Select w such that Follows(s, w)
+3
+5000
+3 - Valid Follows: Select stmt (while, stmt)
+stmt s; while w;
+Select s such that Follows(w, s)
+11
+5000
+4 - Valid Follows: Select while (while, stmt)
+stmt s; while w;
+Select w such that Follows(w, s)
+3
+5000
+5 - Valid Follows*: Select stmt (stmt, while)
+stmt s; while w;
+Select s such that Follows*(s, w)
+1,2
+5000
+6 - Valid Follows*: Select while (stmt, while)
+stmt s; while w;
+Select w such that Follows*(s, w)
+3
+5000
+7 - Valid Follows*: Select stmt (while, stmt)
+stmt s; while w;
+Select s such that Follows*(w, s)
+11
+5000
+8 - Valid Follows*: Select while (while, stmt)
+stmt s; while w;
+Select w such that Follows*(w, s)
+3
+5000
+9 - Valid Follows: Select stmt (stmt, if)
+stmt s; if ifs;
+Select s such that Follows(s, ifs)
+
+5000
+10 - Valid Follows: Select if (stmt, if)
+stmt s; if ifs;
+Select ifs such that Follows(s, ifs)
+
+5000
+11 - Valid Follows: Select stmt (if, stmt)
+stmt s; if ifs;
+Select s such that Follows(ifs, s)
+9
+5000
+12 - Valid Follows: Select if (if, stmt)
+stmt s; if ifs;
+Select ifs such that Follows(ifs, s)
+4
+5000
+13 - Valid Follows*: Select stmt (stmt, if)
+stmt s; if ifs;
+Select s such that Follows*(s, ifs)
+
+5000
+14 - Valid Follows*: Select if (stmt, if)
+stmt s; if ifs;
+Select ifs such that Follows*(s, ifs)
+
+5000
+15 - Valid Follows*: Select stmt (if, stmt)
+stmt s; if ifs;
+Select s such that Follows*(ifs, s)
+9,10
+5000
+16 - Valid Follows*: Select if (if, stmt)
+stmt s; if ifs;
+Select ifs such that Follows*(ifs, s)
+4
+5000
+17 - Valid Uses: Select while (while, variable)
+while w; variable v;
+Select w such that Uses(w, v)
+3
+5000
+18 - Valid Uses: Select variable (while, variable)
+while w; variable v;
+Select v such that Uses(w, v)
+c10,d10,f10,g10,j10
+5000
+19 - Valid Uses: Select while (while, IDENT)
+while w;
+Select w such that Uses(w, "c10")
+3
+5000
+20 - Valid Uses: Select variable (integer, variable)
+variable v;
+Select v such that Uses(3, v)
+c10,d10,f10,g10,j10
+5000
+21 - Valid Uses: Select variable (if, variable)
+if ifs; variable v;
+Select v such that Uses(ifs, v)
+d10,f10,g10
+5000
+22 - Valid Uses: Select if (if, IDENT)
+if ifs;
+Select ifs such that Uses(ifs, "a9")
+
+5000
+23 - Valid Uses: Select variable (integer, variable)
+variable v;
+Select v such that Uses(2, v)
+a10
+5000
+24 - Valid Modifies: Select while (while, variable)
+while w; variable v;
+Select w such that Modifies(w, v)
+3
+5000
+25 - Valid Modifies: Select variable (while, variable)
+while w; variable v;
+Select v such that Modifies(w, v)
+e10,g10,h10,i10
+5000
+26  - Valid Modifies: (while, IDENT)
+while w;
+Select w such that Modifies(w, "g10")
+3
+5000
+27 - Valid Modifies: (integer, variable)
+variable v;
+Select v such that Modifies(1, v)
+a10
+5000
+28 - Valid Modifies: Select if (if, variable)
+if ifs; variable v;
+Select ifs such that Modifies(ifs, v)
+4
+5000
+29 - Valid Modifies: Select variable (if, variable)
+if ifs; variable v;
+Select v such that Modifies(ifs, v)
+e10,g10,h10
+5000
+30  - Valid Modifies: (if, IDENT)
+if ifs;
+Select ifs such that Modifies(ifs, "h10")
+4
+5000
+31 - Valid Modifies: (integer, variable)
+variable v;
+Select v such that Modifies(1, v)
+a10
+5000
+32 - Valid Parent: (selected-synonym, synonym)
+stmt s1, s2;
+Select s1 such that Parent(s1, s2)
+3,4
+5000
+33 - Valid Parent: (synonym, selected-synonym)
+stmt s1, s2;
+Select s2 such that Parent(s1, s2)
+4,5,6,7,8,9,10
+5000
+34 - Valid Parent: (synonym, _)
+stmt s;
+Select s such that Parent(s, _)
+3,4
+5000
+35 - Valid Parent: (synonym, integer)
+stmt s;
+Select s such that Parent(s, 4)
+3
+5000
+36 - Valid Parent: (_, synonym)
+stmt s;
+Select s such that Parent(_, s)
+4,5,6,7,8,9,10
+5000
+37 - Valid Parent: (_, _)
+stmt s;
+Select s such that Parent(_, _)
+1,2,3,4,5,6,7,8,9,10,11
+5000
+38 - Valid Parent: (_, integer)
+stmt s;
+Select s such that Parent(_, 7)
+1,2,3,4,5,6,7,8,9,10,11
+5000
+39 - Valid Parent: (integer, synonym)
+stmt s;
+Select s such that Parent(3, s)
+10,4,9
+5000
+40 - Valid Parent: (integer, _)
+stmt s;
+Select s such that Parent(3, _)
+1,2,3,4,5,6,7,8,9,10,11
+5000
+41 - Valid Parent: (integer, integer)
+stmt s;
+Select s such that Parent(4, 7)
+1,2,3,4,5,6,7,8,9,10,11
+5000
+42 - Valid Parent: Select stmt (stmt, read)
+stmt s; read re; 
+Select s such that Parent(s, re)
+3,4
+5000
+43 - Valid Parent: Select read (stmt, read)
+stmt s; read re; 
+Select re such that Parent(s, re)
+5,9
+5000
+44 - Valid Parent: Select stmt (read, stmt)
+stmt s; read re; 
+Select s such that Parent(re, s)
+
+5000
+45 - Valid Parent: Select read (read, stmt)
+stmt s; read re; 
+Select re such that Parent(re, s)
+
+5000
+46 - Valid Parent: Select stmt (stmt, print)
+stmt s; print pn; 
+Select s such that Parent(s, pn)
+3,4
+5000
+47 - Valid Parent: Select print (stmt, print)
+stmt s; print pn; 
+Select pn such that Parent(s, pn)
+10,6
+5000
+48 - Valid Parent: Select stmt (print, stmt)
+stmt s; print pn; 
+Select s such that Parent(pn, s)
+
+5000
+49 - Valid Parent: Select print (print, stmt)
+stmt s; print pn; 
+Select pn such that Parent(pn, s)
+
+5000
+50 - Valid Parent: Select stmt (stmt, assign)
+stmt s; assign a;
+Select s such that Parent(s, a)
+4
+5000
+51 - Valid Parent: Select assign (stmt, assign)
+stmt s; assign a;
+Select a such that Parent(s, a)
+7,8
+5000
+52 - Valid Parent: Select stmt (assign, stmt)
+stmt s; assign a;
+Select s such that Parent(a, s)
+
+5000
+53 - Valid Parent: Select assign (assign, stmt)
+stmt s; assign a;
+Select a such that Parent(a, s)
+
+5000
+54 - Valid Parent: Select stmt (stmt, call)
+stmt s; call cl;
+Select s such that Parent(s, cl)
+
+5000
+55 - Valid Parent: Select call (stmt, call)
+stmt s; call cl;
+Select cl such that Parent(s, cl)
+
+5000
+56 - Valid Parent: Select stmt (call, stmt)
+stmt s; call cl;
+Select s such that Parent(cl, s)
+
+5000
+57 - Valid Parent: Select call (call, stmt)
+stmt s; call cl;
+Select cl such that Parent(cl, s)
+
+5000
+58 - Valid Parent: Select stmt (stmt, while)
+stmt s; while w;
+Select s such that Parent(s, w)
+
+5000
+59 - Valid Parent: Select while (stmt, while)
+stmt s; while w;
+Select w such that Parent(s, w)
+
+5000
+60 - Valid Parent: Select stmt (while, stmt)
+stmt s; while w;
+Select s such that Parent(w, s)
+4,9,10
+5000
+61 - Valid Parent: Select while (while, stmt)
+stmt s; while w;
+Select w such that Parent(w, s)
+3
+5000
+62 - Invalid Parent: Select stmt (stmt, procedure)
+stmt s; procedure p;
+Select s such that Parent(s, p)
+
+5000
+63 - Valid Parent: Select stmt (stmt, if)
+stmt s; if ifs;
+Select s such that Parent(s, ifs)
+3
+5000
+64 - Valid Parent: Select if (stmt, if)
+stmt s; if ifs;
+Select ifs such that Parent(s, ifs)
+4
+5000
+65 - Valid Parent: Select stmt (if, stmt)
+stmt s; if ifs;
+Select s such that Parent(ifs, s)
+5,6,7,8
+5000
+66 - Valid Parent: Select if (if, stmt)
+stmt s; if ifs;
+Select ifs such that Parent(ifs, s)
+4
+5000
+67 - Valid Parent*: (selected-synonym, synonym)
+stmt s1, s2;
+Select s1 such that Parent*(s1, s2)
+3,4
+5000
+68 - Valid Parent*: (synonym, selected-synonym)
+stmt s1, s2;
+Select s2 such that Parent*(s1, s2)
+4,5,6,7,8,9,10
+5000
+69 - Valid Parent*: (synonym, _)
+stmt s;
+Select s such that Parent*(s, _)
+3,4
+5000
+70 - Valid Parent*: (synonym, integer)
+stmt s;
+Select s such that Parent*(s, 4)
+3
+5000
+71 - Valid Parent*: (_, synonym)
+stmt s;
+Select s such that Parent*(_, s)
+4,5,6,7,8,9,10
+5000
+72 - Valid Parent*: (_, _)
+stmt s;
+Select s such that Parent*(_, _)
+1,2,3,4,5,6,7,8,9,10,11
+5000
+73 - Valid Parent*: (_, integer)
+stmt s;
+Select s such that Parent*(_, 7)
+1,2,3,4,5,6,7,8,9,10,11
+5000
+74 - Valid Parent*: (integer, synonym)
+stmt s;
+Select s such that Parent*(3, s)
+4,5,6,7,8,9,10
+5000
+75 - Valid Parent*: (integer, _)
+stmt s;
+Select s such that Parent*(3, _)
+1,2,3,4,5,6,7,8,9,10,11
+5000
+76 - Valid Parent*: (integer, integer)
+stmt s;
+Select s such that Parent*(4, 7)
+1,2,3,4,5,6,7,8,9,10,11
+5000
+77 - Valid Parent*: Select stmt (stmt, read)
+stmt s; read re; 
+Select s such that Parent*(s, re)
+3,4
+5000
+78 - Valid Parent*: Select read (stmt, read)
+stmt s; read re; 
+Select re such that Parent*(s, re)
+5,9
+5000
+79 - Valid Parent*: Select stmt (read, stmt)
+stmt s; read re; 
+Select s such that Parent*(re, s)
+
+5000
+80 - Valid Parent*: Select read (read, stmt)
+stmt s; read re; 
+Select re such that Parent*(re, s)
+
+5000
+81 - Valid Parent*: Select stmt (stmt, print)
+stmt s; print pn; 
+Select s such that Parent*(s, pn)
+3,4
+5000
+82 - Valid Parent*: Select print (stmt, print)
+stmt s; print pn; 
+Select pn such that Parent*(s, pn)
+10,6
+5000
+83 - Valid Parent*: Select stmt (print, stmt)
+stmt s; print pn; 
+Select s such that Parent*(pn, s)
+
+5000
+84 - Valid Parent*: Select print (print, stmt)
+stmt s; print pn; 
+Select pn such that Parent*(pn, s)
+
+5000
+85 - Valid Parent*: Select stmt (stmt, assign)
+stmt s; assign a;
+Select s such that Parent*(s, a)
+3,4
+5000
+86 - Valid Parent*: Select assign (stmt, assign)
+stmt s; assign a;
+Select a such that Parent*(s, a)
+7,8
+5000
+87 - Valid Parent*: Select stmt (assign, stmt)
+stmt s; assign a;
+Select s such that Parent*(a, s)
+
+5000
+88 - Valid Parent*: Select assign (assign, stmt)
+stmt s; assign a;
+Select a such that Parent*(a, s)
+
+5000
+89 - Valid Parent*: Select stmt (stmt, call)
+stmt s; call cl;
+Select s such that Parent*(s, cl)
+
+5000
+90 - Valid Parent*: Select call (stmt, call)
+stmt s; call cl;
+Select cl such that Parent*(s, cl)
+
+5000
+91 - Valid Parent*: Select stmt (call, stmt)
+stmt s; call cl;
+Select s such that Parent*(cl, s)
+
+5000
+92 - Valid Parent*: Select call (call, stmt)
+stmt s; call cl;
+Select cl such that Parent*(cl, s)
+
+5000
+93 - Valid Parent*: Select stmt (stmt, while)
+stmt s; while w;
+Select s such that Parent*(s, w)
+
+5000
+94 - Valid Parent*: Select while (stmt, while)
+stmt s; while w;
+Select w such that Parent*(s, w)
+
+5000
+95 - Valid Parent*: Select stmt (while, stmt)
+stmt s; while w;
+Select s such that Parent*(w, s)
+4,5,6,7,8,9,10
+5000
+96 - Valid Parent*: Select while (while, stmt)
+stmt s; while w;
+Select w such that Parent*(w, s)
+3
+5000
+97 - Invalid Parent*: Select stmt (stmt, procedure)
+stmt s; procedure p;
+Select s such that Parent*(s, p)
+
+5000
+98 - Valid Parent*: Select stmt (stmt, if)
+stmt s; if ifs;
+Select s such that Parent*(s, ifs)
+3
+5000
+99 - Valid Parent*: Select if (stmt, if)
+stmt s; if ifs;
+Select ifs such that Parent*(s, ifs)
+4
+5000
+100 - Valid Parent*: Select stmt (if, stmt)
+stmt s; if ifs;
+Select s such that Parent*(ifs, s)
+5,6,7,8
+5000
+101 - Valid Parent*: Select if (if, stmt)
+stmt s; if ifs;
+Select ifs such that Parent*(ifs, s)
+4
+5000

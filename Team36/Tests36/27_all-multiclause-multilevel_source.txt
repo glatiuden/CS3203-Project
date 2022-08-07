@@ -1,0 +1,165 @@
+procedure pattern1 {
+    read Calls;
+    read Next;
+    read Affects;
+    read with;
+    call pattern2;
+    Calls = Parent + Uses - Modifies;
+    if (Calls < Next + Affects * with) then {
+        Follows = Next + Affects * with;
+        while(Follows > Parent - Uses / Modifies) {
+            call pattern3;
+            Calls = Follows * Parent / Uses;
+            if (Calls + Next <= Affects * with) then {
+                Follows = Calls - Next / Affects;
+                with = Modifies;
+                call pattern4;
+            } else {
+                Calls = Follows + Follows * Follows;
+                Uses = Affects;
+            }
+            call pattern5;
+            Follows = with * with + with;
+        }
+        Calls = Modifies / Modifies - Modifies;
+    } else {
+        call pattern6;
+        Follows = Calls - Calls / Calls;
+        while(Follows - Parent >= Uses / Modifies) {
+            Next = Follows + Uses - Modifies;
+            if (Calls + Next * Affects == with) then {
+                call pattern7;
+                Parent = Calls + Affects * with;
+                Next = Parent;
+            } else {
+                Next = Follows * Parent / Modifies;
+                call pattern2;
+                Follows = Calls;
+            }
+            Parent = Calls - Next / with;
+        }
+        call pattern3;
+        Next = Uses + Uses * Uses;
+    }
+    Parent = Affects * Affects + Affects;
+    print Follows;
+    call pattern4;
+    print Parent;
+    print Uses;
+    print Modifies;
+}
+
+procedure pattern2 {
+    read Follows;
+    read Parent;
+    read Uses;
+    call pattern5;
+    read Modifies;
+    Next = Parent / Parent - Parent;
+    while (Follows - Parent / Uses != Modifies) {
+        Parent = Next - Next / Next;
+        call pattern6;
+        if (Calls + Next < Affects) then {
+            Affects = Follows + Parent - Modifies;
+            while (Follows > Parent - Uses) {
+                Uses = Calls + Next * with;
+                call pattern7;
+                Modifies = Next - Affects;
+            }
+            Affects = Follows * Uses / Modifies;
+        } else {
+            call pattern3;
+            Uses = Calls - Affects / with;
+            while (Calls <= Next * with) {
+                Affects = Parent + Parent * Parent;
+                with = Follows / Uses;
+                call pattern4;
+            }
+            Uses = Next * Next + Next;
+        }
+        Affects = Uses / Uses - Uses;
+        call pattern5;
+    }
+    Uses = Affects - Affects / Affects;
+    print Calls;
+    print Next;
+    call pattern6;
+    print Affects;
+    print with;
+}
+
+procedure pattern3 {
+    with = Follows + Parent - Uses;
+    if (Follows / Uses >= Modifies) then {
+        Modifies = Calls + Next * Affects;
+        while(Calls + Affects == with ) {
+            call pattern7;
+            with = Parent + Uses / Modifies;
+            Modifies = Calls + Affects;
+        }
+        Modifies = Next - Affects / with;
+        call pattern4;
+    } else {
+        with = Follows + Follows * Follows;
+        while(Follows != Parent - Modifies) {
+            Modifies = Calls * Calls + Calls;
+            call pattern5;
+            with = Parent * Uses;
+        }
+        with = Modifies / Modifies - Modifies;
+    }
+    call pattern6;
+    Modifies = with - with / with;
+}
+
+procedure pattern4 {
+    Calls = Parent + Uses;
+    while (Follows != Parent - Modifies) {
+        Follows = Next * Affects;
+        if (Uses / Parent < Modifies) then {
+            Calls = Parent - Modifies;
+            call pattern7;
+            Modifies = Calls / Next;
+        } else {
+            Follows = Next / with;
+            with = Follows - Parent;
+            call pattern5;
+        }
+        Calls = Uses * Modifies;
+    }
+    Follows = Affects + with;
+    call pattern6;
+}
+
+procedure pattern5 {
+    Next = Follows / Uses;
+    call pattern7;
+    while(with != Calls + Next * Affects) {
+        Parent = Calls - Affects;
+        Uses = Next * v;
+    }
+    call pattern6;
+    Next = Follows + Modifies;
+}
+
+procedure pattern6 {
+    call pattern7;
+    Parent = Calls * with;
+    if ( Modifies == Follows - Parent / Uses) then {
+        Next = Uses - Modifies;
+        Affects = Parent + Modifies;
+        call pattern7;
+    } else {
+        Parent = Affects / with;
+        Uses = Calls - with;
+    }
+    call pattern7;
+    Affects = Follows * Parent;
+}
+
+procedure pattern7 {
+    Uses = Calls + Next;
+    Affects = Follows / Modifies;
+    Follows = 425 * Follows + Parent;
+    Next = Next + 25 * with;
+}

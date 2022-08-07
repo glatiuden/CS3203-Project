@@ -1,0 +1,1070 @@
+1 - Follows + Follows + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows(8, 9) pattern Follows("Follows", "Next + Affects * with")
+TRUE
+5000
+2 - Follows + Follows + Pattern = stmt# no common
+assign Follows;
+Select Follows such that Follows(6, 7) and Follows(8, 9) pattern Follows("Follows", "Next + Affects * with")
+8
+5000
+3 - Follows + Follows + Pattern = attribute no common
+assign Follows;
+Select Follows.stmt# such that Follows(6, 7) and Follows(8, 9) pattern Follows("Follows", "Next + Affects * with")
+8
+5000
+4 - Follows + Follows + Pattern = attribute not in clause -  no common
+assign Follows; read r;
+Select r such that Follows(6, 7) and Follows(8, 9) pattern Follows("Follows", "Next + Affects * with")
+1,2,3,4,41,42,43,45
+5000
+5 - Follows + Follows + Pattern = attribute not in clause -  no common
+assign Follows; read r;
+Select r.varName such that Follows(6, 7) and Follows(8, 9) pattern Follows("Follows", "Next + Affects * with")
+Follows,Parent,Uses,Modifies,Calls,Next,Affects,with
+5000
+6 - Follows + Follows + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows(8, 9) pattern Follows("Follows", _"Next + Affects"_)
+FALSE
+5000
+7 - Follows + Follows + Pattern = boolean no common
+assign Follows;
+Select Follows such that Follows(6, 7) and Follows(8, 9) pattern Follows("Follows", _"Next + Affects"_)
+
+5000
+8 - Follows + Follows + Pattern = boolean no common
+assign Follows; read r;
+Select r such that Follows(6, 7) and Follows(8, 9) pattern Follows("Follows", _"Next + Affects"_)
+
+5000
+9 - Follows + Follows + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows(8, 9) pattern Follows("Follows", _"Affects * with"_)
+TRUE
+5000
+1 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(7, 8) and Follows(8, 9) pattern Follows("Follows", "Next + Affects * with")
+FALSE
+5000
+2 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows(19, 20) pattern Follows("Follows", "Next + Affects * with")
+FALSE
+5000
+3 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean no common
+if ifs;
+Select BOOLEAN such that Follows(6, 7) and Follows(8, 9) pattern ifs("Calls", _, _)
+TRUE
+5000
+4 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean no common
+if ifs;
+Select BOOLEAN such that Follows(6, 7) and Follows(8, 9) pattern ifs("Next", _, _)
+TRUE
+5000
+5 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean no common
+if ifs;
+Select BOOLEAN such that Follows(6, 7) and Follows(8, 9) pattern ifs("Calls", _)
+FALSE
+5000
+6 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean no common
+while Calls;
+Select BOOLEAN such that Follows(6, 7) and Follows(8, 9) pattern Calls("Follows", _, _)
+FALSE
+5000
+7 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean no common
+while Calls;
+Select BOOLEAN such that Follows(6, 7) and Follows(8, 9) pattern Calls("Follows", _)
+TRUE
+5000
+8 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows(Follows, 9) pattern Follows("Follows", "Next + Affects * with")
+TRUE
+5000
+9 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(Follows, 7) and Follows(Follows, 9) pattern Follows("Follows", "Next + Affects * with")
+FALSE
+5000
+10 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows(Follows, 9) pattern Follows("Follows", _"Next + Affects"_)
+FALSE
+5000
+11 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows(Follows, 9) pattern Follows("Follows", _"Affects * with"_)
+TRUE
+5000
+12 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(Follows, 7) and Follows(8, 9) pattern Follows("Follows", _"Next + Affects"_)
+FALSE
+5000
+13 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(Follows, 7) and Follows(8, 9) pattern Follows("Follows", _"Affects * with"_)
+FALSE
+5000
+14 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+if ifs;
+Select BOOLEAN such that Follows(6, ifs) and Follows(8, 9) pattern ifs("Calls", _, _)
+TRUE
+5000
+15 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+if ifs;
+Select ifs such that Follows(6, ifs) and Follows(8, 9) pattern ifs("Calls", _, _)
+7
+5000
+16 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+while Calls;
+Select BOOLEAN such that Follows(6, 7) and Follows(8, Calls) pattern Calls("Follows", _)
+TRUE
+5000
+17 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+while Calls;
+Select Calls such that Follows(6, 7) and Follows(8, Calls) pattern Calls("Follows", _)
+9
+5000
+18 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+if ifs; constant Uses;
+Select <ifs, Uses> such that Follows(6, ifs) and Follows(8, 9) pattern ifs("Calls", _, _)
+7 25,7 425
+5000
+19 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean one common
+if ifs; constant Uses;
+Select <ifs, Uses.value> such that Follows(6, ifs) and Follows(8, 9) pattern ifs("Calls", _, _)
+7 25,7 425
+5000
+20 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select BOOLEAN such that Follows(Uses, 19) and Follows(12, Uses) pattern Follows(_, "Next + Affects * with")
+TRUE
+5000
+21 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select Follows such that Follows(Uses, 19) and Follows(12, Uses) pattern Follows(_, "Next + Affects * with")
+8
+5000
+22 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select Uses such that Follows(Uses, 19) and Follows(12, Uses) pattern Follows(_, "Next + Affects * with")
+18
+5000
+23 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select <Follows, Follows> such that Follows(Uses, 19) and Follows(12, Uses) pattern Follows(_, "Next + Affects * with")
+8 8
+5000
+24 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select <Follows, Uses> such that Follows(Uses, 19) and Follows(12, Uses) pattern Follows(_, "Next + Affects * with")
+8 18
+5000
+25 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select BOOLEAN such that Follows(Uses, 19) and Follows(Follows, 9) pattern Follows(_, "Next + Affects * with")
+TRUE
+5000
+26 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select Follows such that Follows(Uses, 19) and Follows(Follows, 9) pattern Follows(_, "Next + Affects * with")
+8
+5000
+27 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select Uses such that Follows(Uses, 19) and Follows(Follows, 9) pattern Follows(_, "Next + Affects * with")
+18
+5000
+28 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select <Follows, Uses> such that Follows(Uses, 19) and Follows(Follows, 9) pattern Follows(_, "Next + Affects * with")
+8 18
+5000
+29 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select <Uses, Follows> such that Follows(Uses, 19) and Follows(Follows, 9) pattern Follows(_, "Next + Affects * with")
+18 8
+5000
+30 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r;
+Select BOOLEAN such that Follows(Uses, 19) and Follows(r, 5) pattern Follows(_, "Next + Affects * with")
+TRUE
+5000
+31 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r
+Select Follows such that Follows(Uses, 19) and Follows(r, 5) pattern Follows(_, "Next + Affects * with")
+
+5000
+32 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r
+Select Uses such that Follows(Uses, 19) and Follows(r, 5) pattern Follows(_, "Next + Affects * with")
+
+5000
+33 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r
+Select <Follows, Uses, r> such that Follows(Uses, 19) and Follows(r, 5) pattern Follows(_, "Next + Affects * with")
+
+5000
+34 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r
+Select <Follows, Follows, Uses> such that Follows(Uses, 19) and Follows(r, 5) pattern Follows(_, "Next + Affects * with")
+
+5000
+35 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r
+Select <Follows, Follows, Uses, Uses, r, r> such that Follows(Uses, 19) and Follows(r, 5) pattern Follows(_, "Next + Affects * with")
+
+5000
+36 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select BOOLEAN such that Follows(Uses, Follows) and Follows(r, 5) pattern Follows(_, _"(with * with)"_)
+TRUE
+5000
+37 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select <Follows, Uses> such that Follows(Uses, Follows) and Follows(r, 5) pattern Follows(_, _"(with * with)"_)
+19 18
+5000
+38 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select <Follows, r> such that Follows(Uses, Follows) and Follows(r, 5) pattern Follows(_, _"(with * with)"_)
+19 4
+5000
+39 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select <Uses, r> such that Follows(Uses, Follows) and Follows(r, 5) pattern Follows(_, _"(with * with)"_)
+18 4
+5000
+40 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select <Follows, Uses, r> such that Follows(Uses, Follows) and Follows(r, 5) pattern Follows(_, _"(with * with)"_)
+19 18 4
+5000
+41 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, two common
+assign Follows; call Uses; read r;
+Select BOOLEAN such that Follows(Uses, Follows) and Follows(r, Uses) pattern Follows("Calls", _)
+TRUE
+5000
+42 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, two common
+assign Follows; call Uses; read r;
+Select <Follows, Uses> such that Follows(Uses, Follows) and Follows(r, Uses) pattern Follows("Calls", _)
+6 5
+5000
+43 - Valid 2 such that + 1 pattern: Follows + Follows + Pattern = boolean - three variables, two common
+assign Follows; call Uses; read r;
+Select <Follows, r, r, Uses> such that Follows(Uses, Follows) and Follows(r, Uses) pattern Follows("Calls", _)
+6 4 4 5
+5000
+44 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", "Next + Affects * with")
+TRUE
+5000
+45 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = stmt# no common
+assign Follows;
+Select Follows such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", "Next + Affects * with")
+8
+5000
+46 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = attribute no common
+assign Follows;
+Select Follows.stmt# such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", "Next + Affects * with")
+8
+5000
+47 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = attribute not in clause -  no common
+assign Follows; read r;
+Select r such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", "Next + Affects * with")
+1,2,3,4,41,42,43,45
+5000
+48 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = attribute not in clause -  no common
+assign Follows; read r;
+Select r.varName such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", "Next + Affects * with")
+Follows,Parent,Uses,Modifies,Calls,Next,Affects,with
+5000
+49 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", _"Next + Affects"_)
+FALSE
+5000
+50 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+assign Follows;
+Select Follows such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", _"Next + Affects"_)
+
+5000
+51 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+assign Follows; read r;
+Select r such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", _"Next + Affects"_)
+
+5000
+52 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", "Next + Affects * with")
+TRUE
+5000
+53 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", "Next + Affects * with")
+TRUE
+5000
+54 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern Follows("Follows", "Next + Affects * with")
+TRUE
+5000
+55 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+if ifs;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern ifs("Calls", _, _)
+TRUE
+5000
+56 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+if ifs;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern ifs("Next", _, _)
+TRUE
+5000
+57 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+if ifs;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern ifs("Calls", _, _)
+TRUE
+5000
+58 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+while Calls;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern Calls("Follows", _, _)
+FALSE
+5000
+59 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean no common
+while Calls;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, 9) pattern Calls("Follows", _)
+TRUE
+5000
+60 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows*(Follows, 9) pattern Follows("Follows", "Next + Affects * with")
+TRUE
+5000
+61 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(Follows, 7) and Follows*(Follows, 9) pattern Follows("Follows", "Next + Affects * with")
+FALSE
+5000
+62 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows*(Follows, 9) pattern Follows("Follows", _"Next + Affects"_)
+FALSE
+5000
+63 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(6, 7) and Follows*(Follows, 9) pattern Follows("Follows", _"Affects * with"_)
+TRUE
+5000
+64 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(Follows, 7) and Follows*(8, 9) pattern Follows("Follows", _"Next + Affects"_)
+FALSE
+5000
+65 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+assign Follows;
+Select BOOLEAN such that Follows(Follows, 7) and Follows*(8, 9) pattern Follows("Follows", _"Affects * with"_)
+FALSE
+5000
+66 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+if ifs;
+Select BOOLEAN such that Follows(6, ifs) and Follows*(8, 9) pattern ifs("Calls", _, _)
+TRUE
+5000
+67 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+if ifs;
+Select ifs such that Follows(6, ifs) and Follows*(8, 9) pattern ifs("Calls", _, _)
+7
+5000
+68 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+while Calls;
+Select BOOLEAN such that Follows(6, 7) and Follows*(8, Calls) pattern Calls("Follows", _)
+TRUE
+5000
+69 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean one common
+while Calls;
+Select Calls such that Follows(6, 7) and Follows*(8, Calls) pattern Calls("Follows", _)
+9
+5000
+70 - Valid 2 such that + 1 pattern: Follows* + Follows + Pattern = boolean one common
+if ifs; constant Uses;
+Select <ifs, Uses> such that Follows*(6, ifs) and Follows(8, 9) pattern ifs("Calls", _, _)
+7 25,7 425
+5000
+71 - Valid 2 such that + 1 pattern: Follows* + Follows + Pattern = boolean one common
+if ifs; constant Uses;
+Select <ifs, Uses.value> such that Follows*(6, ifs) and Follows(8, 9) pattern ifs("Calls", _, _)
+7 25,7 425
+5000
+72 - Valid 2 such that + 1 pattern: Follows* + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select BOOLEAN such that Follows*(Uses, 19) and Follows(12, Uses) pattern Follows(_, "Next + Affects * with")
+TRUE
+5000
+73 - Valid 2 such that + 1 pattern: Follows* + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select Follows such that Follows*(Uses, 19) and Follows(12, Uses) pattern Follows(_, "Next + Affects * with")
+8
+5000
+74 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select Uses such that Follows(Uses, 19) and Follows*(12, Uses) pattern Follows(_, "Next + Affects * with")
+18
+5000
+75 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select <Follows, Follows> such that Follows(Uses, 19) and Follows*(12, Uses) pattern Follows(_, "Next + Affects * with")
+8 8
+5000
+76 - Valid 2 such that + 1 pattern: Follows* + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select <Follows, Uses> such that Follows*(Uses, 19) and Follows(12, Uses) pattern Follows(_, "Next + Affects * with")
+8 18
+5000
+77 - Valid 2 such that + 1 pattern: Follows* + Follows + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select BOOLEAN such that Follows*(Uses, 19) and Follows(Follows, 9) pattern Follows(_, "Next + Affects * with")
+TRUE
+5000
+78 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select Follows such that Follows(Uses, 19) and Follows*(Follows, 9) pattern Follows(_, "Next + Affects * with")
+8
+5000
+79 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select Uses such that Follows(Uses, 19) and Follows*(Follows, 9) pattern Follows(_, "Next + Affects * with")
+18
+5000
+80 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select <Follows, Uses> such that Follows(Uses, 19) and Follows*(Follows, 9) pattern Follows(_, "Next + Affects * with")
+8 18
+5000
+81 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - two variables, one common
+assign Follows; call Uses;
+Select <Uses, Follows> such that Follows(Uses, 19) and Follows*(Follows, 9) pattern Follows(_, "Next + Affects * with")
+18 8
+5000
+82 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r;
+Select BOOLEAN such that Follows(Uses, 19) and Follows*(r, 5) pattern Follows(_, "Next + Affects * with")
+TRUE
+5000
+83 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r;
+Select Follows such that Follows(Uses, 19) and Follows*(r, 5) pattern Follows(_, "Next + Affects * with")
+8
+5000
+84 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r;
+Select Uses such that Follows(Uses, 19) and Follows*(r, 5) pattern Follows(_, "Next + Affects * with")
+18
+5000
+85 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r;
+Select <Follows, Uses, r> such that Follows(Uses, 19) and Follows*(r, 5) pattern Follows(_, "Next + Affects * with")
+8 18 1,8 18 2,8 18 3,8 18 4
+5000
+86 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r;
+Select <Follows, Follows, Uses> such that Follows(Uses, 19) and Follows*(r, 5) pattern Follows(_, "Next + Affects * with")
+8 8 18
+5000
+87 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, none common
+assign Follows; call Uses; read r;
+Select <Follows, Follows, Uses, Uses, r, r> such that Follows(Uses, 19) and Follows*(r, 5) pattern Follows(_, "Next + Affects * with")
+8 8 18 18 1 1,8 8 18 18 2 2,8 8 18 18 3 3,8 8 18 18 4 4
+5000
+88 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select BOOLEAN such that Follows(Uses, Follows) and Follows*(r, 5) pattern Follows(_, _"(with * with)"_)
+TRUE
+5000
+89 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select <Follows, Uses> such that Follows(Uses, Follows) and Follows*(r, 5) pattern Follows(_, _"(with * with)"_)
+19 18
+5000
+90 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select <Follows, r> such that Follows(Uses, Follows) and Follows*(r, 5) pattern Follows(_, _"(with * with)"_)
+19 1,19 2,19 3,19 4
+5000
+91 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select <Uses, r> such that Follows(Uses, Follows) and Follows*(r, 5) pattern Follows(_, _"(with * with)"_)
+18 1,18 2,18 3,18 4
+5000
+92 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, one common
+assign Follows; call Uses; read r;
+Select <Follows, Uses, r> such that Follows(Uses, Follows) and Follows*(r, 5) pattern Follows(_, _"(with * with)"_)
+19 18 1,19 18 2,19 18 3,19 18 4
+5000
+93 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, two common
+assign Follows; call Uses; read r;
+Select BOOLEAN such that Follows(Uses, Follows) and Follows*(r, Uses) pattern Follows("Calls", _)
+TRUE
+5000
+94 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, two common
+assign Follows; call Uses; read r;
+Select <Follows, Uses> such that Follows(Uses, Follows) and Follows*(r, Uses) pattern Follows("Calls", _)
+6 5
+5000
+95 - Valid 2 such that + 1 pattern: Follows + Follows* + Pattern = boolean - three variables, two common
+assign Follows; call Uses; read r;
+Select <Follows, r, r, Uses> such that Follows(Uses, Follows) and Follows*(r, Uses) pattern Follows("Calls", _)
+6 1 1 5,6 2 2 5,6 3 3 5,6 4 4 5
+5000
+96 - Valid 2 such that + 1 pattern: parent + uses + pattern
+procedure p; variable v; if ifs; stmt s1, s2;
+Select BOOLEAN such that Parent(s1, s2) such that Uses(p, v) pattern ifs("Calls", _, _)
+TRUE
+5000
+97 - Valid 2 such that + 1 pattern: parent + uses + pattern
+procedure p; variable v; if ifs; stmt s1, s2;
+Select p such that Parent(s1, s2) such that Uses(p, v) pattern ifs("Calls", _, _)
+pattern1,pattern2,pattern3,pattern4,pattern5,pattern6,pattern7
+5000
+98 - Valid 2 such that + 1 pattern: parent + uses + pattern
+procedure p; variable v; if ifs; stmt s1, s2;
+Select v such that Parent(s1, s2) such that Uses(p, v) pattern ifs("Calls", _, _)
+Follows,Parent,Uses,Modifies,v,Calls,Next,Affects,with
+5000
+99 - Valid 2 such that + 1 pattern: parent + uses + pattern
+procedure p; variable v; if ifs; stmt s1, s2;
+Select ifs such that Parent(s1, s2) such that Uses(p, v) pattern ifs("Calls", _, _)
+12,25,50,7
+5000
+100 - Valid 2 such that + 1 pattern: parent + uses + pattern
+procedure p; variable v; if ifs; stmt s1, s2;
+Select <s1, s2> such that Parent(s1, s2) such that Uses(p, v) pattern ifs("Calls", _, _)
+104 105,104 106,111 112,111 113,111 114,111 115,111 116,12 13,12 14,12 15,12 16,12 17,23 24,23 25,23 32,25 26,25 27,25 28,25 29,25 30,25 31,47 48,47 49,47 50,47 64,47 65,50 51,50 52,50 56,50 57,50 58,50 59,50 63,52 53,52 54,52 55,59 60,59 61,59 62,7 20,7 21,7 22,7 23,7 33,7 34,7 8,7 9,73 74,73 75,73 79,73 80,73 81,73 82,73 86,75 76,75 77,75 78,82 83,82 84,82 85,9 10,9 11,9 12,9 18,9 19,90 91,90 92,90 99,92 93,92 94,92 95,92 96,92 97,92 98
+5000
+101 - Valid 2 such that + 1 pattern: parent + uses + pattern
+procedure p; variable v; if ifs; stmt s1, s2;
+Select <p, v> such that Parent(s1, s2) such that Uses(p, v) pattern ifs(v, _, _)
+pattern1 Follows,pattern1 Parent,pattern1 Uses,pattern1 Modifies,pattern1 Calls,pattern1 Next,pattern1 Affects,pattern1 with,pattern2 Follows,pattern2 Parent,pattern2 Uses,pattern2 Modifies,pattern2 Calls,pattern2 Next,pattern2 Affects,pattern2 with,pattern3 Follows,pattern3 Parent,pattern3 Uses,pattern3 Modifies,pattern3 Calls,pattern3 Next,pattern3 Affects,pattern3 with,pattern4 Follows,pattern4 Parent,pattern4 Uses,pattern4 Modifies,pattern4 Calls,pattern4 Next,pattern4 Affects,pattern4 with,pattern5 Follows,pattern5 Parent,pattern5 Uses,pattern5 Modifies,pattern5 Calls,pattern5 Next,pattern5 Affects,pattern5 with,pattern6 Follows,pattern6 Parent,pattern6 Uses,pattern6 Modifies,pattern6 Calls,pattern6 Next,pattern6 Affects,pattern6 with,pattern7 Follows,pattern7 Parent,pattern7 Modifies,pattern7 Calls,pattern7 Next,pattern7 with
+5000
+102 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+print p; variable v; assign Follows; stmt s;
+Select p such that Follows(Follows, s) such that Uses(Follows, v) pattern Follows("Follows", _"Next/Affects"_)
+36,38,39,40,67,68,70,71
+5000
+103 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+print p; variable v; assign Follows; stmt s;
+Select v such that Follows(Follows, s) such that Uses(Follows, v) pattern Follows("Follows", _"Next/Affects"_)
+Calls,Next,Affects
+5000
+104 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+print p; variable v; assign Follows; stmt s;
+Select <Follows, s> such that Follows(Follows, s) such that Uses(Follows, v) pattern Follows("Follows", _"Next/Affects"_)
+13 14
+5000
+105 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+print p; variable v; assign Follows; stmt s;
+Select <Follows, s, v> such that Follows(Follows, s) such that Uses(Follows, v) pattern Follows("Follows", _"Next/Affects"_)
+13 14 Calls,13 14 Next,13 14 Affects
+5000
+106 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+variable v; assign Follows; stmt s;
+Select BOOLEAN such that Follows(Follows, s) such that Uses(Follows, v) pattern Follows("Follows", _"Next/Affects"_)
+TRUE
+5000
+107 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select BOOLEAN such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Follows", _, _)
+TRUE
+5000
+108 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select ifs such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Follows", _, _)
+111,73
+5000
+109 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select Follows such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Follows", _, _)
+100,102,105,11,110,112,113,115,119,120,121,13,14,16,22,24,27,29,35,46,48,51,53,58,6,60,61,64,66,72,74,77,79,8,81,83,89,91,93,96,97
+5000
+110 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select s such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Follows", _, _)
+101,103,106,111,113,114,116,12,120,121,122,14,15,17,23,25,28,30,36,47,49,52,54,59,61,62,65,67,7,73,75,78,80,82,84,9,90,92,94,97,98
+5000
+111 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select v such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Follows", _, _)
+Follows,Parent,Uses,Modifies,Calls,Next,Affects,with
+5000
+112 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select <Follows, s, v> such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Follows", _, _)
+100 101 Affects,100 101 with,102 103 Follows,102 103 Uses,105 106 Calls,105 106 Affects,11 12 Follows,11 12 Parent,11 12 Uses,110 111 Calls,110 111 with,112 113 Uses,112 113 Modifies,113 114 Parent,113 114 Modifies,115 116 Affects,115 116 with,119 120 Calls,119 120 Next,120 121 Follows,120 121 Modifies,121 122 Follows,121 122 Parent,13 14 Calls,13 14 Next,13 14 Affects,14 15 Modifies,16 17 Follows,22 23 Calls,24 25 Follows,24 25 Uses,24 25 Modifies,27 28 Calls,27 28 Affects,27 28 with,29 30 Follows,29 30 Parent,29 30 Modifies,35 36 Affects,46 47 Parent,48 49 Next,51 52 Follows,51 52 Parent,51 52 Modifies,53 54 Calls,53 54 Next,53 54 with,58 59 Calls,58 59 Affects,58 59 with,6 7 Parent,6 7 Uses,6 7 Modifies,60 61 Parent,61 62 Follows,61 62 Uses,64 65 Uses,66 67 Affects,72 73 Follows,72 73 Parent,72 73 Uses,74 75 Calls,74 75 Next,74 75 Affects,77 78 Parent,77 78 Uses,77 78 Modifies,79 80 Next,79 80 Affects,79 80 with,8 9 Next,8 9 Affects,8 9 with,81 82 Follows,83 84 Calls,89 90 Parent,89 90 Uses,91 92 Next,91 92 Affects,93 94 Parent,93 94 Modifies,96 97 Next,96 97 with,97 98 Follows,97 98 Parent
+5000
+113 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+variable v; assign Follows; stmt s, s1;
+Select BOOLEAN such that Follows(s, s1) such that Uses(Follows, v) pattern Follows("Follows", _)
+TRUE
+5000
+114 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+variable v; assign Follows; stmt s, s1;
+Select v such that Follows(s, s1) such that Uses(Follows, v) pattern Follows("Follows", _)
+Follows,Parent,Calls,Next,Affects,with
+5000
+115 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+variable v; assign Follows; stmt s, s1;
+Select s such that Follows(s, s1) such that Uses(Follows, v) pattern Follows("Follows", _)
+1,10,100,102,103,104,105,107,109,11,110,111,112,113,115,117,119,12,120,121,13,14,16,18,2,21,22,23,24,25,26,27,29,3,30,33,35,36,37,38,39,4,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,57,58,59,6,60,61,64,66,67,68,69,7,70,72,73,74,75,76,77,79,8,81,82,83,84,87,89,9,90,91,92,93,94,96,97
+5000
+116 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+variable v; assign Follows; stmt s, s1;
+Select <s, s1> such that Follows(s, s1) such that Uses(Follows, v) pattern Follows("Follows", _)
+1 2,10 11,100 101,102 103,103 104,104 107,105 106,107 108,109 110,11 12,110 111,111 117,112 113,113 114,115 116,117 118,119 120,12 18,120 121,121 122,13 14,14 15,16 17,18 19,2 3,21 22,22 23,23 33,24 25,25 32,26 27,27 28,29 30,3 4,30 31,33 34,35 36,36 37,37 38,38 39,39 40,4 5,41 42,42 43,43 44,44 45,45 46,46 47,47 66,48 49,49 50,5 6,50 64,51 52,52 56,53 54,54 55,57 58,58 59,59 63,6 7,60 61,61 62,64 65,66 67,67 68,68 69,69 70,7 35,70 71,72 73,73 87,74 75,75 79,76 77,77 78,79 80,8 9,81 82,82 86,83 84,84 85,87 88,89 90,9 20,90 100,91 92,92 99,93 94,94 95,96 97,97 98
+5000
+117 - Valid 2 such that + 1 pattern: follows + uses + pattern with common synonym
+variable v; assign Follows; stmt s, s1;
+Select Follows such that Follows(s, s1) such that Uses(Follows, v) pattern Follows("Follows", _)
+100,121,13,19,22,31,8,91,96
+5000
+118 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select BOOLEAN such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+TRUE
+5000
+119 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select v such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+Follows,Parent,Uses,Modifies,Calls,Next,Affects,with
+5000
+120 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select Follows such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+100,102,105,11,110,112,113,115,119,120,121,13,14,16,22,24,27,29,35,46,48,51,53,58,6,60,61,64,66,72,74,77,79,8,81,83,89,91,93,96,97
+5000
+121 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select <Follows, s> such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+100 101,102 103,105 106,11 12,110 111,112 113,113 114,115 116,119 120,120 121,121 122,13 14,14 15,16 17,22 23,24 25,27 28,29 30,35 36,46 47,48 49,51 52,53 54,58 59,6 7,60 61,61 62,64 65,66 67,72 73,74 75,77 78,79 80,8 9,81 82,83 84,89 90,91 92,93 94,96 97,97 98
+5000
+122 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select ifs such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+111,73,92
+5000
+123 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select <Follows, s, v> such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+100 101 Affects,100 101 with,102 103 Follows,102 103 Uses,105 106 Calls,105 106 Affects,11 12 Follows,11 12 Parent,11 12 Uses,110 111 Calls,110 111 with,112 113 Uses,112 113 Modifies,113 114 Parent,113 114 Modifies,115 116 Affects,115 116 with,119 120 Calls,119 120 Next,120 121 Follows,120 121 Modifies,121 122 Follows,121 122 Parent,13 14 Calls,13 14 Next,13 14 Affects,14 15 Modifies,16 17 Follows,22 23 Calls,24 25 Follows,24 25 Uses,24 25 Modifies,27 28 Calls,27 28 Affects,27 28 with,29 30 Follows,29 30 Parent,29 30 Modifies,35 36 Affects,46 47 Parent,48 49 Next,51 52 Follows,51 52 Parent,51 52 Modifies,53 54 Calls,53 54 Next,53 54 with,58 59 Calls,58 59 Affects,58 59 with,6 7 Parent,6 7 Uses,6 7 Modifies,60 61 Parent,61 62 Follows,61 62 Uses,64 65 Uses,66 67 Affects,72 73 Follows,72 73 Parent,72 73 Uses,74 75 Calls,74 75 Next,74 75 Affects,77 78 Parent,77 78 Uses,77 78 Modifies,79 80 Next,79 80 Affects,79 80 with,8 9 Next,8 9 Affects,8 9 with,81 82 Follows,83 84 Calls,89 90 Parent,89 90 Uses,91 92 Next,91 92 Affects,93 94 Parent,93 94 Modifies,96 97 Next,96 97 with,97 98 Follows,97 98 Parent
+5000
+124 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select <Follows, s, v, ifs> such that Follows(Follows, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+100 101 Affects 111,100 101 Affects 73,100 101 Affects 92,100 101 with 111,100 101 with 73,100 101 with 92,102 103 Follows 111,102 103 Follows 73,102 103 Follows 92,102 103 Uses 111,102 103 Uses 73,102 103 Uses 92,105 106 Calls 111,105 106 Calls 73,105 106 Calls 92,105 106 Affects 111,105 106 Affects 73,105 106 Affects 92,11 12 Follows 111,11 12 Follows 73,11 12 Follows 92,11 12 Parent 111,11 12 Parent 73,11 12 Parent 92,11 12 Uses 111,11 12 Uses 73,11 12 Uses 92,110 111 Calls 111,110 111 Calls 73,110 111 Calls 92,110 111 with 111,110 111 with 73,110 111 with 92,112 113 Uses 111,112 113 Uses 73,112 113 Uses 92,112 113 Modifies 111,112 113 Modifies 73,112 113 Modifies 92,113 114 Parent 111,113 114 Parent 73,113 114 Parent 92,113 114 Modifies 111,113 114 Modifies 73,113 114 Modifies 92,115 116 Affects 111,115 116 Affects 73,115 116 Affects 92,115 116 with 111,115 116 with 73,115 116 with 92,119 120 Calls 111,119 120 Calls 73,119 120 Calls 92,119 120 Next 111,119 120 Next 73,119 120 Next 92,120 121 Follows 111,120 121 Follows 73,120 121 Follows 92,120 121 Modifies 111,120 121 Modifies 73,120 121 Modifies 92,121 122 Follows 111,121 122 Follows 73,121 122 Follows 92,121 122 Parent 111,121 122 Parent 73,121 122 Parent 92,13 14 Calls 111,13 14 Calls 73,13 14 Calls 92,13 14 Next 111,13 14 Next 73,13 14 Next 92,13 14 Affects 111,13 14 Affects 73,13 14 Affects 92,14 15 Modifies 111,14 15 Modifies 73,14 15 Modifies 92,16 17 Follows 111,16 17 Follows 73,16 17 Follows 92,22 23 Calls 111,22 23 Calls 73,22 23 Calls 92,24 25 Follows 111,24 25 Follows 73,24 25 Follows 92,24 25 Uses 111,24 25 Uses 73,24 25 Uses 92,24 25 Modifies 111,24 25 Modifies 73,24 25 Modifies 92,27 28 Calls 111,27 28 Calls 73,27 28 Calls 92,27 28 Affects 111,27 28 Affects 73,27 28 Affects 92,27 28 with 111,27 28 with 73,27 28 with 92,29 30 Follows 111,29 30 Follows 73,29 30 Follows 92,29 30 Parent 111,29 30 Parent 73,29 30 Parent 92,29 30 Modifies 111,29 30 Modifies 73,29 30 Modifies 92,35 36 Affects 111,35 36 Affects 73,35 36 Affects 92,46 47 Parent 111,46 47 Parent 73,46 47 Parent 92,48 49 Next 111,48 49 Next 73,48 49 Next 92,51 52 Follows 111,51 52 Follows 73,51 52 Follows 92,51 52 Parent 111,51 52 Parent 73,51 52 Parent 92,51 52 Modifies 111,51 52 Modifies 73,51 52 Modifies 92,53 54 Calls 111,53 54 Calls 73,53 54 Calls 92,53 54 Next 111,53 54 Next 73,53 54 Next 92,53 54 with 111,53 54 with 73,53 54 with 92,58 59 Calls 111,58 59 Calls 73,58 59 Calls 92,58 59 Affects 111,58 59 Affects 73,58 59 Affects 92,58 59 with 111,58 59 with 73,58 59 with 92,6 7 Parent 111,6 7 Parent 73,6 7 Parent 92,6 7 Uses 111,6 7 Uses 73,6 7 Uses 92,6 7 Modifies 111,6 7 Modifies 73,6 7 Modifies 92,60 61 Parent 111,60 61 Parent 73,60 61 Parent 92,61 62 Follows 111,61 62 Follows 73,61 62 Follows 92,61 62 Uses 111,61 62 Uses 73,61 62 Uses 92,64 65 Uses 111,64 65 Uses 73,64 65 Uses 92,66 67 Affects 111,66 67 Affects 73,66 67 Affects 92,72 73 Follows 111,72 73 Follows 73,72 73 Follows 92,72 73 Parent 111,72 73 Parent 73,72 73 Parent 92,72 73 Uses 111,72 73 Uses 73,72 73 Uses 92,74 75 Calls 111,74 75 Calls 73,74 75 Calls 92,74 75 Next 111,74 75 Next 73,74 75 Next 92,74 75 Affects 111,74 75 Affects 73,74 75 Affects 92,77 78 Parent 111,77 78 Parent 73,77 78 Parent 92,77 78 Uses 111,77 78 Uses 73,77 78 Uses 92,77 78 Modifies 111,77 78 Modifies 73,77 78 Modifies 92,79 80 Next 111,79 80 Next 73,79 80 Next 92,79 80 Affects 111,79 80 Affects 73,79 80 Affects 92,79 80 with 111,79 80 with 73,79 80 with 92,8 9 Next 111,8 9 Next 73,8 9 Next 92,8 9 Affects 111,8 9 Affects 73,8 9 Affects 92,8 9 with 111,8 9 with 73,8 9 with 92,81 82 Follows 111,81 82 Follows 73,81 82 Follows 92,83 84 Calls 111,83 84 Calls 73,83 84 Calls 92,89 90 Parent 111,89 90 Parent 73,89 90 Parent 92,89 90 Uses 111,89 90 Uses 73,89 90 Uses 92,91 92 Next 111,91 92 Next 73,91 92 Next 92,91 92 Affects 111,91 92 Affects 73,91 92 Affects 92,93 94 Parent 111,93 94 Parent 73,93 94 Parent 92,93 94 Modifies 111,93 94 Modifies 73,93 94 Modifies 92,96 97 Next 111,96 97 Next 73,96 97 Next 92,96 97 with 111,96 97 with 73,96 97 with 92,97 98 Follows 111,97 98 Follows 73,97 98 Follows 92,97 98 Parent 111,97 98 Parent 73,97 98 Parent 92
+5000
+125 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select BOOLEAN such that Follows(ifs, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+TRUE
+5000
+126 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select v such that Follows(ifs, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+Follows,Parent,Uses,Modifies,v,Calls,Next,Affects,with
+5000
+127 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select ifs such that Follows(ifs, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+111,73,92
+5000
+128 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; assign Follows; stmt s; if ifs;
+Select <Follows, v, ifs> such that Follows(ifs, s) such that Uses(Follows, v) pattern ifs("Uses", _, _)
+100 Affects 111,100 Affects 73,100 Affects 92,100 with 111,100 with 73,100 with 92,102 Follows 111,102 Follows 73,102 Follows 92,102 Uses 111,102 Uses 73,102 Uses 92,105 Calls 111,105 Calls 73,105 Calls 92,105 Affects 111,105 Affects 73,105 Affects 92,106 v 111,106 v 73,106 v 92,106 Next 111,106 Next 73,106 Next 92,108 Follows 111,108 Follows 73,108 Follows 92,108 Modifies 111,108 Modifies 73,108 Modifies 92,11 Follows 111,11 Follows 73,11 Follows 92,11 Parent 111,11 Parent 73,11 Parent 92,11 Uses 111,11 Uses 73,11 Uses 92,110 Calls 111,110 Calls 73,110 Calls 92,110 with 111,110 with 73,110 with 92,112 Uses 111,112 Uses 73,112 Uses 92,112 Modifies 111,112 Modifies 73,112 Modifies 92,113 Parent 111,113 Parent 73,113 Parent 92,113 Modifies 111,113 Modifies 73,113 Modifies 92,115 Affects 111,115 Affects 73,115 Affects 92,115 with 111,115 with 73,115 with 92,116 Calls 111,116 Calls 73,116 Calls 92,116 with 111,116 with 73,116 with 92,118 Follows 111,118 Follows 73,118 Follows 92,118 Parent 111,118 Parent 73,118 Parent 92,119 Calls 111,119 Calls 73,119 Calls 92,119 Next 111,119 Next 73,119 Next 92,120 Follows 111,120 Follows 73,120 Follows 92,120 Modifies 111,120 Modifies 73,120 Modifies 92,121 Follows 111,121 Follows 73,121 Follows 92,121 Parent 111,121 Parent 73,121 Parent 92,122 Next 111,122 Next 73,122 Next 92,122 with 111,122 with 73,122 with 92,13 Calls 111,13 Calls 73,13 Calls 92,13 Next 111,13 Next 73,13 Next 92,13 Affects 111,13 Affects 73,13 Affects 92,14 Modifies 111,14 Modifies 73,14 Modifies 92,16 Follows 111,16 Follows 73,16 Follows 92,17 Affects 111,17 Affects 73,17 Affects 92,19 with 111,19 with 73,19 with 92,20 Modifies 111,20 Modifies 73,20 Modifies 92,22 Calls 111,22 Calls 73,22 Calls 92,24 Follows 111,24 Follows 73,24 Follows 92,24 Uses 111,24 Uses 73,24 Uses 92,24 Modifies 111,24 Modifies 73,24 Modifies 92,27 Calls 111,27 Calls 73,27 Calls 92,27 Affects 111,27 Affects 73,27 Affects 92,27 with 111,27 with 73,27 with 92,28 Parent 111,28 Parent 73,28 Parent 92,29 Follows 111,29 Follows 73,29 Follows 92,29 Parent 111,29 Parent 73,29 Parent 92,29 Modifies 111,29 Modifies 73,29 Modifies 92,31 Calls 111,31 Calls 73,31 Calls 92,32 Calls 111,32 Calls 73,32 Calls 92,32 Next 111,32 Next 73,32 Next 92,32 with 111,32 with 73,32 with 92,34 Uses 111,34 Uses 73,34 Uses 92,35 Affects 111,35 Affects 73,35 Affects 92,46 Parent 111,46 Parent 73,46 Parent 92,48 Next 111,48 Next 73,48 Next 92,51 Follows 111,51 Follows 73,51 Follows 92,51 Parent 111,51 Parent 73,51 Parent 92,51 Modifies 111,51 Modifies 73,51 Modifies 92,53 Calls 111,53 Calls 73,53 Calls 92,53 Next 111,53 Next 73,53 Next 92,53 with 111,53 with 73,53 with 92,55 Next 111,55 Next 73,55 Next 92,55 Affects 111,55 Affects 73,55 Affects 92,56 Follows 111,56 Follows 73,56 Follows 92,56 Uses 111,56 Uses 73,56 Uses 92,56 Modifies 111,56 Modifies 73,56 Modifies 92,58 Calls 111,58 Calls 73,58 Calls 92,58 Affects 111,58 Affects 73,58 Affects 92,58 with 111,58 with 73,58 with 92,6 Parent 111,6 Parent 73,6 Parent 92,6 Uses 111,6 Uses 73,6 Uses 92,6 Modifies 111,6 Modifies 73,6 Modifies 92,60 Parent 111,60 Parent 73,60 Parent 92,61 Follows 111,61 Follows 73,61 Follows 92,61 Uses 111,61 Uses 73,61 Uses 92,63 Next 111,63 Next 73,63 Next 92,64 Uses 111,64 Uses 73,64 Uses 92,66 Affects 111,66 Affects 73,66 Affects 92,72 Follows 111,72 Follows 73,72 Follows 92,72 Parent 111,72 Parent 73,72 Parent 92,72 Uses 111,72 Uses 73,72 Uses 92,74 Calls 111,74 Calls 73,74 Calls 92,74 Next 111,74 Next 73,74 Next 92,74 Affects 111,74 Affects 73,74 Affects 92,77 Parent 111,77 Parent 73,77 Parent 92,77 Uses 111,77 Uses 73,77 Uses 92,77 Modifies 111,77 Modifies 73,77 Modifies 92,78 Calls 111,78 Calls 73,78 Calls 92,78 Affects 111,78 Affects 73,78 Affects 92,79 Next 111,79 Next 73,79 Next 92,79 Affects 111,79 Affects 73,79 Affects 92,79 with 111,79 with 73,79 with 92,8 Next 111,8 Next 73,8 Next 92,8 Affects 111,8 Affects 73,8 Affects 92,8 with 111,8 with 73,8 with 92,81 Follows 111,81 Follows 73,81 Follows 92,83 Calls 111,83 Calls 73,83 Calls 92,85 Parent 111,85 Parent 73,85 Parent 92,85 Uses 111,85 Uses 73,85 Uses 92,86 Modifies 111,86 Modifies 73,86 Modifies 92,88 with 111,88 with 73,88 with 92,89 Parent 111,89 Parent 73,89 Parent 92,89 Uses 111,89 Uses 73,89 Uses 92,91 Next 111,91 Next 73,91 Next 92,91 Affects 111,91 Affects 73,91 Affects 92,93 Parent 111,93 Parent 73,93 Parent 92,93 Modifies 111,93 Modifies 73,93 Modifies 92,95 Calls 111,95 Calls 73,95 Calls 92,95 Next 111,95 Next 73,95 Next 92,96 Next 111,96 Next 73,96 Next 92,96 with 111,96 with 73,96 with 92,97 Follows 111,97 Follows 73,97 Follows 92,97 Parent 111,97 Parent 73,97 Parent 92,99 Uses 111,99 Uses 73,99 Uses 92,99 Modifies 111,99 Modifies 73,99 Modifies 92
+5000
+129 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v, v1; stmt s; assign Follows; procedure p;
+Select BOOLEAN such that Follows(s, Follows) and Uses(s,v) pattern Follows(v1,_)
+TRUE
+5000
+130 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v, v1; stmt s; assign Follows; procedure p;
+Select s such that Follows(s, Follows) and Uses(s,v) pattern Follows(v1,_)
+10,105,107,109,112,115,117,119,120,121,13,16,18,21,25,26,27,30,33,47,5,50,52,54,57,59,60,7,75,76,77,82,84,87,9,90,92,94,96
+5000
+131 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v, v1; stmt s; assign Follows; procedure p;
+Select Follows such that Follows(s, Follows) and Uses(s,v) pattern Follows(v1,_)
+100,106,108,11,110,113,116,118,120,121,122,14,17,19,20,22,27,28,31,32,34,35,55,56,58,6,61,63,64,66,77,78,79,85,86,88,95,97,99
+5000
+132 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v, v1; stmt s; assign Follows; procedure p;
+Select v such that Follows(s, Follows) and Uses(s,v) pattern Follows(v1,_)
+Follows,Parent,Uses,Modifies,v,Calls,Next,Affects,with
+5000
+133 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v, v1; stmt s; assign Follows; procedure p;
+Select v1 such that Follows(s, Follows) and Uses(s,v) pattern Follows(v1,_)
+Follows,Parent,Uses,Modifies,Calls,Next,Affects,with
+5000
+134 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v, v1; stmt s; assign Follows; procedure p;
+Select <v, v1> such that Follows(s, Follows) and Uses(s,v) pattern Follows(v1,_)
+Follows Follows,Follows Parent,Follows Uses,Follows Modifies,Follows Calls,Follows Next,Follows Affects,Follows with,Parent Follows,Parent Parent,Parent Uses,Parent Modifies,Parent Calls,Parent Next,Parent Affects,Parent with,Uses Follows,Uses Parent,Uses Uses,Uses Modifies,Uses Calls,Uses Next,Uses Affects,Uses with,Modifies Follows,Modifies Parent,Modifies Uses,Modifies Modifies,Modifies Calls,Modifies Next,Modifies Affects,Modifies with,v Follows,v Parent,v Uses,v Calls,v Next,v Affects,v with,Calls Follows,Calls Parent,Calls Uses,Calls Modifies,Calls Calls,Calls Next,Calls Affects,Calls with,Next Follows,Next Parent,Next Uses,Next Modifies,Next Calls,Next Next,Next Affects,Next with,Affects Follows,Affects Parent,Affects Uses,Affects Modifies,Affects Calls,Affects Next,Affects Affects,Affects with,with Follows,with Parent,with Uses,with Modifies,with Calls,with Next,with Affects,with with
+5000
+135 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v, v1; stmt s; assign Follows; procedure p;
+Select <Follows, s, v, v1> such that Follows(s, Follows) and Uses(s,v) pattern Follows(v1,_)
+100 90 Follows Follows,100 90 Parent Follows,100 90 Uses Follows,100 90 Modifies Follows,100 90 v Follows,100 90 Calls Follows,100 90 Next Follows,100 90 Affects Follows,100 90 with Follows,106 105 Calls Uses,106 105 Affects Uses,108 107 Follows Next,108 107 Parent Next,108 107 Uses Next,108 107 Modifies Next,108 107 Calls Next,108 107 Next Next,108 107 Affects Next,108 107 with Next,11 10 Follows Calls,11 10 Parent Calls,11 10 Uses Calls,11 10 Modifies Calls,11 10 v Calls,11 10 Calls Calls,11 10 Next Calls,11 10 Affects Calls,11 10 with Calls,110 109 Follows Parent,110 109 Parent Parent,110 109 Modifies Parent,110 109 Calls Parent,110 109 Next Parent,110 109 with Parent,113 112 Uses Affects,113 112 Modifies Affects,116 115 Affects Uses,116 115 with Uses,118 117 Follows Affects,118 117 Parent Affects,118 117 Modifies Affects,118 117 Calls Affects,118 117 Next Affects,118 117 with Affects,120 119 Calls Affects,120 119 Next Affects,121 120 Follows Follows,121 120 Modifies Follows,122 121 Follows Next,122 121 Parent Next,14 13 Calls with,14 13 Next with,14 13 Affects with,17 16 Follows Uses,19 18 Follows Follows,19 18 Parent Follows,19 18 Uses Follows,19 18 Modifies Follows,19 18 v Follows,19 18 Calls Follows,19 18 Next Follows,19 18 Affects Follows,19 18 with Follows,20 9 Follows Calls,20 9 Parent Calls,20 9 Uses Calls,20 9 Modifies Calls,20 9 v Calls,20 9 Calls Calls,20 9 Next Calls,20 9 Affects Calls,20 9 with Calls,22 21 Follows Follows,22 21 Parent Follows,22 21 Uses Follows,22 21 Modifies Follows,22 21 Calls Follows,22 21 Next Follows,22 21 Affects Follows,22 21 with Follows,27 26 Follows Parent,27 26 Parent Parent,27 26 Modifies Parent,27 26 Calls Parent,27 26 Next Parent,27 26 with Parent,28 27 Calls Next,28 27 Affects Next,28 27 with Next,31 30 Follows Follows,31 30 Parent Follows,31 30 Uses Follows,31 30 Modifies Follows,31 30 v Follows,31 30 Calls Follows,31 30 Next Follows,31 30 Affects Follows,31 30 with Follows,32 25 Follows Parent,32 25 Parent Parent,32 25 Uses Parent,32 25 Modifies Parent,32 25 v Parent,32 25 Calls Parent,32 25 Next Parent,32 25 Affects Parent,32 25 with Parent,34 33 Follows Next,34 33 Parent Next,34 33 Uses Next,34 33 Modifies Next,34 33 v Next,34 33 Calls Next,34 33 Next Next,34 33 Affects Next,34 33 with Next,35 7 Follows Parent,35 7 Parent Parent,35 7 Uses Parent,35 7 Modifies Parent,35 7 v Parent,35 7 Calls Parent,35 7 Next Parent,35 7 Affects Parent,35 7 with Parent,55 54 Follows Modifies,55 54 Parent Modifies,55 54 Modifies Modifies,55 54 Calls Modifies,55 54 Next Modifies,55 54 with Modifies,56 52 Follows Affects,56 52 Parent Affects,56 52 Uses Affects,56 52 Modifies Affects,56 52 Calls Affects,56 52 Next Affects,56 52 Affects Affects,56 52 with Affects,58 57 Follows Uses,58 57 Parent Uses,58 57 Uses Uses,58 57 Modifies Uses,58 57 v Uses,58 57 Calls Uses,58 57 Next Uses,58 57 Affects Uses,58 57 with Uses,6 5 Follows Calls,6 5 Parent Calls,6 5 Uses Calls,6 5 Modifies Calls,6 5 v Calls,6 5 Calls Calls,6 5 Next Calls,6 5 Affects Calls,6 5 with Calls,61 60 Parent with,63 59 Follows Uses,63 59 Parent Uses,63 59 Uses Uses,63 59 Modifies Uses,63 59 v Uses,63 59 Calls Uses,63 59 Next Uses,63 59 Affects Uses,63 59 with Uses,64 50 Follows Affects,64 50 Parent Affects,64 50 Uses Affects,64 50 Modifies Affects,64 50 v Affects,64 50 Calls Affects,64 50 Next Affects,64 50 Affects Affects,64 50 with Affects,66 47 Follows Uses,66 47 Parent Uses,66 47 Uses Uses,66 47 Modifies Uses,66 47 v Uses,66 47 Calls Uses,66 47 Next Uses,66 47 Affects Uses,66 47 with Uses,77 76 Follows with,77 76 Parent with,77 76 Modifies with,77 76 Calls with,77 76 Next with,77 76 with with,78 77 Parent Modifies,78 77 Uses Modifies,78 77 Modifies Modifies,79 75 Follows Modifies,79 75 Parent Modifies,79 75 Uses Modifies,79 75 Modifies Modifies,79 75 Calls Modifies,79 75 Next Modifies,79 75 Affects Modifies,79 75 with Modifies,85 84 Follows with,85 84 Parent with,85 84 Uses with,85 84 Modifies with,85 84 v with,85 84 Calls with,85 84 Next with,85 84 Affects with,85 84 with with,86 82 Follows with,86 82 Parent with,86 82 Uses with,86 82 Modifies with,86 82 v with,86 82 Calls with,86 82 Next with,86 82 Affects with,86 82 with with,88 87 Follows Modifies,88 87 Parent Modifies,88 87 Uses Modifies,88 87 Modifies Modifies,88 87 Calls Modifies,88 87 Next Modifies,88 87 Affects Modifies,88 87 with Modifies,95 94 Follows Modifies,95 94 Parent Modifies,95 94 Modifies Modifies,95 94 Calls Modifies,95 94 Next Modifies,95 94 with Modifies,97 96 Next with,97 96 with with,99 92 Follows Calls,99 92 Parent Calls,99 92 Uses Calls,99 92 Modifies Calls,99 92 v Calls,99 92 Calls Calls,99 92 Next Calls,99 92 Affects Calls,99 92 with Calls
+5000
+136 - Valid 2 such that + 1 pattern: follows + uses + while pattern with common synonym
+variable v; stmt s; while Calls; procedure p;
+Select BOOLEAN such that Follows(Calls, s) and Uses(s,v) pattern Calls("Follows", _)
+TRUE
+5000
+137 - Valid 2 such that + 1 pattern: follows + uses + while pattern with common synonym
+variable v; stmt s; while Calls; procedure p;
+Select Calls such that Follows(Calls, s) and Uses(s,v) pattern Calls("Follows", _)
+23,47,52,82,9,90
+5000
+138 - Valid 2 such that + 1 pattern: follows + uses + while pattern with common synonym
+variable v; stmt s; while Calls; procedure p;
+Select s such that Follows(Calls, s) and Uses(s,v) pattern Calls("Follows", _)
+100,20,33,56,66,86
+5000
+139 - Valid 2 such that + 1 pattern: follows + uses + while pattern with common synonym
+variable v; stmt s; while Calls; procedure p;
+Select v such that Follows(Calls, s) and Uses(s,v) pattern Calls("Follows", _)
+Follows,Parent,Uses,Modifies,v,Calls,Next,Affects,with
+5000
+140 - Valid 2 such that + 1 pattern: follows + uses + while pattern with common synonym
+variable v; stmt s; while Calls; procedure p;
+Select <Calls, s> such that Follows(Calls, s) and Uses(s,v) pattern Calls("Follows", _)
+23 33,47 66,52 56,82 86,9 20,90 100
+5000
+141 - Valid 2 such that + 1 pattern: follows + uses + while pattern with common synonym
+variable v; stmt s; while Calls; procedure p;
+Select <s, v> such that Follows(Calls, s) and Uses(s,v) pattern Calls("Follows", _)
+100 Affects,100 with,20 Modifies,33 Follows,33 Parent,33 Uses,33 Modifies,33 v,33 Calls,33 Next,33 Affects,33 with,56 Follows,56 Uses,56 Modifies,66 Affects,86 Modifies
+5000
+142 - Valid 2 such that + 1 pattern: follows + uses + while pattern with common synonym
+variable v; stmt s; while Calls; procedure p;
+Select <Calls, s, v> such that Follows(Calls, s) and Uses(s,v) pattern Calls("Follows", _)
+23 33 Follows,23 33 Parent,23 33 Uses,23 33 Modifies,23 33 v,23 33 Calls,23 33 Next,23 33 Affects,23 33 with,47 66 Affects,52 56 Follows,52 56 Uses,52 56 Modifies,82 86 Modifies,9 20 Modifies,90 100 Affects,90 100 with
+5000
+143 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; stmt s; assign Follows; procedure p; if ifs;
+Select BOOLEAN such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+TRUE
+5000
+144 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; stmt s; assign Follows; procedure p; if ifs;
+Select ifs such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+50,73
+5000
+145 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; stmt s; assign Follows; procedure p; if ifs;
+Select s such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+49,72
+5000
+146 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; stmt s; assign Follows; procedure p; if ifs;
+Select v such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+Follows,Uses,Calls,Next,Affects
+5000
+147 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; stmt s; assign Follows; procedure p; if ifs;
+Select <s, v, ifs> such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+49 Calls 50,49 Next 50,49 Affects 50,72 Follows 73,72 Uses 73
+5000
+148 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; stmt s; assign Follows; procedure p; if ifs;
+Select BOOLEAN such that Follows(s, ifs) and Uses(s,v) pattern ifs("Calls",_,_)
+TRUE
+5000
+149 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; stmt s; assign Follows; procedure p; if ifs;
+Select ifs such that Follows(s, ifs) and Uses(s,v) pattern ifs("Calls",_,_)
+12,25,50,7
+5000
+150 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; stmt s; assign Follows; procedure p; if ifs;
+Select s such that Follows(s, ifs) and Uses(s,v) pattern ifs("Calls",_,_)
+11,24,49,6
+5000
+151 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+variable v; stmt s; assign Follows; procedure p; if ifs;
+Select v such that Follows(s, ifs) and Uses(s,v) pattern ifs("Calls",_,_)
+Follows,Parent,Uses,Modifies,Calls,Next,Affects,with
+5000
+152 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v; stmt s; assign Follows;
+Select BOOLEAN such that Follows(Follows, s) and Uses(s,v) pattern Follows(_,_)
+TRUE
+5000
+153 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v; stmt s; assign Follows;
+Select Follows such that Follows(Follows, s) and Uses(s,v) pattern Follows(_,_)
+100,102,105,11,110,112,113,115,119,120,121,13,14,16,22,24,27,29,35,46,48,51,53,58,6,60,61,64,66,72,74,77,79,8,81,83,89,91,93,96,97
+5000
+154 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v; stmt s; assign Follows;
+Select s such that Follows(Follows, s) and Uses(s,v) pattern Follows(_,_)
+101,103,106,111,113,114,116,12,120,121,122,14,15,17,23,25,28,30,36,47,49,52,54,59,61,62,65,67,7,73,75,78,80,82,84,9,90,92,94,97,98
+5000
+155 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v; stmt s; assign Follows;
+Select v such that Follows(Follows, s) and Uses(s,v) pattern Follows(_,_)
+Follows,Parent,Uses,Modifies,v,Calls,Next,Affects,with
+5000
+156 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select BOOLEAN such that Follows(Follows, Calls) and Uses(Calls,v1) pattern Follows(v2, _)
+TRUE
+5000
+157 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select Follows such that Follows(Follows, Calls) and Uses(Calls,v1) pattern Follows(v2, _)
+22,46,51,58,74,8,81,89
+5000
+158 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select Calls such that Follows(Follows, Calls) and Uses(Calls,v1) pattern Follows(v2, _)
+23,47,52,59,75,82,9,90
+5000
+159 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select v1 such that Follows(Follows, Calls) and Uses(Calls,v1) pattern Follows(v2, _)
+Follows,Parent,Uses,Modifies,v,Calls,Next,Affects,with
+5000
+160 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select BOOLEAN such that Follows(Follows, Calls) and Modifies(Calls,v1) pattern Follows(v2, _)
+TRUE
+5000
+161 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select Calls such that Follows(Follows, Calls) and Modifies(Calls,v1) pattern Follows(v2, _)
+23,47,52,59,75,82,9,90
+5000
+162 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select v2 such that Follows(Follows, Calls) and Modifies(Calls,v1) pattern Follows(v2, _)
+Follows,Uses,Modifies,Calls,Next,Affects,with
+5000
+163 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select <v1, v2> such that Follows(Follows, Calls) and Modifies(Calls,v1) pattern Follows(v2, _)
+Follows Follows,Follows Uses,Follows Modifies,Follows Calls,Follows Next,Follows Affects,Follows with,Parent Follows,Parent Uses,Parent Calls,Parent Next,Parent with,Uses Follows,Uses Uses,Uses Modifies,Uses Calls,Uses Next,Uses Affects,Uses with,Modifies Follows,Modifies Uses,Modifies Modifies,Modifies Calls,Modifies Next,Modifies Affects,Modifies with,Calls Follows,Calls Uses,Calls Calls,Calls Next,Next Follows,Next Uses,Next Modifies,Next Calls,Next Next,Next Affects,Next with,Affects Follows,Affects Uses,Affects Modifies,Affects Calls,Affects Next,Affects Affects,Affects with,with Follows,with Uses,with Modifies,with Calls,with Next,with with
+5000
+164 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select <Follows, Calls> such that Follows(Follows, Calls) and Modifies(Calls,v1) pattern Follows(v2, _)
+22 23,46 47,51 52,58 59,74 75,8 9,81 82,89 90
+5000
+165 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+variable v1, v2; while Calls; assign Follows;
+Select Follows such that Follows(Follows, Calls) and Modifies(Calls,v1) pattern Follows(v2, _)
+22,46,51,58,74,8,81,89
+5000
+166 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+stmt s; assign Follows; variable v;
+Select BOOLEAN such that Follows(Follows, s) and Uses(s,v) pattern Follows(v,_)
+TRUE
+5000
+167 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+stmt s; assign Follows; variable v;
+Select v such that Follows(Follows, s) and Uses(s,v) pattern Follows(v,_)
+Follows,Parent,Uses,Modifies,Calls,Next,Affects,with
+5000
+168 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+stmt s; assign Follows; variable v;
+Select <s, v> such that Follows(Follows, s) and Uses(s,v) pattern Follows(v,_)
+101 Follows,103 Next,111 Parent,12 Calls,15 with,23 Follows,25 Next,28 Parent,30 Next,47 Next,49 Parent,52 Affects,59 Uses,62 with,65 Affects,7 Calls,73 with,75 Modifies,80 Modifies,82 with,84 Modifies,9 Follows,90 Calls,92 Follows,94 Calls,97 Follows,98 with
+5000
+169 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+stmt s; assign Follows; variable v;
+Select Follows such that Follows(Follows, s) and Uses(s,v) pattern Follows(v,_)
+100,102,11,110,14,22,24,27,29,46,48,51,58,6,61,64,72,74,79,8,81,83,89,91,93,96,97
+5000
+170 - Valid 2 such that + 1 pattern: follows + uses + wildcard pattern with common synonym
+stmt s; assign Follows; variable v;
+Select <Follows, s, v> such that Follows(Follows, s) and Uses(s,v) pattern Follows(v,_)
+100 101 Follows,102 103 Next,11 12 Calls,110 111 Parent,14 15 with,22 23 Follows,24 25 Next,27 28 Parent,29 30 Next,46 47 Next,48 49 Parent,51 52 Affects,58 59 Uses,6 7 Calls,61 62 with,64 65 Affects,72 73 with,74 75 Modifies,79 80 Modifies,8 9 Follows,81 82 with,83 84 Modifies,89 90 Calls,91 92 Follows,93 94 Calls,96 97 Follows,97 98 with
+5000
+171 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+stmt s; variable v; procedure p; while Calls; if ifs;
+Select BOOLEAN such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+TRUE
+5000
+172 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+stmt s; variable v; procedure p; while Calls; if ifs;
+Select ifs such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+50,73
+5000
+173 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+stmt s; variable v; procedure p; while Calls; if ifs;
+Select v such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+Follows,Uses,Calls,Next,Affects
+5000
+174 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+stmt s; variable v; procedure p; while Calls; if ifs;
+Select s such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+49,72
+5000
+175 - Valid 2 such that + 1 pattern: follows + uses + ifs pattern with common synonym
+stmt s; variable v; procedure p; while Calls; if ifs;
+Select <s, v> such that Follows(s, ifs) and Uses(s,v) pattern ifs(v,_,_)
+49 Calls,49 Next,49 Affects,72 Follows,72 Uses
+5000
+176 - Valid 2 such that + 1 pattern: follows + parent + ifs pattern with common synonym
+print p; stmt s1, s2; if ifs;
+Select BOOLEAN such that Follows(s1, s2) such that Parent(s1, s2) pattern ifs("Calls", _, _)
+FALSE
+5000
+177 - Valid 2 such that + 1 pattern: follows + parent + ifs pattern with common synonym
+print p; stmt s1, s2; if ifs;
+Select p such that Follows(s1, s2) such that Parent(s1, s2) pattern ifs("Calls", _, _)
+
+5000
+178 - Valid 2 such that + 1 pattern: Uses + Modifies + ifs Pattern
+stmt s1; variable v; if ifs;
+Select BOOLEAN such that Uses(s1, v) such that Modifies(s1, v) pattern ifs("Modifies", _, _)
+TRUE
+5000
+179 - Valid 2 such that + 1 pattern: Uses + Modifies + ifs Pattern
+stmt s1; variable v; if ifs;
+Select v such that Uses(s1, v) such that Modifies(s1, v) pattern ifs("Modifies", _, _)
+Follows,Parent,Uses,Modifies,Calls,Next,Affects,with
+5000
+180 - Valid 2 such that + 1 pattern: Uses + Modifies + ifs Pattern
+stmt s1; variable v; if ifs;
+Select s1 such that Uses(s1, v) such that Modifies(s1, v) pattern ifs("Modifies", _, _)
+10,101,103,107,109,111,114,117,12,121,122,15,18,21,23,25,26,30,33,37,44,47,49,5,50,52,54,57,59,62,65,69,7,73,75,76,80,82,84,87,9,90,92,94,98
+5000
+181 - Valid 2 such that + 1 pattern: Uses + Modifies + ifs Pattern
+stmt s1; variable v; if ifs;
+Select ifs such that Uses(s1, v) such that Modifies(s1, v) pattern ifs("Modifies", _, _)
+111,73,92
+5000
+182 - Valid 2 such that + 1 pattern: Follows + Parent + Pattern
+stmt s1, s2; if ifs;
+Select BOOLEAN such that Follows(s1, s2) such that Parent(s1, s2) pattern ifs("Modifies", _, _)
+FALSE
+5000
+183 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+stmt s; assign Follows; variable v, v1;
+Select BOOLEAN such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v1, _"Next"_)
+TRUE
+5000
+184 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+stmt s; assign Follows; variable v, v1;
+Select s such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v1, _"Next"_)
+1,10,100,101,102,103,104,105,106,107,108,109,11,110,111,112,113,114,115,116,117,118,119,12,120,121,122,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,56,57,58,59,6,60,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,81,82,83,84,85,86,87,88,89,9,90,91,92,93,94,95,96,97,98,99
+5000
+185 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+stmt s; assign Follows; variable v, v1;
+Select Follows such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v1, _"Next"_)
+122
+5000
+186 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+stmt s; assign Follows; variable v, v1;
+Select v such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v1, _"Next"_)
+Next
+5000
+187 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+stmt s; assign Follows; variable v, v1;
+Select v1 such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v1, _"Next"_)
+Next
+5000
+188 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+stmt s; assign Follows; variable v, v1;
+Select <Follows, v> such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v1, _"Next"_)
+122 Next
+5000
+189 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+stmt s; assign Follows; variable v, v1;
+Select <Follows, v, v1> such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v1, _"Next"_)
+122 Next Next
+5000
+190 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+assign Follows; variable v;
+Select BOOLEAN such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v, _"25"_)
+TRUE
+5000
+191 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+assign Follows; variable v;
+Select Follows such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v, _"25"_)
+122
+5000
+192 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+assign Follows; variable v;
+Select v such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v, _"25"_)
+Next
+5000
+193 - Valid 2 such that + 1 pattern: uses + modifies + pattern
+assign Follows; variable v;
+Select <Follows, v> such that Uses(Follows, v) such that Modifies(Follows, v) pattern Follows(v, _"25"_)
+122 Next
+5000
+194 - Valid 2 such that + 1 with: such that (modifies) and with(varName) synonym result (stmt)
+stmt s; variable v; 
+Select s such that Modifies(s, v) with v.varName = "Uses"
+10,101,103,104,106,107,109,111,114,116,117,119,12,15,17,18,21,23,25,26,30,33,37,43,44,47,49,5,50,52,53,54,57,58,59,62,63,65,66,69,7,73,75,76,80,82,84,87,9,90,92,94,98
+5000
+195 - Valid 2 such that + 1 with: such that (uses) and with(varName) synonym result (stmt)
+stmt s; variable v; 
+Select s such that Uses(s, v) with v.varName = "Next"
+10,101,103,104,106,107,109,111,114,117,119,12,122,13,15,18,21,23,25,26,30,32,33,37,44,47,48,49,5,50,52,53,54,55,57,59,62,63,65,68,69,7,73,74,75,76,79,8,80,82,84,87,9,90,91,92,94,95,96,98
+5000
+196 - Valid 2 such that + 1 with: such that (follows) and with(stmt#) tuple result (2)
+stmt s1, s2;
+Select <s1, s2> such that  Follows(s1, s2) with s1.stmt# = 10
+10 11
+5000
+197 - Valid 2 such that + 1 with: such that (follows*) and with(stmt#) tuple result (2)
+stmt s1, s2;
+Select <s1, s2> such that  Follows*(s1, s2) with s2.stmt# = 20
+8 20,9 20
+5000
+198 - Valid 2 such that + 1 with: such that (parent) and with(stmt#) tuple result (2)
+stmt s1, s2;
+Select <s1, s2> such that  Parent(s1, s2) with s1.stmt# = 50
+50 51,50 52,50 56,50 57,50 58,50 59,50 63
+5000
+199 - Valid 2 such that + 1 with: such that (parent*) and with(stmt#) tuple result (2)
+stmt s1, s2;
+Select <s1, s2> such that  Parent*(s1, s2) with s2.stmt# = 30
+23 30,25 30,7 30
+5000
+200 - Valid 2 such that + 1 with: such that (calls) and with(procName) tuple result (2)
+procedure p1, p2;
+Select <p1, p2> such that  Calls(p1, p2) with p1.procName = "pattern1"
+pattern1 pattern2,pattern1 pattern3,pattern1 pattern4,pattern1 pattern5,pattern1 pattern6,pattern1 pattern7
+5000
+201 - Valid 2 such that + 1 with: such that (calls*) and with(procName) tuple result (2)
+procedure p1, p2;
+Select <p1, p2> such that  Calls*(p1, p2) with p2.procName = "pattern7"
+pattern1 pattern7,pattern2 pattern7,pattern3 pattern7,pattern4 pattern7,pattern5 pattern7,pattern6 pattern7
+5000
+202 - Valid 2 such that + 1 with: such that (next) and with(stmt#) tuple result (2)
+stmt s1, s2;
+Select <s1, s2> such that  Next(s1, s2) with s1.stmt# = 60
+60 61
+5000
+203 - Valid 2 such that + 1 with: such that (next*) and with(stmt#) tuple result (2)
+stmt s1, s2;
+Select <s1, s2> such that  Next*(s1, s2) with s2.stmt# = 40
+1 40,10 40,11 40,12 40,13 40,14 40,15 40,16 40,17 40,18 40,19 40,2 40,20 40,21 40,22 40,23 40,24 40,25 40,26 40,27 40,28 40,29 40,3 40,30 40,31 40,32 40,33 40,34 40,35 40,36 40,37 40,38 40,39 40,4 40,5 40,6 40,7 40,8 40,9 40
+5000
+204 - Valid 2 such that + 1 with: such that (affects) and with(stmt#) tuple result (2)
+stmt s1, s2;
+Select <s1, s2> such that  Affects(s1, s2) with s1.stmt# = 110
+110 113,110 118
+5000
+205 - Valid 2 such that + 1 with: such that (affects*) and with(stmt#) tuple result (2)
+stmt s1, s2;
+Select <s1, s2> such that  Affects*(s1, s2) with s2.stmt# = 100
+96 100,97 100
+5000

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\PKB\AffectsTable.cpp" />
+    <ClCompile Include="..\source\PKB\Cache.cpp" />
+    <ClCompile Include="..\source\PKB\PatternTable.cpp" />
+    <ClCompile Include="..\source\QPS\QPSClauseParser.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorWithProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects\QPSEvaluatorSTAffectsProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects\QPSEvaluatorSTAffectsTProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\Evaluators\QPSMultiClauseEvaluator.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\Evaluators\QPSSingleClauseEvaluator.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\QPSOptimizer.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls\QPSEvaluatorSTCallsProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls\QPSEvaluatorSTCallsTProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows\QPSEvaluatorSTFollowsTProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next\QPSEvaluatorSTNextProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next\QPSEvaluatorSTNextTProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent\QPSEvaluatorSTParentProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent\QPSEvaluatorSTParentTProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSTFollowsParentNextAffectsProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSTModifiesUsesProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\QPSResultTable.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\QPSResultTableEntities.cpp" />
+    <ClCompile Include="..\source\QPS\QPSFilter.cpp" />
+    <ClCompile Include="..\source\PKB\ASTProcessor.cpp" />
+    <ClCompile Include="..\source\PKB\CFGProcessor.cpp" />
+    <ClCompile Include="..\source\TNode.cpp" />
+    <ClCompile Include="..\source\Lexer.cpp" />
+    <ClCompile Include="..\source\Token.cpp" />
+    <ClCompile Include="..\source\CustomException.cpp" />
+    <ClCompile Include="..\source\SP\SourceProcessor.cpp" />
+    <ClCompile Include="..\source\SP\Parser.cpp" />
+    <ClCompile Include="..\source\SP\SourceValidator.cpp" />
+    <ClCompile Include="..\source\PKB\PKB.cpp" />
+    <ClCompile Include="..\source\PKB\StmtData.cpp" />
+    <ClCompile Include="..\source\PKB\StmtNode.cpp" />
+    <ClCompile Include="..\source\PKB\StmtRsTable.cpp" />
+    <ClCompile Include="..\source\PKB\StmtVarMapTable.cpp" />
+    <ClCompile Include="..\source\PKB\VarTable.cpp" />
+    <ClCompile Include="..\source\QPS\QPS.cpp" />
+    <ClCompile Include="..\source\QPS\QPSPreprocessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSResultProjector.cpp" />
+    <ClCompile Include="..\source\QPS\QPSCommunicator.cpp" />
+    <ClCompile Include="..\source\QPS\QPSTree\QPSNode.cpp" />
+    <ClCompile Include="..\source\QPS\QPSTree\ArgNode.cpp" />
+    <ClCompile Include="..\source\QPS\QPSTree\QPSTree.cpp" />
+    <ClCompile Include="..\source\QPS\QPSTree\QPSPatternNode.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorSelectionProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorPatternProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSuchThatProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Modifies\QPSEvaluatorSTModifiesProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Uses\QPSEvaluatorSTUsesProcessor.cpp" />
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows\QPSEvaluatorSTFollowsProcessor.cpp" />
+    <ClCompile Include="..\source\SP\ValidatorHelper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\source\PKB\AffectsTable.h" />
+    <ClInclude Include="..\source\PKB\Cache.h" />
+    <ClInclude Include="..\source\PKB\PatternTable.h" />
+    <ClInclude Include="..\source\QPS\QPSClauseParser.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\ClauseProcessors.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorWithProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects\QPSEvaluatorSTAffectsProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects\QPSEvaluatorSTAffectsTProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls\QPSEvaluatorSTCallsProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls\QPSEvaluatorSTCallsTProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows\QPSEvaluatorSTFollowsTProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next\QPSEvaluatorSTNextProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next\QPSEvaluatorSTNextTProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent\QPSEvaluatorSTParentProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent\QPSEvaluatorSTParentTProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSTFollowsParentNextAffectsProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSTModifiesUsesProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\Evaluators\QPSMultiClauseEvaluator.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\Evaluators\QPSSingleClauseEvaluator.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\QPSOptimizer.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\QPSResultTable.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\QPSResultTableEntities.h" />
+    <ClInclude Include="..\source\QPS\QPSFilter.h" />
+    <ClInclude Include="..\source\PKB\ASTProcessor.h" />
+    <ClInclude Include="..\source\PKB\CFGProcessor.h" />
+    <ClInclude Include="..\source\TNode.h" />
+    <ClInclude Include="..\source\Lexer.h" />
+    <ClInclude Include="..\source\Token.h" />
+    <ClInclude Include="..\source\CustomException.h" />
+    <ClInclude Include="..\source\NodeType.h" />
+    <ClInclude Include="..\source\SP\Parser.h" />
+    <ClInclude Include="..\source\SP\SourceProcessor.h" />
+    <ClInclude Include="..\source\SP\SourceValidator.h" />
+    <ClInclude Include="..\source\PKB\PKB.h" />
+    <ClInclude Include="..\source\PKB\StmtData.h" />
+    <ClInclude Include="..\source\PKB\StmtNode.h" />
+    <ClInclude Include="..\source\PKB\StmtRsTable.h" />
+    <ClInclude Include="..\source\PKB\StmtVarMapTable.h" />
+    <ClInclude Include="..\source\PKB\Var.h" />
+    <ClInclude Include="..\source\PKB\VarTable.h" />
+    <ClInclude Include="..\source\QPS\QPS.h" />
+    <ClInclude Include="..\source\QPS\QPSCommunicator.h" />
+    <ClInclude Include="..\source\QPS\QPSPreprocessor.h" />
+    <ClInclude Include="..\source\QPS\QPSHelper.h" />
+    <ClInclude Include="..\source\QPS\QPSResultProjector.h" />
+    <ClInclude Include="..\source\QPS\QPSTree\QPSNode.h" />
+    <ClInclude Include="..\source\QPS\QPSTree\QPSTree.h" />
+    <ClInclude Include="..\source\QPS\QPSTree\ArgNode.h" />
+    <ClInclude Include="..\source\QPS\QPSTree\QPSPatternNode.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSuchThatProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorSelectionProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorPatternProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Modifies\QPSEvaluatorSTModifiesProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Uses\QPSEvaluatorSTUsesProcessor.h" />
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows\QPSEvaluatorSTFollowsProcessor.h" />
+    <ClInclude Include="..\source\SP\ValidatorHelper.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DC21A1EA-D2C6-4D14-A2B4-E025B64BDE81}</ProjectGuid>
+    <RootNamespace>SPA</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

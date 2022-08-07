@@ -1,0 +1,12 @@
+procedure p7 {
+    a7 = 1;
+    b7 = a7 + 1;
+    if (c7 == 0) then {
+	d7 = e7 + 1;
+	read f7;
+    } else {
+        print g7;
+	h7 = g7;
+    }
+    i7 = h7 + 2;
+}

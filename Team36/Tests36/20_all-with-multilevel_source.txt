@@ -1,0 +1,41 @@
+procedure p20 {
+  read x;
+  read y;
+  length = x * x + y * y;
+  t = 30;
+  call q20;
+  print length;
+}
+
+procedure q20 {
+  if ((x >= 0) && (y >= 0)) then {
+    while (x != 0) {
+      bcm = y / x;
+      yy = y / length;
+      ds = x / length;
+      call s20;
+      if (((yy * yy + ds * ds) == 1) || (!(bcm != (yy / ds)))) then {
+        x = y / 2;
+        y = x / 2;
+      } else {
+        x = 0;
+      }
+      length = x * x + y * y;
+    }
+  } else {
+    x = 10;
+    y = 10;
+    length = x * x + y * y;
+  }
+}
+
+procedure s20 {
+  pi = 3;
+  area = pi * x * y;
+  if (area < 10) then {
+    x = x + 1;
+    y = y + y / x + 1;
+  } else {
+    print area;
+  }
+}

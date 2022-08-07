@@ -1,0 +1,26 @@
+procedure p9 {
+    if (a9 == 0) then {
+		if (b9 != 0) then {
+			read c9;
+			print d9;
+		} else {
+			e9 = 1;
+			f9 = e9 + 2;
+		}
+		g9 = 3;
+		h9 = g9 + 4;
+	} else {
+		i9 = 5;
+		j9 = i9 + 6;
+		if (k9 != 0) then {
+			read l9;
+			print m9;
+		} else {
+			n9 = 7;
+			o9 = n9 + 8;
+		}
+		p9 = 1;
+    }
+    read q9;
+    print r9;
+}

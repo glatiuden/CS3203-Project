@@ -1,0 +1,20 @@
+procedure p {
+    a = a / 1;
+    call q;
+    c = a;
+    while(z != w + x * y) {
+        b = c - y;
+        c = b * v;
+    }
+    a = c;
+    call r;
+    x = a + d;
+}
+
+procedure q {
+    a = 1;
+}
+
+procedure r {
+    c = b;
+}

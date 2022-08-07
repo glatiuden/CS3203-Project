@@ -1,0 +1,16 @@
+procedure p10 {
+    a10 = 1;
+    b10 = a10 + 1;
+    while (c10 == 0) {
+		if (d10 != 0) then {
+			read e10;
+			print f10;
+		} else {
+			g10 = 1;
+			h10 = g10 + 1;
+		}
+		read i10;
+		print j10;
+    }
+	k10 = j10 + 1;
+}

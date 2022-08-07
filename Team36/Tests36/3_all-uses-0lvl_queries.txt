@@ -1,0 +1,325 @@
+1 - Valid Uses: (selected-synonym, synonym)
+stmt s; variable v;
+Select s such that Uses(s, v)
+2, 4, 6, 9
+5000
+2 - Valid Uses: (synonym, selected-synonym)
+stmt s; variable v;
+Select v such that Uses(s, v)
+a3, d3, e3
+5000
+3 - Valid Uses: (synonym, _)
+stmt s;
+Select s such that Uses(s, _)
+2, 4, 6, 9
+5000
+4 - Valid Uses: (synonym, IDENT)
+stmt s;
+Select s such that Uses(s, "a3")
+2
+5000
+5 - Invalid Uses: (_, synonym), syntax valid | semantic invalid
+variable v;
+Select v such that Uses(_, v)
+
+5000
+6 - Invalid Uses: (_, _), syntax valid | semantic invalid
+stmt s;
+Select s such that Uses(_, _)
+
+5000
+7 - Invalid Uses: (_, IDENT), syntax valid | semantic invalid
+stmt s;
+Select s such that Uses(_, "d3")
+
+5000
+8 - Valid Uses: (integer, synonym)
+variable v;
+Select v such that Uses(6, v)
+e3
+5000
+9 - Valid Uses: (integer, _)
+stmt s;
+Select s such that Uses(2, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9
+5000
+10 - Valid Uses: (integer, IDENT)
+stmt s;
+Select s such that Uses(2, "a3")
+1, 2, 3, 4, 5, 6, 7, 8, 9
+5000
+11 - Valid Uses: (IDENT, synonym)
+variable v;
+Select BOOLEAN such that Uses("p3", v)
+TRUE
+5000
+12 - Valid Uses: (IDENT, _)
+
+Select BOOLEAN such that Uses("p3", _)
+TRUE
+5000
+13 - Valid Uses: (IDENT, IDENT)
+variable v;
+Select BOOLEAN such that Uses("q3", "e3")
+TRUE
+5000
+14 - Invalid Uses: (synonym, integer), syntax invalid 
+stmt s;
+Select s such that Uses(s, 123)
+
+5000
+15 - Invalid Uses: (_, integer), syntax invalid 
+
+Select BOOLEAN such that Uses(_, 123) 
+
+5000
+16 - Invalid Uses: (IDENT, integer), syntax invalid 
+
+Select BOOLEAN such that Uses("q3", 123)
+
+5000
+17 - Invalid Uses: (stmt, procedure), syntax valid | semantic invalid
+stmt s; procedure p;
+Select BOOLEAN such that Uses(s, p)
+FALSE
+5000
+18 - Invalid Uses: (read, procedure), syntax valid | semantic invalid
+read re; procedure p;
+Select BOOLEAN such that Uses(re, p)
+FALSE
+5000
+19 - Invalid Uses: (print, procedure), syntax valid | semantic invalid
+print pn; procedure p;
+Select BOOLEAN such that Uses(pn, p)
+FALSE
+5000
+20 - Invalid Uses: (assign, procedure), syntax valid | semantic invalid
+assign a; procedure p;
+Select BOOLEAN such that Uses(a, p)
+FALSE
+5000
+21 - Invalid Uses: (call, procedure), syntax valid | semantic invalid
+call cl; procedure p;
+Select BOOLEAN such that Uses(cl, p)
+FALSE
+5000
+22 - Invalid Uses: (while, procedure), syntax valid | semantic invalid
+while w; procedure p;
+Select BOOLEAN such that Uses(w, p)
+FALSE
+5000
+23 - Invalid Uses: (if, procedure), syntax valid | semantic invalid
+if ifs; procedure p;
+Select BOOLEAN such that Uses(ifs, p)
+FALSE
+5000
+24 - Invalid Uses: (stmt, stmt), syntax valid | semantic invalid
+stmt s1, s2;
+Select BOOLEAN such that Uses(s1, s2)
+FALSE
+5000
+25 - Invalid Uses: (stmt, read), syntax valid | semantic invalid
+stmt s; read re;
+Select BOOLEAN such that Uses(s, re)
+FALSE
+5000
+26 - Invalid Uses: (stmt, print), syntax valid | semantic invalid
+stmt s; print pn;
+Select BOOLEAN such that Uses(s, pn)
+FALSE
+5000
+27 - Invalid Uses: (stmt, assign), syntax valid | semantic invalid
+stmt s; assign a;
+Select BOOLEAN such that Uses(s, a)
+FALSE
+5000
+28 - Invalid Uses: (stmt, call), syntax valid | semantic invalid
+stmt s; call cl;
+Select BOOLEAN such that Uses(s, cl)
+FALSE
+5000
+29 - Invalid Uses: (stmt, while), syntax valid | semantic invalid
+stmt s; while w;
+Select BOOLEAN such that Uses(s, w)
+FALSE
+5000
+30 - Invalid Uses: (stmt, if), syntax valid | semantic invalid
+stmt s; if ifs;
+Select BOOLEAN such that Uses(s, ifs)
+FALSE
+5000
+31 - Valid Uses: Select stmt (stmt, variable)
+stmt s; variable v;
+Select s such that Uses(s,v)
+2,4,6,9
+5000
+32 - Valid Uses: Select variable (stmt, variable)
+stmt s; variable v;
+Select v such that Uses(s,v)
+a3,d3,e3
+5000
+33 - Valid Uses: Select stmt (stmt, constant)
+stmt s; constant c;
+Select s such that Uses(s, c)
+
+5000
+34 - Valid Uses: Select constant (stmt, constant)
+stmt s; constant c;
+Select c such that Uses(s, c)
+
+5000
+35 - Valid Uses: Select read (read, variable)
+read re; variable v;
+Select re such that Uses(re, v)
+
+5000
+36 - Valid Uses: Select variable (read, variable)
+read re; variable v;
+Select v such that Uses(re, v)
+
+5000
+37 - Valid Uses: Select read (read, constant)
+read re; constant c;
+Select re such that Uses(re, c)
+
+5000
+38 - Valid Uses: Select constant (read, constant)
+read re; constant c;
+Select c such that Uses(re, c)
+
+5000
+39 - Valid Uses: Select print (print, variable)
+print pn; variable v;
+Select pn such that Uses(pn, v)
+4
+5000
+40 - Valid Uses: Select variable (print, variable)
+print pn; variable v;
+Select v such that Uses(pn, v)
+d3
+5000
+41 - Valid Uses: Select print (print, constant)
+print pn; constant c;
+Select pn such that Uses(pn, c)
+
+5000
+42 - Valid Uses: Select constant (print, constant)
+print pn; constant c;
+Select c such that Uses(pn, c)
+
+5000
+43 - Valid Uses: Select assign (assign, variable)
+assign a; variable v;
+Select a such that Uses(a, v)
+2,6
+5000
+44 - Valid Uses: Select variable (assign, variable)
+assign a; variable v;
+Select v such that Uses(a, v)
+a3,e3
+5000
+45 - Valid Uses: Select assign (assign, constant), syntax valid | semantic invalid
+assign a; constant c;
+Select BOOLEAN such that Uses(a, c)
+FALSE
+5000
+46 - Valid Uses: Select constant (assign, constant), syntax valid | semantic invalid
+assign a; constant c;
+Select BOOLEAN such that Uses(a, c)
+FALSE
+5000
+47 - Valid Uses: Select call (call, variable)
+call cl; variable v;
+Select cl such that Uses(cl, v)
+9
+5000
+48 - Valid Uses: Select variable (call, variable)
+call cl; variable v;
+Select v such that Uses(cl, v)
+e3
+5000
+49 - Valid Uses: Select call (call, constant), syntax valid | semantic invalid
+call cl; constant c;
+Select BOOLEAN such that Uses(cl, c)
+FALSE
+5000
+50 - Valid Uses: Select constant (call, constant), syntax valid | semantic invalid
+call cl; constant c;
+Select BOOLEAN such that Uses(cl, c)
+FALSE
+5000
+51 - Valid Uses: Select while (while, variable)
+while w; variable v;
+Select w such that Uses(w, v)
+
+5000
+52 - Valid Uses: Select variable (while, variable)
+while w; variable v;
+Select v such that Uses(w, v)
+
+5000
+53 - Valid Uses: Select while (while, constant)
+while w; constant c;
+Select w such that Uses(w, c)
+
+5000
+54 - Valid Uses: Select constant (while, constant)
+while w; constant c;
+Select c such that Uses(w, c)
+
+5000
+55 - Valid Uses: Select if (if, variable)
+if ifs; variable v;
+Select ifs such that Uses(ifs, v)
+
+5000
+56 - Valid Uses: Select variable (if, variable)
+if ifs; variable v;
+Select v such that Uses(ifs, v)
+
+5000
+57 - Valid Uses: Select if (if, constant)
+if ifs; constant c;
+Select ifs such that Uses(ifs, c)
+
+5000
+58 - Valid Uses: Select constant (if, constant)
+if ifs; constant c;
+Select c such that Uses(ifs, c)
+
+5000
+59 - Valid Uses: (procName, variable)
+variable v;
+Select v such that Uses("p3", v)
+a3,d3
+5000
+60 - Valid Uses: (procName, _) where True
+assign a;
+Select a such that Uses("p3", _)
+1,2,5,6,7,8
+5000
+61 - Valid Uses: (procName, _) where False
+stmt s;
+Select s such that Uses("s3",_)
+
+5000
+62 - Valid Uses: (procName, ident) where True
+stmt s;
+Select s such that Uses("p3","a3")
+1,2,3,4,5,6,7,8,9
+5000
+63 - Valid Uses: (procName, ident) where False
+stmt s;
+Select s such that Uses("p3","b3")
+
+5000
+64 - Invalid Uses: Mispelled Uses, syntax invalid
+stmt s; variable v;
+Select BOOLEAN such that Use(s, v)
+
+5000
+65 - Invalid Uses: Lower case uses, syntax invalid
+stmt s; variable v;
+Select BOOLEAN such that uses(s, v)
+
+5000

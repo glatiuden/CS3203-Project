@@ -1,0 +1,195 @@
+1 - - Valid Result Clause: Both return values in same clause
+assign a; variable v;
+Select <a, v> such that Uses(a, v)
+7 a, 7 b, 14 b
+5000
+2 - - Valid Result Clause: Both return values in same clause
+stmt s1, s2;
+Select <s1, s2> such that Parent(s1, s2)
+8 9, 8 10, 10 11, 10 12, 13 14, 13 15
+5000
+3 - - Valid Result Clause: Both return values in same clause, duplicate return values
+stmt s;
+Select <s, s> such that Next* (s, s)
+8 8, 9 9, 10 10, 11 11, 12 12
+5000
+4 - - Valid Result Clause: Neither return value constrained
+stmt s; read rd; print pt;
+Select <rd, pt> such that Next* (s, s)
+2 4, 2 5, 3 4, 3 5, 2 11, 3 11
+5000
+5 - - Valid Result Clause: One return value constrained
+stmt s; call c;
+Select <s, c> such that Next* (s, s)
+8 1, 8 9, 8 12, 8 15, 9 1, 9 9, 9 12, 9 15, 10 1, 10 9, 10 12, 10 15, 11 1, 11 9, 11 12, 11 15, 12 1, 12 9, 12 12, 12 15
+5000
+6 - - Valid Result Clause: More than two return values
+if ifs; while w; read rd; print pt;
+Select <ifs, w, rd, pt> such that Follows(rd, pt)
+10 8 3 4, 13 8 3 4
+5000
+7 - - Valid Result Clause: Return values unconstrained
+read rd; print pt; assign a; variable v;
+Select <rd, pt> such that Uses(a,v) pattern a(_,_)
+2 4, 2 5, 3 4, 3 5, 2 11, 3 11
+5000
+8 - - Valid Result Clause: Return values constrained independently
+read rd; print pt; stmt s1,s2;
+Select <s1, rd> such that Follows(rd, pt) such that Parent(s1,s2)
+8 3, 10 3, 13 3
+5000
+9 - - Valid Result Clause: Return values constrained independently
+stmt s; while w; call c;
+Select <s, c> such that Parent(w, c) such that Next*(s,s)
+8 9, 9 9, 10 9, 11 9, 12 9
+5000
+10 - - Valid Result Clause: Return values constrained together directly
+assign a; variable v;
+Select <a, v> such that Modifies(a,v) pattern a(_,"a+b")
+7 b
+5000
+11 - - Valid Result Clause: Return values constrained together indirectly
+stmt s1, s2, s3;
+Select <s1, s3> such that Parent(s1, s2) such that Next(s2,s3)
+8 10, 8 11, 8 12, 10 8
+5000
+12 - - Valid Result Clause: Three return values, 1 constrained independently, 2 indirectly
+stmt s1, s2, s3; assign a;
+Select <s1, s3, a> such that Parent(s1, s2) such that Next(s2,s3) such that Modifies(a, "b")
+8 10 7, 8 11 7, 8 12 7, 10 8 7, 8 10 14, 8 11 14, 8 12 14, 10 8 14
+5000
+13 - Invalid Result Clause: Select stmt.procName, syntax valid | semantic invalid
+stmt s;
+Select s.procName
+
+5000
+14 - Invalid Result Clause: Select read.procName, syntax valid | semantic invalid
+read re;
+Select re.procName
+
+5000
+15 - Invalid Result Clause: Select print.procName, syntax valid | semantic invalid
+print pn;
+Select pn.procName
+
+5000
+16 - Invalid Result Clause: Select assign.procName, syntax valid | semantic invalid
+assign a;
+Select a.procName
+
+5000
+17 - Invalid Result Clause: Select while.procName, syntax valid | semantic invalid
+while w;
+Select w.procName
+
+5000
+18 - Invalid Result Clause: Select if.procName, syntax valid | semantic invalid
+if ifs;
+Select ifs.procName
+
+5000
+19 - Invalid Result Clause: Select variable.procName, syntax valid | semantic invalid
+variable v;
+Select v.procName
+
+5000
+20 - Invalid Result Clause: Select constant.procName, syntax valid | semantic invalid
+constant c;
+Select c.procName
+
+5000
+21 - Invalid Result Clause: Select procedure.varName, syntax valid | semantic invalid
+procedure p;
+Select p.varName
+
+5000
+22 - Invalid Result Clause: Select stmt.varName, syntax valid | semantic invalid
+stmt s;
+Select s.varName
+
+5000
+23 - Invalid Result Clause: Select assign.varName, syntax valid | semantic invalid
+assign a;
+Select a.varName
+
+5000
+24 - Invalid Result Clause: Select call.varName, syntax valid | semantic invalid
+call cl;
+Select cl.varName
+
+5000
+25 - Invalid Result Clause: Select while.varName, syntax valid | semantic invalid
+while w;
+Select w.varName
+
+5000
+26 - Invalid Result Clause: Select if.varName, syntax valid | semantic invalid
+if ifs;
+Select ifs.varName
+
+5000
+27 - Invalid Result Clause: Select constant.varName, syntax valid | semantic invalid
+constant c;
+Select c.varName
+
+5000
+28 - Invalid Result Clause: Select procedure.value, syntax valid | semantic invalid
+procedure p;
+Select p.value
+
+5000
+29 - Invalid Result Clause: Select stmt.value, syntax valid | semantic invalid
+stmt s;
+Select s.value
+
+5000
+30 - Invalid Result Clause: Select read.value, syntax valid | semantic invalid
+read re;
+Select re.value
+
+5000
+31 - Invalid Result Clause: Select print.value, syntax valid | semantic invalid
+print pn;
+Select pn.value
+
+5000
+32 - Invalid Result Clause: Select assign.value, syntax valid | semantic invalid
+assign a;
+Select a.value
+
+5000
+33 - Invalid Result Clause: Select call.value, syntax valid | semantic invalid
+call cl;
+Select cl.value
+
+5000
+34 - Invalid Result Clause: Select while.value, syntax valid | semantic invalid
+while w;
+Select w.value
+
+5000
+35 - Invalid Result Clause: Select if.value, syntax valid | semantic invalid
+if ifs;
+Select ifs.value
+
+5000
+36 - Invalid Result Clause: Select variable.value, syntax valid | semantic invalid
+variable v;
+Select v.value
+
+5000
+37 - Invalid Result Clause: Select procedure.stmt#, syntax valid | semantic invalid
+procedure p;
+Select p.stmt#
+
+5000
+38 - Invalid Result Clause: Select variable.stmt#, syntax valid | semantic invalid
+variable v;
+Select v.stmt#
+
+5000
+39 - Invalid Result Clause: Select constant.stmt#, syntax valid | semantic invalid
+constant c;
+Select c.stmt#
+
+5000

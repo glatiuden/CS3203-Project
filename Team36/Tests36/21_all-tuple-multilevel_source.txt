@@ -1,0 +1,27 @@
+procedure p21 {
+	call q21;
+	read a;
+	read b;
+	print a;
+	print b;
+	a = 1;
+	b = a + b;
+	while (a == 1) {
+		call q21;
+		if (a > b) then {
+			print b;
+		} else {
+			call q21;
+		}
+	}
+
+	if (a < b) then {
+		b = b + 1;
+	} else {
+		call q21;
+	}
+}
+
+procedure q21 {
+	a = 1;
+}

@@ -1,0 +1,125 @@
+1 - Valid Follows-pattern: Select assign Follows(assign, stmt) pattern (variable, _)
+assign a; stmt s; variable v;
+Select a such that Follows(a, s) pattern a (v, _)
+1, 2, 3, 5, 9
+5000
+2 - Valid Follows-pattern: Select assign Follows(assign, stmt) pattern (variable, IDENT)
+assign a; stmt s; variable v;
+Select a such that Follows(a, s) pattern a (v, _"a12"_)
+5, 9
+5000
+3 - Valid Follows-pattern: Select assign Follows(assign, stmt) pattern (IDENT, _variable_)
+assign a; stmt s;
+Select a such that Follows(a, s) pattern a ("b12", _"b12"_)
+9
+50000
+4 - Valid Follows-pattern: Select assign Follows(assign, stmt) pattern (variable, _constant_)
+assign a; stmt s; variable v;
+Select v such that Follows(a, s) pattern a (v, _"1"_)
+a12
+5000
+5 - Valid Follows-pattern: Select assign Follows(stmt, assign) pattern (_, _)
+assign a; stmt s;
+Select a such that Follows(s,a) pattern a (_, _)
+2, 3, 9, 10
+5000
+6 - Valid Follows-pattern: Select assign Follows(stmt, assign) pattern (_, _constant_)
+assign a; stmt s;
+Select a such that Follows(s,a) pattern a (_, _"1"_)
+10
+5000
+7 - Valid Follows-pattern: Select assign Follows(stmt, assign) pattern (IDENT, _constant_)
+assign a; stmt s;
+Select a such that Follows(s,a) pattern a ("c12", _"1"_)
+10
+5000
+8 - Valid Follows-pattern: Select assign Follows(stmt, assign) pattern (variable, _variable_)
+assign a; stmt s; variable v;
+Select v such that Follows(s,a) pattern a (v, _"c12"_)
+b12, c12
+5000
+9 - Valid Follows-pattern: Select assign Follows(assign, _) pattern (variable, _)
+assign a; variable v;
+Select a such that Follows(a, _) pattern a (v, _)
+1, 2, 3, 5, 9
+5000
+10 - Valid Follows-pattern: Select assign Follows(assign, integer) pattern (variable, _)
+assign a; variable v;
+Select a such that Follows(a, 3) pattern a (v, _)
+2
+5000
+11 - Valid Follows-pattern: Select assign Follows(assign, integer) pattern (_, _variable_)
+assign a;
+Select a such that Follows(a, 10) pattern a (_, _"a12"_)
+9
+5000
+12 - Valid Follows-pattern: Select assign Follows(assign, integer) pattern (variable, _variable_)
+assign a;
+Select a such that Follows(a, 3) pattern a ("b12", _"3"_)
+2
+5000
+13 - Valid Follows-pattern: Select assign Follows(assign, integer) pattern (variable, _)
+assign a; variable v;
+Select v such that Follows(a, 2) pattern a (v, _)
+a12
+5000
+14 - Valid Follows-pattern: Select assign Follows(_, assign) pattern (variable, _)
+assign a; variable v;
+Select a such that Follows(_, a) pattern a (v, _)
+2, 3, 9, 10
+5000
+15 - Valid Follows-pattern: Select assign Follows(_, _) pattern (variable, _)
+assign a; variable v;
+Select a such that Follows(_, _) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+16 - Valid Follows-pattern: Select assign Follows(_, integer) pattern (variable, _)
+assign a; variable v;
+Select a such that Follows(_, 3) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+17 - Valid Follows-pattern: Select assign Follows(integer, assign) pattern (variable, _variable_)
+assign a; variable v;
+Select a such that Follows(9, a) pattern a (v, _"c12"_)
+10
+5000
+18 - Valid Follows-pattern: Select assign Follows(integer, assign) pattern (_, _variable_)
+stmt a;
+Select a such that Follows(9, a) pattern a (_, _"a12"_)
+
+5000
+19 - Valid Follows-pattern: Select assign Follows(integer, assign) pattern (IDENT, _variable_)
+assign a;
+Select a such that Follows(6, a) pattern a ("b12", _"a12"_)
+9
+5000
+20 - Valid Follows-pattern: Select assign Follows(integer, assign) pattern (variable, _constant_)
+assign a; variable v;
+Select v such that Follows(2, a) pattern a (v, _"5"_)
+c12
+5000
+21 - Valid Follows-pattern: Select assign Follows(integer, _) pattern (variable, _)
+assign a; variable v;
+Select a such that Follows(3, _) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+22 - Valid Follows-pattern: Select assign Follows(integer, integer) pattern (variable, _)
+assign a; variable v;
+Select a such that Follows(2, 3) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+23 - Valid pattern-Follows: Select assign pattern (variable, _) Follows(assign, stmt)
+assign a; stmt s; variable v;
+Select a pattern a (v, _) such that Follows(a, s)
+1, 2, 3, 5, 9
+5000
+24 - Valid pattern-Follows: Select assign pattern (variable, _variable_) Follows(stmt, assign)
+assign a; stmt s; variable v;
+Select v pattern a (v, _"c12"_) such that Follows(s,a)
+b12, c12
+5000
+25 - Valid pattern-Follows: Select assign pattern (IDENT, _variable_) Follows(integer, assign)
+assign a;
+Select a pattern a ("b12", _"a12"_) such that Follows(6, a)
+9
+5000

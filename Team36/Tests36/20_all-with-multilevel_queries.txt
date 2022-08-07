@@ -1,0 +1,260 @@
+1 - Valid with: with stmt
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select s with s.stmt# = 26
+26
+5000
+2 - Valid with: with variable
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select v with s.stmt# = 15
+x,y,length,t,bcm,yy,ds,pi,area
+5000
+3 - Valid with: with stmt = constant
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select s with s.stmt# = c.value
+1, 2, 3, 10
+5000
+4 - Valid with: with variable = procedure
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select v with v.varName = p.procName
+
+5000
+5 - Valid with: with assign = constant
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select a with a.stmt# = c.value
+3, 10
+5000
+6 - Valid with: with read = constant
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select re with re.stmt# = c.value
+1, 2
+5000
+7 - Valid with: with constant
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select w with c.value=0
+8
+5000
+8 - Valid with: with procedure
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select p with 12 = 13
+
+5000
+9 - Valid with: with procedure
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select p with 12 = 12
+p20, q20, s20
+5000
+10 - Valid with: with procedure = procedure
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select p with p.procName = p.procName
+p20, q20, s20
+5000
+11 - Valid with: with procedure = procedure
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select v with p.procName = q.procName
+x,y,length,t,bcm,yy,ds,pi,area
+5000
+12 - Valid with: with constant
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select w with c.value=-2
+
+5000
+13 - Valid with: with stmt = stmt
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select s1 with s.stmt# = 26 and s1.stmt# = s.stmt#
+26
+5000
+14 - Valid with: with stmt = integer and procedure = procedure
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select v with s.stmt# = 15 and p.procName = q.procName
+x,y,length,t,bcm,yy,ds,pi,area
+5000
+15 - Valid with: with stmt = integer and procedure = IDENT
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select v with s.stmt# = 15 and p.procName = "p20"
+x,y,length,t,bcm,yy,ds,pi,area
+5000
+16 - Valid with: with stmt = integer and procedure = IDENT
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select q with s.stmt# = 15 and p.procName = "p20"
+p20, q20, s20
+5000
+17 - Valid with: with stmt = constant and stmt = constant
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select s with s.stmt# = c.value and s.stmt# = c.value
+1, 2, 3, 10
+5000
+18 - Valid with: with stmt = constant and constant = integer
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select s with s.stmt# = c.value and c.value = 10
+10
+5000
+19 - Valid with: with variable = procedure and stmt = integer
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select v with v.varName = p.procName and s.stmt# = 26
+
+5000
+20 - Valid with: with variable = IDENT and procedure = procedure
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select p with v.varName = "x" and cl.procName = p.procName
+q20, s20
+5000
+21 - Valid with: with variable = IDENT and procedure = procedure
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select p with v.varName = "x" and p.procName = p.procName
+p20, q20, s20
+5000
+22 - Valid with: with variable = IDENT and procedure = procedure
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select v with v.varName = "xyz" and p.procName = p.procName
+
+5000
+23 - Valid with: with constant = integer and while = assign
+stmt s, s1, s2; assign a, a1; while w, w1; if ifs, ifs1; variable v, v1; procedure p, q, p1; constant c, c1; call cl; print pn; read re;
+Select w with c.value = 0 and w.stmt# = a.stmt#
+
+5000
+24 - Valid with: with assign
+assign a, a1;
+Select a1 with 12 = a.stmt#
+
+5000
+25 - Valid with: with assign
+assign a, a1;
+Select a with a1.stmt# = 3
+10, 11, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 3, 4, 9
+5000
+26 - Invalid with: stmt.procName = procedure.procName, syntax valid | semantic invalid
+stmt s; procedure p;
+Select BOOLEAN with s.procName = p.procName
+FALSE
+5000
+27 - Invalid with: read.procName = procedure.procName, syntax valid | semantic invalid
+read re; procedure p;
+Select BOOLEAN with re.procName = p.procName
+FALSE
+5000
+28 - Invalid with: print.procName = procedure.procName, syntax valid | semantic invalid
+print pn; procedure p;
+Select BOOLEAN with pn.procName = p.procName
+FALSE
+5000
+29 - Invalid with: assign.procName = procedure.procName, syntax valid | semantic invalid
+assign a; procedure p;
+Select BOOLEAN with a.procName = p.procName
+FALSE
+5000
+30 - Invalid with: while.procName = procedure.procName, syntax valid | semantic invalid
+while w; procedure p;
+Select BOOLEAN with w.procName = p.procName
+FALSE
+5000
+31 - Invalid with: if.procName = procedure.procName, syntax valid | semantic invalid
+if ifs; procedure p;
+Select BOOLEAN with ifs.procName = p.procName
+FALSE
+5000
+32 - Invalid with: variable.procName = procedure.procName, syntax valid | semantic invalid
+variable v; procedure p;
+Select BOOLEAN with v.procName = p.procName
+FALSE
+5000
+33 - Invalid with: constant.procName = procedure.procName, syntax valid | semantic invalid
+constant c; procedure p;
+Select BOOLEAN with c.procName = p.procName
+FALSE
+5000
+34 - Invalid with: procedure.varName = variable.varName, syntax valid | semantic invalid
+procedure p; variable v;
+Select BOOLEAN with p.varName = v.varName
+FALSE
+5000
+35 - Invalid with: stmt.varName = variable.varName, syntax valid | semantic invalid
+stmt s; variable v;
+Select BOOLEAN with s.varName = v.varName
+FALSE
+5000
+36 - Invalid with: assign.varName = variable.varName, syntax valid | semantic invalid
+assign a; variable v;
+Select BOOLEAN with a.varName = v.varName
+FALSE
+5000
+37 - Invalid with: call.varName = variable.varName, syntax valid | semantic invalid
+call cl; variable v;
+Select BOOLEAN with cl.varName = v.varName
+FALSE
+5000
+38 - Invalid with: while.varName = variable.varName, syntax valid | semantic invalid
+while w; variable v;
+Select BOOLEAN with w.varName = v.varName
+FALSE
+5000
+39 - Invalid with: if.varName = variable.varName, syntax valid | semantic invalid
+if ifs; variable v;
+Select BOOLEAN with ifs.varName = v.varName
+FALSE
+5000
+40 - Invalid with: constant.varName = variable.varName, syntax valid | semantic invalid
+constant c; variable v;
+Select BOOLEAN with c.varName = v.varName
+FALSE
+5000
+41 - Invalid with: procedure.value = constant.value, syntax valid | semantic invalid
+procedure p; constant c;
+Select BOOLEAN with p.value = c.value
+FALSE
+5000
+42 - Invalid with: stmt.value = constant.value, syntax valid | semantic invalid
+stmt s; constant c;
+Select BOOLEAN with s.value = c.value
+FALSE
+5000
+43 - Invalid with: read.value = constant.value, syntax valid | semantic invalid
+read re; constant c;
+Select BOOLEAN with re.value = c.value
+FALSE
+5000
+44 - Invalid with: print.value = constant.value, syntax valid | semantic invalid
+print pn; constant c;
+Select BOOLEAN with pn.value = c.value
+FALSE
+5000
+45 - Invalid with: assign.value = constant.value, syntax valid | semantic invalid
+assign a; constant c;
+Select BOOLEAN with a.value = c.value
+FALSE
+5000
+46 - Invalid with: call.value = constant.value, syntax valid | semantic invalid
+call cl; constant c;
+Select BOOLEAN with cl.value = c.value
+FALSE
+5000
+47 - Invalid with: while.value = constant.value, syntax valid | semantic invalid
+while w; constant c;
+Select BOOLEAN with w.value = c.value
+FALSE
+5000
+48 - Invalid with: if.value = constant.value, syntax valid | semantic invalid
+if ifs; constant c;
+Select BOOLEAN with ifs.value = c.value
+FALSE
+5000
+49 - Invalid with: variable.value = constant.value, syntax valid | semantic invalid
+variable v; constant c;
+Select BOOLEAN with v.value = c.value
+FALSE
+5000
+50 - Invalid with: procedure.stmt# = stmt.stmt#, syntax valid | semantic invalid
+procedure p; stmt s;
+Select BOOLEAN with p.stmt# = s.stmt#
+FALSE
+5000
+51 - Invalid with: variable.stmt# = stmt.stmt#, syntax valid | semantic invalid
+variable v; stmt s;
+Select BOOLEAN with v.stmt# = s.stmt#
+FALSE
+5000
+52 - Invalid with: constant.stmt# = stmt.stmt#, syntax valid | semantic invalid
+constant c; stmt s;
+Select BOOLEAN with c.stmt# = s.stmt#
+FALSE
+5000

@@ -1,0 +1,422 @@
+procedure p109 {
+    x = x + 1;
+    y = y + 5;
+    while (a >= 10) {
+        x = x + 5;
+        call q109;
+        c = a;
+    }
+    if (a >= b) then {
+        x = x * 5;
+        call r109;
+    } else {
+        call s109;
+        y = y + 10;
+    }
+    a = b;
+    b = c + 10;
+    c = c * 10;
+    while (x > 4) {
+        if (x > 2) then {
+            a = 44;
+        } else {
+            a = 4;
+            b = s;
+        }
+    }
+    a = 4 + 1;
+}
+
+procedure q109 {
+    while (x >= 1) {
+        x = x + 1;
+    }
+    call r109;
+}
+
+procedure r109 {
+    call s109;
+    a = a + 1;
+    b = c;
+}
+
+procedure s109 {
+    x = x + 1;
+    y = 4;
+}
+
+procedure vin {
+    read w;
+    read x;
+    read y;
+    read z;
+    call james;
+    w = b + c - d;
+    if (w < x + y * z) then {
+        a = x + y * z;
+        while(a > b - c / d) {
+            call jerryl;
+            w = a * b / c;
+            if (w + x <= y * z) then {
+                a = w - x / y;
+                z = d;
+                call jianwei;
+            } else {
+                w = a + a * a;
+                c = y;
+            }
+            call jennifer;
+            a = z * z + z;
+        }
+        w = d / d - d;
+    } else {
+        call miausn;
+        a = w - w / w;
+        while(a - b >= c / d) {
+            x = a + c - d;
+            if (w + x * y == z) then {
+                call verylongprocnamecheckkkkbaby;
+                b = w + y * z;
+                x = b;
+            } else {
+                x = a * b / d;
+                call ruby;
+                a = w;
+            }
+            b = w - x / z;
+        }
+        call sapphire;
+        x = c + c * c;
+    }
+    b = y * y + y;
+    print a;
+    call james;
+    print b;
+    print c;
+    print d;
+}
+
+procedure james {
+    read a;
+    read b;
+    read c;
+    call jerryl;
+    read d;
+    x = b / b - b;
+    while (a - b / c != d) {
+        b = x - x / x;
+        call jianwei;
+        if (w + x < y) then {
+            y = a + b - d;
+            while (a > b - c) {
+                c = w + x * z;
+                call jennifer;
+                d = x - y;
+            }
+            y = a * c / d;
+        } else {
+            call miausn;
+            c = w - y / z;
+            while (w <= x * z) {
+                y = b + b * b;
+                z = a / c;
+                call verylongprocnamecheckkkkbaby;
+            }
+            c = x * x + x;
+        }
+        y = c / c - c;
+        call ruby;
+    }
+    c = y - y / y;
+    print w;
+    print x;
+    call sapphire;
+    print y;
+    print z;
+}
+
+procedure jerryl {
+    z = a + b - c;
+    if (a / c >= d) then {
+        d = w + x * y;
+        while(w + y == z ) {
+            call jianwei;
+            z = b + c / d;
+            d = w + y;
+        }
+        d = x - y / z;
+        call jennifer;
+    } else {
+        z = a + a * a;
+        while(a != b - d) {
+            d = w * w + w;
+            call miausn;
+            z = b * c;
+        }
+        z = d / d - d;
+    }
+    call verylongprocnamecheckkkkbaby;
+    d = z - z / z;
+}
+
+procedure jianwei {
+    w = b + c;
+    while (a != b - d) {
+        a = x * y;
+        if (c / b < d) then {
+            w = b - d;
+            call ruby;
+            d = w / x;
+        } else {
+            a = x / z;
+            z = a - b;
+            call sapphire;
+        }
+        w = c * d;
+    }
+    a = y + z;
+    call jennifer;
+}
+
+procedure jennifer {
+    x = a / c;
+    call miausn;
+    while(z != w + x * y) {
+        b = w - y;
+        c = x * v;
+    }
+    call verylongprocnamecheckkkkbaby;
+    x = a + d;
+}
+
+procedure miausn {
+    call ruby;
+    b = w * z;
+    if ( d == a - b / c) then {
+        x = c - d;
+        y = b + d;
+        call sapphire;
+    } else {
+        b = y / z;
+        c = w - z;
+    }
+    call verylongprocnamecheckkkkbaby;
+    y = a * b;
+}
+
+procedure verylongprocnamecheckkkkbaby {
+    call ruby;
+    c = w + x;
+    y = a / d;
+}
+
+procedure ruby {
+    w = y - x * z * w;
+    if (d + c - b * a != 23) then {
+        a = c * b / d - a;
+        while (z - y * x / w == 11) {
+            call sapphire;
+            x = y - w / z / x;
+            if (b >= a * 23 + d - c ) then {
+                b = c / a + d * b;
+                while (x <= w / 11 - z * y) {
+                    call sapphire;
+                    y = x * w + z % y;
+                    z = y + w - x * z;
+                }
+                c = b / a - d / c ;
+                call sapphire;
+            } else {
+                z = x * w - y + z;
+                while (b * a > 23 + d - c) {
+                    d = b / a * c % d;
+                    call sapphire;
+                    d = c * a / b - d;
+                }
+                w = y / z + x / 1;
+            }
+            call sapphire;
+            a = c * d - b * 13;
+        }
+        x = y / z - w % 4;
+    } else {
+        call sapphire;
+        b = c * d + a / 16;
+        while (x / w < 11 - z * y) {
+            y = x / z + w + 7;
+            if (b * a + 23 == d - c) then {
+                call sapphire;
+                c = b - d / a % 19;
+                while (x / w - 11 != z * y) {
+                    z = x * y / w - 10;
+                    w = z * y - x + 2;
+                    call sapphire;
+                }
+                d = b - c * a + 22;
+            } else {
+                w = z - x + y % w;
+                call sapphire;
+                while (b * a + 23 - d != c) {
+                    a = d / b * c / a;
+                    a = d - c + b % 14;
+                }
+                call sapphire;
+                x = z + w / y + x;
+            }
+            b = d / a - c % b;
+        }
+        call sapphire;
+        y = z + w * x - y;
+    }
+    c = d / a + b + c;
+}
+
+procedure sapphire {
+    w = x + y - z + w / 25;
+    while (d < c + b - a * 23) {
+        a = b - c * d % a;
+        if (z > y - x * w / 11) then {
+            x = w + y * z - x;
+            while (d + c <= b - a * 23) {
+                b = a - c / d + b;
+                if (z - y >= x * w / 11) then {
+                    y = w + x / z * y;
+                    x = z * y + w - 5;
+                } else {
+                    c = a * b + d - c;
+                    b = d + c / a + 17;
+                }
+                z = w - x + y / z;
+            }
+            d = a * b - c * d;
+        } else {
+            w = x * z / y - 0 % w;
+            while (d + c - b == a * 23) {
+                a = b + d - c + 12;
+                if (z - y * x != w / 11) then {
+                    x = w / z + y * 3;
+                    y = z - x / w * 8;
+                } else {
+                    b = a + d * c - 15;
+                    c = d + b * a - 20;
+                }
+                y = w / z - x / 6;
+            }
+            c = a + d / b * 18;
+        }
+        z = w / y * x % 9;
+    }
+    d = a - c + b / 21;
+}
+
+procedure emera1d {
+    read x;
+    y = 1;
+    z = x + y;
+
+    while ( i>9) {
+        z = z + i;
+        i = i - 1;
+    }
+
+    i = 10      + y * z /    x + 5 * x - 3 *    y;
+
+    if (z ==        10) then {
+        print x;
+        print    y;
+    } else {
+        while ( z!= 4 ) {
+            z = z - 1;
+            print z;
+            call procName;
+        }
+    }
+
+    if (z == 6) then {
+        print z;
+     } else {
+        print y;
+     }
+}
+
+procedure  procName {
+    x = 7 * 4 + 5 * l;
+    if (3 == 3) then {
+        z = z;
+        print y;
+        read a;
+        if (3 == 4) then {
+            m = 3 + ((y));
+        } else {
+            l = 3 + (3/4) + (4  /   5) + (6 * 7);
+            if (x == 1) then {
+                while (y > 10) {
+                    d = a + b + c + d;
+                }
+            } else {
+                while (i > j) {
+                    while (j != y) {
+                        read a;
+                    }
+                    xyzaaaaaaaaaaaaaaaaaaaaaaaaalongvarnameeeeeeeeeeeeeeeeeeeeeeeeeeeeeee = y;
+                    d = d + a + b;
+                    if (!((a > b) || (((a >= b) && (b >= c)) || (z + 10 - 4 % 7 <= 110)))) then {
+                        z = 10;
+                    } else {
+                        while (x == 5) {
+                            while (z > 10) {
+                                y = y;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        y = 44;
+        print z;
+    } else {
+        bigNum = 1;
+    }
+}
+
+procedure Endddd {
+    read x;
+    print y;
+    read y;
+    print x;
+    x = x + 5;
+    y = x * z + 4;
+    while ( x != 7) {
+        read z;
+        x = x + 5;
+        z = a + b + c;
+        while (1 ==1) {
+            x = x * x;
+            y = 4 * x;
+            if ( x == 27) then {
+                print m;
+                m = n * l + k;
+                y = 4044;
+                while ( x == 1) {
+                    print z;
+                    read z;
+                } x = x + 1;
+            } else { read z;
+                z = z - 1;
+            } d = a * c + b;
+        } m = m * n;
+        l = l * l;
+        if ( x == x) then {
+            read y;
+            read z;
+        } else { print z;
+            read y;
+            if ( y > 3 ) then {
+                x = 22;
+                z = 55;
+            } else { read x;
+                print x;
+            } } } read l;
+    read m;
+}
+

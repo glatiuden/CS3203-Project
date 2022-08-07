@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\QPS">
+      <UniqueIdentifier>{c887a87b-f647-4c0d-adb6-07f3832ae519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PKB">
+      <UniqueIdentifier>{3b46e93e-f3cd-4e78-bab9-9145f3b75bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SP">
+      <UniqueIdentifier>{642bfd84-21a0-4d7e-8acb-3c099663e19e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS">
+      <UniqueIdentifier>{e4f9a363-6aa6-4009-b2dd-8d60daee2488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\PKB">
+      <UniqueIdentifier>{56db7b9c-9e37-440d-8773-67409406e2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SP">
+      <UniqueIdentifier>{705294b9-83b4-472a-bf08-1eded923b3aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator">
+      <UniqueIdentifier>{a57d0cf0-c2a7-4646-b993-982985bc5c36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSTree">
+      <UniqueIdentifier>{418cf417-e3bf-4de9-b358-f4973ed16cc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator">
+      <UniqueIdentifier>{7bb6046f-c0dd-45b7-aa6c-c1d9cf419586}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSTree">
+      <UniqueIdentifier>{cb560c2a-78d8-408c-a9f6-d51fef992f9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\ClauseProcessors">
+      <UniqueIdentifier>{7900b089-f274-40be-852b-a38c7ccbc6a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\Evaluators">
+      <UniqueIdentifier>{1b38f7e9-5372-40e1-b482-bed9e257152d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat">
+      <UniqueIdentifier>{e496ace6-2b72-4179-bee3-c94c048eb0e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows">
+      <UniqueIdentifier>{e4034ae6-6d2b-447a-9ff0-4e627c429014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Modifies">
+      <UniqueIdentifier>{3e0ad91c-c93f-4284-8fa5-dd8e5e8ad2e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Uses">
+      <UniqueIdentifier>{b22d7fc9-7b5e-4241-85f6-6af65d5ff60a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent">
+      <UniqueIdentifier>{86317dec-5fd0-4f19-b79d-97ab49fd23ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls">
+      <UniqueIdentifier>{88b51c6c-1392-44d0-b551-ce85ae809bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next">
+      <UniqueIdentifier>{99356325-5771-4e45-9122-412aa4b67902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\ClauseProcessors">
+      <UniqueIdentifier>{5a4e55ef-652d-4aaf-8526-c9962878e7fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat">
+      <UniqueIdentifier>{7e45b46e-1f5e-4127-96df-408609190824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Modifies">
+      <UniqueIdentifier>{94b32799-8f57-4331-abde-2a8fcff095f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Uses">
+      <UniqueIdentifier>{d43fd1fb-2d55-4f5e-8dad-d5bc07fb47bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows">
+      <UniqueIdentifier>{b00d3484-311d-445f-810e-3ff254e12ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent">
+      <UniqueIdentifier>{8e35b790-4cc8-4084-9a9d-6e325d98fa3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls">
+      <UniqueIdentifier>{88b8dd9b-8bbc-4f83-a5ca-e1692d005535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next">
+      <UniqueIdentifier>{25d2fbc8-3872-4ba6-b586-8b755b8cc988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\Evaluators">
+      <UniqueIdentifier>{da7eaeaa-dbf6-4a12-93d6-2f80eab6322c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects">
+      <UniqueIdentifier>{ffb2a624-b467-44d1-9ddb-a3719ef92087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects">
+      <UniqueIdentifier>{75e7dd9d-74f1-4268-979a-b151157ee55a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\TNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Lexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Token.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\PKB.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\StmtData.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\StmtRsTable.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\StmtVarMapTable.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\SP\Parser.cpp">
+      <Filter>Source Files\SP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\SP\SourceValidator.cpp">
+      <Filter>Source Files\SP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\VarTable.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\StmtNode.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\SP\SourceProcessor.cpp">
+      <Filter>Source Files\SP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\CustomException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPS.cpp">
+      <Filter>Source Files\QPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSCommunicator.cpp">
+      <Filter>Source Files\QPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSPreprocessor.cpp">
+      <Filter>Source Files\QPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSResultProjector.cpp">
+      <Filter>Source Files\QPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSTree\QPSTree.cpp">
+      <Filter>Source Files\QPS\QPSTree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSTree\QPSPatternNode.cpp">
+      <Filter>Source Files\QPS\QPSTree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSTree\QPSNode.cpp">
+      <Filter>Source Files\QPS\QPSTree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSTree\ArgNode.cpp">
+      <Filter>Source Files\QPS\QPSTree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows\QPSEvaluatorSTFollowsProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Modifies\QPSEvaluatorSTModifiesProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Modifies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Uses\QPSEvaluatorSTUsesProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Uses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\ASTProcessor.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\CFGProcessor.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSFilter.cpp">
+      <Filter>Source Files\QPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator.cpp">
+      <Filter>Source Files\QPS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSTModifiesUsesProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSuchThatProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSTFollowsParentNextAffectsProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows\QPSEvaluatorSTFollowsTProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent\QPSEvaluatorSTParentProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent\QPSEvaluatorSTParentTProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\SP\ValidatorHelper.cpp">
+      <Filter>Source Files\SP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls\QPSEvaluatorSTCallsProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls\QPSEvaluatorSTCallsTProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next\QPSEvaluatorSTNextProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next\QPSEvaluatorSTNextTProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorPatternProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorSelectionProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorWithProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\Evaluators\QPSSingleClauseEvaluator.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\Evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\Evaluators\QPSMultiClauseEvaluator.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\Evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects\QPSEvaluatorSTAffectsProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects\QPSEvaluatorSTAffectsTProcessor.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\QPSOptimizer.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\QPSResultTable.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\AffectsTable.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\PatternTable.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\PKB\Cache.cpp">
+      <Filter>Source Files\PKB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSEvaluator\QPSResultTableEntities.cpp">
+      <Filter>Source Files\QPS\QPSEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\QPS\QPSClauseParser.cpp">
+      <Filter>Source Files\QPS</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\source\TNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Lexer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Token.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPS.h">
+      <Filter>Header Files\QPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSCommunicator.h">
+      <Filter>Header Files\QPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSHelper.h">
+      <Filter>Header Files\QPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSPreprocessor.h">
+      <Filter>Header Files\QPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\PKB.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\StmtData.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\StmtRsTable.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\StmtVarMapTable.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\Var.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\VarTable.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\SP\Parser.h">
+      <Filter>Header Files\SP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\SP\SourceValidator.h">
+      <Filter>Header Files\SP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\StmtNode.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\NodeType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\CustomException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSResultProjector.h">
+      <Filter>Header Files\QPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\SP\SourceProcessor.h">
+      <Filter>Header Files\SP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSTree\QPSTree.h">
+      <Filter>Header Files\QPS\QPSTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSTree\QPSPatternNode.h">
+      <Filter>Header Files\QPS\QPSTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSTree\ArgNode.h">
+      <Filter>Header Files\QPS\QPSTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSTree\QPSNode.h">
+      <Filter>Header Files\QPS\QPSTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows\QPSEvaluatorSTFollowsProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Modifies\QPSEvaluatorSTModifiesProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Modifies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Uses\QPSEvaluatorSTUsesProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Uses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSuchThatProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\ASTProcessor.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\CFGProcessor.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSFilter.h">
+      <Filter>Header Files\QPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator.h">
+      <Filter>Header Files\QPS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSTModifiesUsesProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\QPSEvaluatorSTFollowsParentNextAffectsProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows\QPSEvaluatorSTFollowsTProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Follows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent\QPSEvaluatorSTParentProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent\QPSEvaluatorSTParentTProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Parent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\ValidatorHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls\QPSEvaluatorSTCallsProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls\QPSEvaluatorSTCallsTProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Calls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next\QPSEvaluatorSTNextTProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next\QPSEvaluatorSTNextProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Next</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorPatternProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorSelectionProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\QPSEvaluatorWithProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\Evaluators\QPSSingleClauseEvaluator.h">
+      <Filter>Header Files\QPS\QPSEvaluator\Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\Evaluators\QPSMultiClauseEvaluator.h">
+      <Filter>Header Files\QPS\QPSEvaluator\Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects\QPSEvaluatorSTAffectsProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects\QPSEvaluatorSTAffectsTProcessor.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors\SuchThat\Affects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\QPSOptimizer.h">
+      <Filter>Header Files\QPS\QPSEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\QPSResultTable.h">
+      <Filter>Header Files\QPS\QPSEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\ClauseProcessors\ClauseProcessors.h">
+      <Filter>Header Files\QPS\QPSEvaluator\ClauseProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\AffectsTable.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\PatternTable.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\PKB\Cache.h">
+      <Filter>Header Files\PKB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSEvaluator\QPSResultTableEntities.h">
+      <Filter>Header Files\QPS\QPSEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\QPS\QPSClauseParser.h">
+      <Filter>Header Files\QPS</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

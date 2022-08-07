@@ -1,0 +1,12 @@
+procedure p2 {
+    a2 = 1;
+    b2 = a2 + 2;
+    read c2;
+    print d2;
+    call p3;
+}
+
+procedure p3 {
+    e2 = f2;
+    print g2;
+}

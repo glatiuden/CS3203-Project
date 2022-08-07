@@ -1,0 +1,31 @@
+procedure p16 {
+    if (a16==1) then {
+        call q16;
+    } else {
+        if (x > y) then { 
+            call r16; 
+        } else {}
+    }
+    if (b16>1) then {
+        call s16;
+    } else {}
+}
+procedure q16 {
+    print c16;
+}
+procedure r16 {
+    call q16;
+    call t16;
+}
+procedure s16 {
+    read d16;
+}
+procedure t16 {
+    e16 = 1 + 2;
+    call u16;
+}
+procedure u16 {
+    call s16;
+}
+
+procedure o16 {}

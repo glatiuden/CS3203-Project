@@ -1,0 +1,19 @@
+procedure p4 {
+    a4 = 1;
+    b4 = a4 + 2;
+    read c4;
+    print d4;
+}
+
+procedure q4 {
+    e4 = 1;
+    f4 = e4 + 2;
+}
+
+procedure r4 {
+    print a4;
+    call q4;
+}
+
+procedure s4 {
+}

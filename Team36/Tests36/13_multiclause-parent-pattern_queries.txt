@@ -1,0 +1,99 @@
+1 - Valid Parent-pattern: Select assign Parent(assing, stmt) pattern (variable, _)
+assign a; stmt s; variable v;
+Select a such that Parent(a, s) pattern a (v, _)
+
+5000
+2 - Valid Parent-pattern: Select assign Parent(assign, stmt) pattern (variable, _variable_) 
+assign a; stmt s; variable v;
+Select a such that Parent(a, s) pattern a (v, _"a13"_)
+
+5000
+3 - Valid Parent-pattern: Select assign Parent(stmt, assign) pattern (_,_) 
+assign a; stmt s;
+Select a such that Parent(s,a) pattern a (_, _)
+5, 7, 8, 9, 10
+5000
+4 - Valid Parent-pattern: Select assign Parent(stmt, assign) pattern (_, _constant_) 
+assign a; stmt s;
+Select a such that Parent(s,a) pattern a (_, _"1"_)
+5, 7, 10
+5000
+5 - Valid Parent-pattern: Select assign Parent(stmt, assign) pattern (IDENT, _constant_)
+assign a; stmt s;
+Select a such that Parent(s,a) pattern a ("c13", _"1"_)
+10
+5000
+6 - Valid Parent-pattern: Select assign Parent(stmt, assign) pattern (variable, _variable_) 
+assign a; stmt s; variable v;
+Select v such that Parent(s,a) pattern a (v, _"c13"_)
+b13, c13
+5000
+7 - Valid Parent-pattern: Select assign Parent(assign, _) pattern (variable, _)
+assign a; variable v;
+Select a such that Parent(a, _) pattern a (v, _)
+
+5000
+8 - Valid Parent-pattern: Select assign Parent(assign, integer) pattern (variable, _)
+assign a; variable v;
+Select a such that Parent(a, 3) pattern a (v, _)
+
+5000
+9 - Valid Parent-pattern: Select assign Parent(_, assign) pattern (variable, _)
+assign a; variable v;
+Select a such that Parent(_, a) pattern a (v, _)
+5, 7, 8, 9, 10
+5000
+10 - Valid Parent-pattern: Select assign Parent(_,_) pattern (variable, _)
+assign a; variable v;
+Select a such that Parent(_, _) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+11 - Valid Parent-pattern: Select assign Parent(_, integer) pattern (variable, _) 
+assign a; variable v;
+Select a such that Parent(_, 5) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+12 - Valid Parent-pattern: Select assign Parent(integer, assign) pattern (variable, _variable_)
+assign a; variable v;
+Select a such that Parent(4, a) pattern a (v, _"c13"_)
+9, 10
+5000
+13 - Valid Parent-pattern: Select assign Parent(integer, assign) pattern (_, _variable_)
+assign a;
+Select a such that Parent(6, a) pattern a (_, _"b13"_)
+8
+5000
+14 - Valid Parent-pattern: Select assign Parent(integer, assgn) pattern (IDENT, _variable_)
+assign a;
+Select a such that Parent(6, a) pattern a ("b13", _"b13"_)
+
+5000
+15 - Valid Parent-pattern: Select assign Parent(integer, assgn) pattern (variable, _constant_) 
+assign a; variable v;
+Select v such that Parent(4, a) pattern a (v, _"1"_)
+a13, c13
+5000
+16 - Valid Parent-pattern: Select assign Parent(integer, _) pattern (variable, _) 
+assign a; variable v;
+Select a such that Parent(4, _) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+17 - Valid Parent-pattern: Select assign Parent(integer, integer) pattern (variable, _)
+assign a; variable v;
+Select a such that Parent(4, 5) pattern a (v, _)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+18 - Valid pattern-Parent: Select assign pattern (_,_)  Parent(stmt, assign)
+assign a; stmt s;
+Select a pattern a (_, _) such that Parent(s,a)
+5, 7, 8, 9, 10
+5000
+19 - Valid pattern-Parent: Select assign pattern (variable, _)  Parent(_, integer)
+assign a; variable v;
+Select a pattern a (v, _) such that Parent(_, 5)
+1, 2, 3, 5, 7, 8, 9, 10
+5000
+20 - Valid pattern-Parent: Select assign pattern (variable, _)  Parent(integer, _)
+assign a; variable v;
+Select a pattern a (v, _) such that Parent(4, _)
+1, 2, 3, 5, 7, 8, 9, 10

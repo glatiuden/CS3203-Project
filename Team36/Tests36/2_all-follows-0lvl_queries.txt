@@ -1,0 +1,600 @@
+1 - Valid Follows: (selected-synonym, synonym)
+stmt s1, s2;
+Select s1 such that Follows(s1, s2)
+1, 2, 3, 4, 6
+5000
+2 - Valid Follows: (synonym, selected-synonym)
+stmt s1, s2;
+Select s2 such that Follows(s1, s2)
+2, 3, 4, 5, 7
+5000
+3 - Valid Follows: (synonym, _)
+stmt s;
+Select s such that Follows(s, _)
+1, 2, 3, 4, 6
+5000
+4 - Valid Follows: (synonym, integer)
+stmt s;
+Select s such that Follows(s, 4)
+3
+5000
+5 - Valid Follows: (_, synonym)
+stmt s;
+Select s such that Follows(_, s)
+2, 3, 4, 5, 7
+5000
+6 - Valid Follows: (_, _)
+stmt s;
+Select s such that Follows(_, _)
+1, 2, 3, 4, 5, 6, 7
+5000
+7 - Valid Follows: (_, integer)
+stmt s;
+Select s such that Follows(_, 4)
+1, 2, 3, 4, 5, 6, 7
+5000
+8 - Valid Follows: (integer, synonym)
+stmt s;
+Select s such that Follows(2, s)
+3
+5000
+9 - Valid Follows: (integer, _)
+stmt s;
+Select s such that Follows(2, _)
+1, 2, 3, 4, 5, 6, 7
+5000
+10 - Valid Follows: (integer, integer)
+stmt s;
+Select s such that Follows(2, 3)
+1, 2, 3, 4, 5, 6, 7
+5000
+11 - Valid Follows*: (selected-synonym, synonym)
+stmt s1, s2;
+Select s1 such that Follows*(s1, s2)
+1, 2, 3, 4, 6
+5000
+12 - Valid Follows*: (synonym, selected-synonym)
+stmt s1, s2;
+Select s2 such that Follows*(s1, s2)
+2, 3, 4, 5, 7
+5000
+13 - Valid Follows*: (synonym, _)
+stmt s;
+Select s such that Follows*(s, _)
+1, 2, 3, 4, 6
+5000
+14 - Valid Follows*: (synonym, integer)
+stmt s;
+Select s such that Follows*(s, 4)
+1, 2, 3
+5000
+15 - Valid Follows*: (_, synonym)
+stmt s;
+Select s such that Follows*(_, s)
+2, 3, 4, 5, 7
+5000
+16 - Valid Follows*: (_, _)
+stmt s;
+Select s such that Follows*(_, _)
+1, 2, 3, 4, 5, 6, 7
+5000
+17 - Valid Follows*: (_, integer)
+stmt s;
+Select s such that Follows*(_, 3)
+1, 2, 3, 4, 5, 6, 7
+5000
+18 - Valid Follows*: (integer, synonym)
+stmt s;
+Select s such that Follows*(2, s)
+3, 4, 5
+5000
+19 - Valid Follows*: (integer, _)
+stmt s;
+Select s such that Follows*(2, _)
+1, 2, 3, 4, 5, 6, 7
+5000
+20 - Valid Follows*: (integer, integer)
+stmt s;
+Select s such that Follows*(2, 3)
+1, 2, 3, 4, 5, 6, 7
+5000
+21 - Invalid Follows: Mispelled Follows
+stmt s1, s2;
+Select s1 such that Follow(s1, s2)
+
+5000
+22 - Invalid Follows: lower case follows
+stmt s1, s2;
+Select s1 such that follows(s1, s2)
+
+5000
+23 - Invalid Follows: (selected-synonym, undeclared-synonym)
+stmt s1, s2;
+Select s1 such that Follows(s1, s3)
+
+5000
+24 - Invalid Follows: (undeclared-synonym, selected-synonym)
+stmt s1, s2;
+Select s1 such that Follows(s3, s1)
+
+5000
+25 - Invalid Follows: (synonym, IDENT)
+stmt s1, s2;
+Select s1 such that Follows(s1, "s2")
+
+5000
+26 - Invalid Follows: (IDENT, synonym)
+stmt s1, s2;
+Select s1 such that Follows("s1", s2)
+
+5000
+27 - Invalid Follows: (_, IDENT)
+stmt s;
+Select s such that Follows(_,"s")
+
+5000
+28 - Invalid Follows: (IDENT, _)
+stmt s;
+Select s such that Follows("s", _)
+
+5000
+29 - Invalid Follows: (integer, IDENT)
+stmt s;
+Select s such that Follows(123, "s")
+
+5000
+30 - Invalid Follows: (IDENT, integer)
+stmt s;
+Select s such that Follows("s", 123)
+
+5000
+31 - Invalid Follows*: Mispelled Follows*
+stmt s1, s2;
+Select s1 such that Follow(s1, s2)
+
+5000
+32 - Invalid Follows*: lower case follows
+stmt s1, s2;
+Select s1 such that follows*(s1, s2)
+
+5000
+33 - Invalid Follows*: (selected-synonym, undeclared-synonym)
+stmt s1, s2;
+Select s1 such that Follows*(s1, s3)
+
+5000
+34 - Invalid Follows*: (undeclared-synonym, selected-synonym)
+stmt s1, s2;
+Select s1 such that Follows*(s3, s1)
+
+5000
+35 - Invalid Follows*: (synonym, IDENT)
+stmt s1, s2;
+Select s1 such that Follows*(s1, "s2")
+
+5000
+36 - Invalid Follows*: (IDENT, synonym)
+stmt s1, s2;
+Select s1 such that Follows*("s1", s2)
+
+5000
+37 - Invalid Follows*: (_, IDENT)
+stmt s;
+Select s such that Follows*(_,"s")
+
+5000
+38 - Invalid Follows*: (IDENT, _)
+stmt s;
+Select s such that Follows*("s", _)
+
+5000
+39 - Invalid Follows*: (integer, IDENT)
+stmt s;
+Select s such that Follows*(123, "s")
+
+5000
+40 - Invalid Follows*: (IDENT, integer)
+stmt s;
+Select s such that Follows*("s", 123)
+
+5000
+41 - Valid Follows: Select stmt (stmt, read)
+stmt s; read re; 
+Select s such that Follows(s, re)
+2
+5000
+42 - Valid Follows: Select read (stmt, read)
+stmt s; read re; 
+Select re such that Follows(s, re)
+3
+5000
+43 - Valid Follows: Select stmt (read, stmt)
+stmt s; read re; 
+Select s such that Follows(re, s)
+4
+5000
+44 - Valid Follows: Select read (read, stmt)
+stmt s; read re; 
+Select re such that Follows(re, s)
+3
+5000
+45 - Valid Follows: Select stmt (stmt, print)
+stmt s; print pn; 
+Select s such that Follows(s, pn)
+3, 6
+5000
+46 - Valid Follows: Select print (stmt, print)
+stmt s; print pn; 
+Select pn such that Follows(s, pn)
+4, 7
+5000
+47 - Valid Follows: Select stmt (print, stmt)
+stmt s; print pn; 
+Select s such that Follows(pn, s)
+5
+5000
+48 - Valid Follows: Select print (print, stmt)
+stmt s; print pn; 
+Select pn such that Follows(pn, s)
+4
+5000
+49 - Valid Follows: Select stmt (stmt, assign)
+stmt s; assign a;
+Select s such that Follows(s, a)
+1
+5000
+50 - Valid Follows: Select assign (stmt, assign)
+stmt s; assign a;
+Select a such that Follows(s, a)
+2
+5000
+51 - Valid Follows: Select stmt (assign, stmt)
+stmt s; assign a;
+Select s such that Follows(a, s)
+2,3,7
+5000
+52 - Valid Follows: Select assign (assign, stmt)
+stmt s; assign a;
+Select a such that Follows(a, s)
+1,2,6
+5000
+53 - Valid Follows: Select stmt (stmt, call)
+stmt s; call cl;
+Select s such that Follows(s, cl)
+4
+5000
+54 - Valid Follows: Select call (stmt, call)
+stmt s; call cl;
+Select cl such that Follows(s, cl)
+5
+5000
+55 - Valid Follows: Select stmt (call, stmt)
+stmt s; call cl;
+Select s such that Follows(cl, s)
+
+5000
+56 - Valid Follows: Select call (call, stmt)
+stmt s; call cl;
+Select cl such that Follows(cl, s)
+
+5000
+57 - Valid Follows: Select stmt (stmt, while)
+stmt s; while w;
+Select s such that Follows(s, w)
+
+5000
+58 - Valid Follows: Select while (stmt, while)
+stmt s; while w;
+Select w such that Follows(s, w)
+
+5000
+59 - Valid Follows: Select stmt (while, stmt)
+stmt s; while w;
+Select s such that Follows(w, s)
+
+5000
+60 - Valid Follows: Select while (while, stmt)
+stmt s; while w;
+Select w such that Follows(w, s)
+
+5000
+61 - Valid Follows: Select stmt (stmt, if)
+stmt s; if ifs;
+Select s such that Follows(s, ifs)
+
+5000
+62 - Valid Follows: Select if (stmt, if)
+stmt s; if ifs;
+Select ifs such that Follows(s, ifs)
+
+5000
+63 - Valid Follows: Select stmt (if, stmt)
+stmt s; if ifs;
+Select s such that Follows(ifs, s)
+
+5000
+64 - Valid Follows: Select if (if, stmt)
+stmt s; if ifs;
+Select ifs such that Follows(ifs, s)
+
+5000
+65 - Invalid Follows: Select stmt (stmt, procedure), syntax valid | semantic invalid
+stmt s; procedure p;
+Select BOOLEAN such that Follows(s, p)
+FALSE
+5000
+66 - Invalid Follows: Select procedure (stmt, procedure), syntax valid | semantic invalid
+stmt s; procedure p;
+Select BOOLEAN such that Follows(s, p)
+FALSE
+5000
+67 - Invalid Follows: Select stmt (procedure, stmt), syntax valid | semantic invalid
+stmt s; procedure p;
+Select BOOLEAN such that Follows(p, s)
+FALSE
+5000
+68 - Invalid Follows: Select procedure (procedure, stmt), syntax valid | semantic invalid
+stmt s; procedure p;
+Select BOOLEAN such that Follows(p, s)
+FALSE
+5000
+69 - Invalid Follows: Select stmt (stmt, variable), syntax valid | semantic invalid
+stmt s; variable v;
+Select BOOLEAN such that Follows(s, v)
+FALSE
+5000
+70 - Invalid Follows: Select variable (stmt, variable), syntax valid | semantic invalid
+stmt s; variable v;
+Select BOOLEAN such that Follows(s, v)
+FALSE
+5000
+71 - Invalid Follows: Select stmt (variable, stmt), syntax valid | semantic invalid
+stmt s; variable v;
+Select BOOLEAN such that Follows(v, s)
+FALSE
+5000
+72 - Invalid Follows: Select variable (variable, stmt), syntax valid | semantic invalid
+stmt s; variable v;
+Select BOOLEAN such that Follows(v, s)
+FALSE
+5000
+73 - Invalid Follows: Select stmt (stmt, constant), syntax valid | semantic invalid
+stmt s; constant c;
+Select BOOLEAN such that Follows(s, c)
+FALSE
+5000
+74 - Invalid Follows: Select constant (stmt, constant), syntax valid | semantic invalid
+stmt s; constant c;
+Select BOOLEAN such that Follows(s, c)
+FALSE
+5000
+75 - Invalid Follows: Select stmt (constant, stmt), syntax valid | semantic invalid
+stmt s; constant c;
+Select BOOLEAN such that Follows(c, s)
+FALSE
+5000
+76 - Invalid Follows: Select constant (constant, stmt), syntax valid | semantic invalid
+stmt s; constant c;
+Select BOOLEAN such that Follows(c, s)
+FALSE
+5000
+77 - Valid Follows*: Select stmt (stmt, read)
+stmt s; read re; 
+Select s such that Follows*(s, re)
+1, 2
+5000
+78 - Valid Follows*: Select read (stmt, read)
+stmt s; read re; 
+Select re such that Follows*(s, re)
+3
+5000
+79 - Valid Follows*: Select stmt (read, stmt)
+stmt s; read re; 
+Select s such that Follows*(re, s)
+4, 5
+5000
+80 - Valid Follows*: Select read (read, stmt)
+stmt s; read re; 
+Select re such that Follows*(re, s)
+3
+5000
+81 - Valid Follows*: Select stmt (stmt, print)
+stmt s; print pn; 
+Select s such that Follows*(s, pn)
+1, 2, 3, 6
+5000
+82 - Valid Follows*: Select print (stmt, print)
+stmt s; print pn; 
+Select pn such that Follows*(s, pn)
+4, 7
+5000
+83 - Valid Follows*: Select stmt (print, stmt)
+stmt s; print pn; 
+Select s such that Follows*(pn, s)
+5
+5000
+84 - Valid Follows*: Select print (print, stmt)
+stmt s; print pn; 
+Select pn such that Follows*(pn, s)
+4
+5000
+85 - Valid Follows*: Select stmt (stmt, assign)
+stmt s; assign a;
+Select s such that Follows*(s, a)
+1
+5000
+86 - Valid Follows*: Select assign (stmt, assign)
+stmt s; assign a;
+Select a such that Follows*(s, a)
+2
+5000
+87 - Valid Follows*: Select stmt (assign, stmt)
+stmt s; assign a;
+Select s such that Follows*(a, s)
+2, 3, 4, 5, 7
+5000
+88 - Valid Follows*: Select assign (assign, stmt)
+stmt s; assign a;
+Select a such that Follows*(a, s)
+1, 2, 6
+5000
+89 - Valid Follows*: Select stmt (stmt, call)
+stmt s; call cl;
+Select s such that Follows*(s, cl)
+1,2,3,4
+5000
+90 - Valid Follows*: Select call (stmt, call)
+stmt s; call cl;
+Select cl such that Follows*(s, cl)
+5
+5000
+91 - Valid Follows*: Select stmt (call, stmt)
+stmt s; call cl;
+Select s such that Follows*(cl, s)
+
+5000
+92 - Valid Follows*: Select call (call, stmt)
+stmt s; call cl;
+Select cl such that Follows*(cl, s)
+
+5000
+93 - Valid Follows*: Select stmt (stmt, while)
+stmt s; while w;
+Select s such that Follows*(s, w)
+
+5000
+94 - Valid Follows*: Select while (stmt, while)
+stmt s; while w;
+Select w such that Follows*(s, w)
+
+5000
+95 - Valid Follows*: Select stmt (while, stmt)
+stmt s; while w;
+Select s such that Follows*(w, s)
+
+5000
+96 - Valid Follows*: Select while (while, stmt)
+stmt s; while w;
+Select w such that Follows*(w, s)
+
+5000
+97 - Valid Follows*: Select stmt (stmt, if)
+stmt s; if ifs;
+Select s such that Follows*(s, ifs)
+
+5000
+98 - Valid Follows*: Select if (stmt, if)
+stmt s; if ifs;
+Select ifs such that Follows*(s, ifs)
+
+5000
+99 - Valid Follows*: Select stmt (if, stmt)
+stmt s; if ifs;
+Select s such that Follows*(ifs, s)
+
+5000
+100 - Valid Follows*: Select if (if, stmt)
+stmt s; if ifs;
+Select ifs such that Follows*(ifs, s)
+
+5000
+101 - Invalid Follows*: (stmt, procedure), syntax valid | semantic invalid
+stmt s; procedure p;
+Select BOOLEAN such that Follows*(s, p)
+FALSE
+5000
+102 - Invalid Follows*: (procedure, stmt), syntax valid | semantic invalid
+stmt s; procedure p;
+Select BOOLEAN such that Follows*(p, s)
+FALSE
+5000
+103 - Invalid Follows*: (stmt, variable), syntax valid | semantic invalid
+stmt s; variable v;
+Select BOOLEAN such that Follows*(s, v)
+FALSE
+5000
+104 - Invalid Follows*: (variable, stmt), syntax valid | semantic invalid
+stmt s; variable v;
+Select BOOLEAN such that Follows*(v, s)
+FALSE
+5000
+105 - Invalid Follows*: (stmt, constant), syntax valid | semantic invalid
+stmt s; constant c;
+Select BOOLEAN such that Follows*(s, c)
+FALSE
+5000
+106 - Invalid Follows*: (constant, stmt), syntax valid | semantic invalid
+stmt s; constant c;
+Select BOOLEAN such that Follows*(c, s)
+FALSE
+5000
+107 - Invalid Follows: (variable, integer), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Follows(v, 2)
+FALSE
+5000
+108 - Invalid Follows*: (variable, integer), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Follows*(v, 2)
+FALSE
+5000
+109 - Invalid Follows: (constant, integer), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Follows(c, 2)
+FALSE
+5000
+110 - Invalid Follows*: (constant, integer), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Follows*(c, 2)
+FALSE
+5000
+111 - Invalid Follows: (procedure, integer), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Follows(p, 2)
+FALSE
+5000
+112 - Invalid Follows*: (procedure, integer), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Follows*(p, 2)
+FALSE
+5000
+118 - Invalid Follows: (variable, _), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Follows(v, _)
+FALSE
+5000
+119 - Invalid Follows*: (variable, _), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Follows*(v, _)
+FALSE
+5000
+120 - Invalid Follows: (constant, _), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Follows(c, _)
+FALSE
+5000
+121 - Invalid Follows*: (constant, _), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Follows*(c, _)
+FALSE
+5000
+122 - Invalid Follows: (procedure, _), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Follows(p, _)
+FALSE
+5000
+123 - Invalid Follows*: (procedure, _), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Follows*(p, _)
+FALSE
+5000
+124 - Invalid Follows: (integer, variable), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Follows(2, v)
+FALSE
+5000
+125 - Invalid Follows*: (integer, variable), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Follows*(2, v)
+FALSE
+5000

@@ -1,0 +1,12 @@
+procedure p8 {
+    while (a8 == 0) {
+	b8 = c8 + 1;
+        while (d8 != 0) {
+	    read e8;
+            print f8;
+        }
+        read g8;
+    }
+    g8 = 1;
+    h8 = g8 + 1;
+}

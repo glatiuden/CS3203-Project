@@ -1,0 +1,26 @@
+procedure p17 {
+	read x;
+	read y;
+	a = 1;
+	while (a < 10) {
+		if (y == 7) then {
+			while (x != 2) {
+				while (y <= x) {
+					print y;
+					while (y != 2) {
+						y = y + 1;
+					}
+				}
+			}
+		} else {
+			x = y;
+		}		
+	}
+	call q17;
+}
+
+procedure q17 {
+	while (y <= 10) {
+		y = y + 1;
+	}
+}

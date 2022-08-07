@@ -1,0 +1,385 @@
+1 - Valid Parent and Pattern clauses
+variable v; assign a; if ifs;
+Select v such that Parent(ifs, a) pattern a(v, _)
+else,Pattern,exit
+5000
+2 - Valid Parent and Pattern clauses
+variable v; assign a; if ifs;
+Select a such that Parent(ifs,a) pattern a(v, _"20"_)
+14
+5000
+3 - Valid Parent and Pattern clauses
+assign a; while w;
+Select a such that Parent(w,a) pattern a(_, _)
+9,10,11,18,19,21
+5000
+4 - Valid Parent and Pattern clauses
+assign a; while w;
+Select w such that Parent(w,a) pattern a(_, _)
+8,15,17,20
+5000
+5 - Valid Parent and Pattern clauses
+assign a; stmt s;
+Select s such that Parent(s,a) pattern a(_, _)
+3,5,8,15,17,20
+5000
+6 - Valid Parent and Pattern clauses
+assign a; procedure p; stmt s;
+Select p such that Parent(s,a) pattern a("end", _)
+while
+5000
+7 - Valid Parent and Pattern clauses
+assign a; stmt s;
+Select a such that Parent(s,a) pattern a(_, _"nested + affects"_)
+18
+5000
+8 - Valid Parent and Pattern clauses
+assign a; stmt s;
+Select s such that Parent(s,a) pattern a(_, _"1"_)
+5,8
+5000
+9 - Valid Parent and Pattern clauses
+variable v; assign a; if ifs;
+Select v such that Parent(ifs, _) pattern a(v, _)
+select, loop, Pattern,i,left,right,exit,else,end,pattern
+5000
+10 - Valid Parent and Pattern clauses
+variable v; assign a; if ifs;
+Select a such that Parent(ifs,_) pattern a(v, _"20"_)
+14
+5000
+11 - Valid Parent and Pattern clauses
+assign a; while w;
+Select a such that Parent(w,_) pattern a(_, _)
+1,2,7,9,10,11,12,14,18,19,21
+5000
+12 - Valid Parent and Pattern clauses
+assign a; stmt s;
+Select a such that Parent(s,_) pattern a("end", _)
+18,21
+5000
+13 - Valid Parent and Pattern clauses
+assign a; stmt s;
+Select a such that Parent(s,_) pattern a(_, _"nested + affects"_)
+18
+5000
+14 - Valid Parent and Pattern clauses
+assign a; stmt s;
+Select s such that Parent(s,_) pattern a(_, _"1"_)
+3,5,15,16,17,20,8
+5000
+15 - Valid Parent and Pattern clauses
+variable v; assign a; if ifs;
+Select v such that Parent(ifs, 15) pattern a(v, _)
+select, loop, Pattern,i,left,right,exit,else,end,pattern
+5000
+16 - Valid Parent and Pattern clauses
+variable v; assign a; if ifs;
+Select a such that Parent(ifs,5) pattern a(v, _"20"_)
+14
+5000
+17 - Valid Parent and Pattern clauses
+assign a; while w;
+Select a such that Parent(w,16) pattern a(_, _)
+1,2,7,9,10,11,12,14,18,19,21
+5000
+18 - Valid Parent and Pattern clauses
+assign a; stmt s;
+Select a such that Parent(s,18) pattern a("end", _)
+18,21
+5000
+19 - Valid Parent and Pattern clauses
+assign a; stmt s;
+Select a such that Parent(s,17) pattern a(_, _"nested + affects"_)
+18
+5000
+20 - Valid Parent and Pattern clauses
+assign a; stmt s;
+Select s such that Parent(s,21) pattern a(_, _"1"_)
+20
+5000
+21 - Valid Parent and Pattern clauses
+assign a;
+Select a such that Parent(_,_) pattern a(_, _"1"_)
+9,12
+5000
+22 - Valid Parent and Pattern clauses
+assign a; read r;
+Select r such that Parent(_,18) pattern a(_, _"nested + affects"_)
+4,13
+5000
+23 - Valid Parent and Pattern clauses
+assign a;
+Select a such that Parent(_,a) pattern a(_, _"a"_)
+7,21
+5000
+24 - Valid Parent and Pattern clauses
+assign a;
+Select a such that Parent(3,4) pattern a(_, _"2"_)
+7
+5000
+25 - Invalid Parent and Pattern clauses
+assign a; constant c;
+Select a such that Parent(3,5) pattern a(_, c)
+
+5000
+26 - Invalid Parent and Pattern clauses
+assign a; variable v; constant c;
+Select a such that Parent(3,13) pattern a(v, c)
+
+5000
+27 - Valid Parent and Pattern clauses
+assign a; variable v;
+Select a such that Parent(5,6) pattern a(v, _)
+1,2,7,9,10,11,12,14,18,19,21
+5000
+28 - Invalid Parent and Pattern clauses
+assign a; variable v;
+Select a such that Parent(5,8) pattern a(_, a)
+
+5000
+29 - Invalid Parent and Pattern clauses
+assign a; variable v, v1;
+Select a such that Parent(5,12)pattern a(v, v1)
+
+5000
+30 - Valid Parent and Pattern clauses
+assign a; variable v;
+Select v such that Parent(15,a)pattern a(v, _)
+pattern
+5000
+31 - Invalid Parent and Pattern clauses
+assign a; variable v;
+Select v such that Parent(5,a)pattern a(_, v)
+
+5000
+32 - Valid Parent and Pattern clauses
+assign a; constant constant;
+Select constant such that Parent(5,a) pattern a(_,_)
+0,1,2,20
+5000
+33 - Invalid Parent and Pattern clauses
+assign a; variable v;
+Select v such that Parent(5,_) pattern a(_, v)
+
+5000
+34 - Invalid Parent and Pattern clauses, Invalid syn p in pattern LHS
+assign a; if ifs; procedure p;
+Select a such that Parent(ifs,a) pattern a(p, _)
+
+5000
+35 - Invalid Parent and Pattern clauses, do not satisfy Parent
+assign a; print pn; stmt s; while w;
+Select s such that Parent(w,pn) pattern a(_, _)
+
+5000
+36 - Invalid Parent and Pattern clauses, Invalid select-cl
+assign a; print pn; stmt s; while w;
+Select s such that Parent(w,s) and pattern a(_, _)
+
+5000
+37 - Invalid Parent and Pattern clauses, Invalid select-cl
+assign a; stmt s;
+Select s such that pattern a(_, _) Parent(5,6)
+
+5000
+38 - Invalid Parent and Pattern clauses, Invalid pattern-cl
+assign a; stmt s; variable v;
+Select s such that Parent(5,a) pattern (v, _)
+
+5000
+39 - Invalid Parent and Pattern clauses, Invalid INDENT in pattern RHS
+assign a; stmt s; constant c; variable v;
+Select s such that Parent(s,c) pattern a(v, _"i+1"_)
+
+5000
+40 - Invalid Parent and Pattern clauses, do not satisfy Parent and pattern clauses
+assign a; stmt s; constant c; read r; variable v;
+Select s such that Parent(r,a) pattern a(v,_)
+
+5000
+41 - Invalid Parent and Pattern clauses, do not satisfy Parent and pattern clauses
+assign a; stmt s; constant c; read r; variable v;
+Select s such that Parent(a,a) pattern a(v,_)
+
+5000
+42 - Invalid Parent and Pattern clauses, do not satisfy Parent and pattern clauses
+assign a,a1; stmt s; variable v;
+Select s such that Parent(a,a1) pattern a1(v,_)
+
+5000
+43 - Invalid Parent and Pattern clauses, Invalid declaration, missing semicolon
+assign a; stmt s; variable v
+Select s such that Parent(s,a) pattern a(v,_)
+
+5000
+44 - Valid Parent* and Pattern clauses
+variable v; assign a; if ifs;
+Select a such that Parent*(ifs, a) pattern a(v, _"0"_)
+10,11
+5000
+45 - Valid Parent* and Pattern clauses
+variable v; assign a; if ifs;
+Select a such that Parent*(ifs, a) pattern a(v, _)
+7,9,10,11,12,14,18,19,21
+5000
+46 - Valid Parent* and Pattern clauses
+assign a; while w;
+Select a such that Parent*(w,a) pattern a(_, _)
+9,10,11,18,19,21
+5000
+47 - Valid Parent* and Pattern clauses
+assign a; while w;
+Select w such that Parent*(w,a) pattern a(_, _)
+8,15,16,17,20
+5000
+48 - Valid Parent* and Pattern clauses
+assign a; stmt s;
+Select s such that Parent*(s,a) pattern a(_, _"nested + affects"_)
+3,15,16,17
+5000
+49 - Valid Parent* and Pattern clauses
+assign a; stmt s;
+Select s such that Parent*(s,a) pattern a(_, _"1"_)
+3,5,8
+5000
+50 - Valid Parent* and Pattern clauses
+assign a; stmt s;
+Select a such that Parent*(s,a) pattern a(_, _"1"_)
+9,12
+5000
+51 - Valid Parent* and Pattern clauses
+assign a; stmt s; if ifs;
+Select a such that Parent*(ifs,a) pattern a(_, _"1"_)
+9,12
+5000
+52 - Valid Parent* and Pattern clauses
+assign a; while w;
+Select a such that Parent*(w,a) pattern a(_, _"1"_)
+9
+5000
+53 - Valid Parent* and Pattern clauses
+assign a; while w;
+Select w such that Parent*(w,a) pattern a("end", _)
+15,16,17,20
+5000
+54 - Valid Parent* and Pattern clauses
+assign a;
+Select a such that Parent*(15,a) pattern a("end", _)
+18,21
+5000
+55 - Valid Parent* and Pattern clauses
+assign a;
+Select a such that Parent*(_,a) pattern a("end", _)
+18,21
+5000
+56 - Valid Parent* and Pattern clauses
+assign a;
+Select a such that Parent*(17,a) pattern a("end", _)
+18
+5000
+57 - Valid Parent* and Pattern clauses
+assign a;
+Select a such that Parent*(3,a) pattern a("Pattern", _"2"_)
+7
+5000
+58 - Valid Parent* and Pattern clauses
+assign a;
+Select a such that Parent*(3,a) pattern a("pattern", _"for"_)
+19
+5000
+59 - Invalid Parent* and Pattern clauses, Invalid syn c in pattern LHS
+assign a; if ifs; constant c;
+Select a such that Parent*(ifs,a) pattern a(c, _)
+
+5000
+60 - Invalid Parent* and Pattern clauses, do not satisfy Parent* and pattern clauses
+assign a; stmt s; while w;
+Select s such that Parent*(w,a) pattern a("0", _)
+
+5000
+61 - Invalid Parent* and Pattern clauses
+assign a; stmt s;
+Select s such that pattern a(_, _) Parent*(3,6)
+
+5000
+62 - Invalid Parent* and Pattern clauses, Invalid pattern-cl
+assign a; stmt s; variable v;
+Select s such that Parent*(3,a) pattern (v, _)
+
+5000
+63 - Invalid Parent* and Pattern clauses, Invalid select-cl
+assign a; stmt s; variable v;
+Select s such that Parent*(s,a) and pattern a(v,_)
+
+5000
+64 - Invalid Parent* and Pattern clauses
+stmt s; assign a; variable v; print pr; if ifs;
+Select ifs such that Parent*(3,a) pattern a(_, _"if"_)
+
+5000
+65 - Invalid Parent* and Pattern clauses
+stmt s; assign a; variable v; print pr; if ifs;
+Select ifs such that Parent*(5,a) pattern a(_, _"assign"_)
+
+5000
+66 - Invalid Parent and Pattern clauses
+assign a,a1; stmt s; variable v; while w; read r; if ifs;
+Select a1 pattern a1(v,"0") such that Parent(a,a1)
+
+5000
+67 - Invalid Parent and Pattern clauses
+assign a; stmt s; variable v; while w; read r; if ifs;
+Select a pattern a(v,"nested + affects") such that Parent(ifs,a)
+
+5000
+68 - Invalid Parent and Pattern clauses
+assign a; stmt s; variable v; while w; read r; if ifs;
+Select a pattern a(v,_"while"_) such that Parent(w,a)
+
+5000
+69 - Invalid Parent and Pattern clauses
+assign a; stmt s; variable v; while w; read r; if ifs;
+Select a pattern a("select",_"assign"_) such that Parent(s,a)
+
+5000
+70 - Invalid Parent* and Pattern clauses
+assign a; stmt s; variable v; while w; read r; if ifs;
+Select a pattern a(_,_"assign"_) such that Parent*(s,a)
+
+5000
+71 - Invalid Parent* and Pattern clauses
+stmt s; assign a; variable v; print pr; while w;
+Select w such that Parent*(15,a) pattern a(_, _"2"_)
+
+5000
+72 - Invalid Parent* and Pattern clauses
+stmt s; assign a; variable v; print pr; if ifs;
+Select ifs such that Parent*(ifs,a) pattern a(_, _"if"_)
+
+5000
+73 - Invalid Parent* and Pattern clauses
+stmt s; assign a; variable v; print pr; if ifs;
+Select ifs such that Parent*(ifs,a) pattern a(_, _"assign"_)
+
+5000
+74 - Invalid Parent* and Pattern clauses
+stmt s; assign a; variable v; print pr; while w;
+Select w such that Parent*(w,a) pattern a(_, _"2"_)
+
+5000
+75 - Invalid Parent* and Pattern clauses
+stmt s; assign a; variable v; print pr; while w;
+Select w such that Parent*(a,3) pattern a(_, _"2"_)
+
+5000
+76 - Invalid Parent* and Pattern clauses
+stmt s; assign a; variable v; print pr; while w; read r;
+Select w such that Parent*(r,5) pattern a(_, _"2"_)
+
+5000
+75 - Invalid Parent* and Pattern clauses
+stmt s; assign a; variable v; print pr; while w;
+Select w such that Parent*(a,15) pattern a(_, _"2"_)
+
+5000

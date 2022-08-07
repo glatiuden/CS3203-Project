@@ -1,0 +1,230 @@
+1 - Valid Next: NEXT(SYN, SYN) - Next(s,s)
+stmt s;
+Select s such that Next(s, s)
+
+5000
+2 - Valid Next: NEXT(SYN, SYN) - Next(w, a)
+assign a; while w;
+Select a such that Next(w, a)
+10, 14
+5000
+3 - Valid Next: NEXT(SYN, _) - Next(s, _)
+stmt s;
+Select s such that Next(s, _)
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14
+5000
+4 - Valid Next: NEXT(_, SYN) - Next(_, pr)
+print pr;
+Select pt such that Next(_, pr)
+
+5000
+5 - Valid Next: NEXT(INT, SYN) - Next(3, s)
+stmt s;
+Select s such that Next(3, s)
+4
+5000
+6 - Valid Next: NEXT(INT, SYN) Next(12, s)
+stmt s;
+Select s such that Next(12, s)
+
+5000
+7 - Valid Next: NEXT(SYN, INT) - Next(s, 12)
+stmt s;
+Select s such that Next(s, 12)
+4
+5000
+8 - Valid Next: NEXT(INT, INT) - Next(2, 3)
+read r;
+Select r such that Next(2, 3)
+1, 2
+5000
+9 - Valid Next: NEXT(INT, INT) - Next(3, 2)
+read rd;
+Select r such that Next(3, 2)
+
+5000
+10 - Valid Next: NEXT(INT, _) - Next(2,_)
+read r;
+Select r such that Next(2,_)
+1, 2
+5000
+11 - Valid Next: NEXT(_, INT) Next(_, 2)
+read r;
+Select r such that Next(2,_)
+1, 2
+5000
+12 - Valid Next: NEXT(INT, INT) - Next(12, 13), cross procedure
+stmt s;
+Select s such that Next(12, 13)
+
+5000
+13 - Valid Next: NEXT(_, _) Next(_, _)
+call c;
+Select c such that Next(_, _)
+12
+5000
+14 - Invalid Next: Next(proc, s), procedure as arguments
+stmt s; procedure p;
+Select s such that Next(p, s)
+
+5000
+15 - Invalid Next: Next(proc, q17), ident as arg
+stmt s; procedure p;
+Select s such that Next(p, "q17")
+
+5000
+17 - Invalid Next: Next(2000,2001), references non-existent lines
+stmt s;
+Select s such that Next(2000, 2001)
+
+5000
+18 - Valid Next*: NEXT*(SYN, SYN) Next*(s,s)
+stmt s;
+Select s such that Next*(s,s)
+4, 5, 6, 7, 8, 9, 10, 11, 13, 14
+5000
+19 - Valid Next*: NEXT*(SYN, SYN) Next*(w,a), a in nested while loops
+assign a; while w;
+Select w such that Next*(w,a)
+4, 6, 7, 9, 13
+5000
+20 - Valid Next*: NEXT*(INT, INT) Next*(8,6), 8 part of stmtLst of while at 6
+read rd;
+Select rd such that Next*(8,6)
+1, 2
+5000
+21 - Valid Next*: NEXT*(INT, INT) Next*(12, 13), Cross Procedure Next
+stmt s;
+Select s such that Next*(12, 13)
+
+5000
+22 - Valid Next*: NEXT*(INT, WILDCARD) Next*(2,_)
+read rd;
+Select rd such that Next*(2,_)
+1, 2
+5000
+23 - Valid Next*: NEXT*(WILDCARD, INT) Next*(_,1)
+read rd;
+Select rd such that Next*(_,1)
+
+5000
+24 - Valid Next*: NEXT*(WILDCARD, INT) Next*(_,2)
+read rd;
+Select rd such that Next*(_,2)
+1, 2
+5000
+25 - Valid Next*: NEXT*(SYN, WILDCARD) Next*(pt,_)
+print pt;
+Select pt such that Next*(pt,_)
+8
+5000
+26 - Valid Next*: NEXT*(WILDCARD, SYN) Next*(_,a)
+assign a;
+Select a such that Next*(_,a)
+3, 10, 11, 14
+5000
+27 - Valid Next*: NEXT*(INT, SYN) Next*(4,w)
+while w;
+Select w such that Next*(4,w)
+4, 6, 7, 9
+5000
+28 - Valid Next*: NEXT*(SYN, INT) Next*(a,2)
+assign a;
+Select a such that Next*(a,2)
+
+5000
+29 - Valid Next*: NEXT*(WILDCARD, WILDCARD) Next*(_,_)
+read rd;
+Select rd such that Next*(_,_)
+1, 2
+5000
+30 - Valid Next*: NEXT*(SYN, SYN) Next*(pt,s)
+print pt; stmt s;
+Select s such that Next*(pt,s)
+4, 5, 6, 7, 8, 9, 10, 11, 12
+5000
+31 - Invalid Next*: Next*(s, proc), procedure as arguments
+stmt s; procedure p;
+Select s such that Next*(s, p)
+
+5000
+32 - Invalid Next*: Next*(proc, q17), ident as arg
+stmt s; procedure p;
+Select s such that Next*(p, "q17")
+
+5000
+33 - Invalid Next*: Next*(2,2001), references non-existent lines
+stmt s;
+Select s such that Next*(2, 2001)
+
+5000
+34 - Invalid Next: (variable, integer), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Next(v, 2)
+FALSE
+5000
+35 - Invalid Next*: (variable, integer), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Next*(v, 2)
+FALSE
+5000
+36 - Invalid Next: (constant, integer), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Next(c, 2)
+FALSE
+5000
+37 - Invalid Next*: (constant, integer), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Next*(c, 2)
+FALSE
+5000
+38 - Invalid Next: (procedure, integer), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Next(p, 2)
+FALSE
+5000
+39- Invalid Next*: (procedure, integer), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Next*(p, 2)
+FALSE
+5000
+40 - Invalid Next: (variable, _), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Next(v, _)
+FALSE
+5000
+41 - Invalid Next*: (variable, _), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Next*(v, _)
+FALSE
+5000
+42 - Invalid Next: (constant, _), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Next(c, _)
+FALSE
+5000
+43 - Invalid Next*: (constant, _), syntax valid | semantic invalid
+constant c;
+Select BOOLEAN such that Next*(c, _)
+FALSE
+5000
+44 - Invalid Next: (procedure, _), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Next(p, _)
+FALSE
+5000
+45 - Invalid Next*: (procedure, _), syntax valid | semantic invalid
+procedure p;
+Select BOOLEAN such that Next*(p, _)
+FALSE
+5000
+46 - Invalid Next: (integer, variable), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Next(2, v)
+FALSE
+5000
+47 - Invalid Next*: (integer, variable), syntax valid | semantic invalid
+variable v;
+Select BOOLEAN such that Next*(2, v)
+FALSE
+5000
